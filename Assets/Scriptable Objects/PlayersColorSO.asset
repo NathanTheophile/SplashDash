@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f7568ff6679fe549a188929888d8eb9, type: 3}
+  m_Name: PlayersColorSO
+  m_EditorClassIdentifier: Assembly-CSharp::PlayersSpritesColorsSO
+  data:
+  - mainBGColor: {r: 0.9372549, g: 0.4084406, b: 0.18431371, a: 0}
+    lightBGColor: {r: 0.93207544, g: 0.60245407, b: 0.46252042, a: 0}
+    sprites: {fileID: 21300000, guid: 82c488e9fdaa1594c8eae758eb8be01c, type: 3}
+    knockedSprite: {fileID: 21300000, guid: 82c488e9fdaa1594c8eae758eb8be01c, type: 3}
+  - mainBGColor: {r: 0.25882354, g: 0.3803922, b: 0.18823531, a: 1}
+    lightBGColor: {r: 0.4210537, g: 0.5396226, b: 0.35330006, a: 1}
+    sprites: {fileID: 21300000, guid: 7872e5f0730ea364ab8d6d2dec97561d, type: 3}
+    knockedSprite: {fileID: 21300000, guid: 7872e5f0730ea364ab8d6d2dec97561d, type: 3}
+  - mainBGColor: {r: 0.38039216, g: 0.18823531, b: 0.36379513, a: 1}
+    lightBGColor: {r: 0.6377357, g: 0.38865778, b: 0.6163862, a: 1}
+    sprites: {fileID: 21300000, guid: 583dc0d6466aba343bd26a2dd80d752d, type: 3}
+    knockedSprite: {fileID: 21300000, guid: 583dc0d6466aba343bd26a2dd80d752d, type: 3}
+  - mainBGColor: {r: 0.29050782, g: 0.2671057, b: 0.7735849, a: 1}
+    lightBGColor: {r: 0.4912356, g: 0.46955496, b: 0.93207544, a: 1}
+    sprites: {fileID: 21300000, guid: eba0273d4cd0b36459d439d338603a23, type: 3}
+    knockedSprite: {fileID: 21300000, guid: ad1b7fd9437fccd4890a31a67b611fd6, type: 3}
+  - mainBGColor: {r: 0.78867924, g: 0.3199359, b: 0.33459014, a: 1}
+    lightBGColor: {r: 0.7735849, g: 0.40138835, b: 0.41144776, a: 1}
+    sprites: {fileID: 21300000, guid: b9e1f5909fb4b48418a9de009f3c0bd2, type: 3}
+    knockedSprite: {fileID: 21300000, guid: 023f4d4f16354b546990a44532741335, type: 3}
+  - mainBGColor: {r: 0.8792453, g: 0.675194, b: 0.7827766, a: 1}
+    lightBGColor: {r: 0.9245283, g: 0.84951943, b: 0.8518881, a: 1}
+    sprites: {fileID: 21300000, guid: a1bf9230dabfc8e46b9108a7062b69cc, type: 3}
+    knockedSprite: {fileID: 21300000, guid: 40d1caac1d1ed0641b649f9aa7e45605, type: 3}
