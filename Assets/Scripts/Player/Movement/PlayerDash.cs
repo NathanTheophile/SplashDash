@@ -74,6 +74,7 @@ public class PlayerDash : MonoBehaviour
 
     public void ResetDash()
     {
+        StopAllCoroutines();
         EndDash();
         canDash = true;
         if (_PlayerMovementSystem != null) _PlayerMovementSystem.ClearInput();
