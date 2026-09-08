@@ -4,17 +4,23 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     private Rigidbody2D _rigidBody;
+    [SerializeField] private PlayerPhysicsStates _physicsStates;
+    private PlayerStats _stats;
 
-    [SerializeField] private float _speed = 5;
-    [SerializeField] private float _friction = 2;
-    [SerializeField] private float _maxMoveSpeed = 5;
-    [SerializeField] private float _rotationSpeed = 1;
-
-    [SerializeField] private float _jumpForce = 10;
-    [SerializeField] private float _jumpCooldown = 3;
-    private bool _canJump = true;
+    private PlayerStates _state;
+    public PlayerStates State 
+    { 
+        get => _state; 
+        set
+        {
+            _stats = _physicsStates.states[(int)value];
+            _state = value;
+        }
+    }
+    [SerializeField] private PlayerStates _startState; // FOR TESTING PURPOSES
 
     private Vector2 _moveDirection;
+    private bool _canJump = true;
 
     private void Awake()
     {
@@ -24,14 +30,15 @@ public class Fish : MonoBehaviour
     private void Start()
     {
         InputManager.Instance.JumpPressed += Jump;
+        State = _startState;
     }
 
     void Update()
     {
         _moveDirection = InputManager.Instance.axis;
-        RotateTowards(transform.up, new Vector3(_moveDirection.x, _moveDirection.y), _rotationSpeed * Time.deltaTime);
+        RotateTowards(transform.up, new Vector3(_moveDirection.x, _moveDirection.y), _stats.rotationSpeed * Time.deltaTime);
 
-        _rigidBody.linearVelocity = Vector2.ClampMagnitude(_rigidBody.linearVelocity, _maxMoveSpeed);
+        _rigidBody.linearVelocity = Vector2.ClampMagnitude(_rigidBody.linearVelocity, _stats.maxMoveSpeed);
     }
 
     private void FixedUpdate()
@@ -40,23 +47,23 @@ public class Fish : MonoBehaviour
         {
             _rigidBody.linearDamping = 0;
             _rigidBody.angularVelocity = 0;
-            _rigidBody.AddForce(_moveDirection * _speed, ForceMode2D.Force);
+            _rigidBody.AddForce(_moveDirection * _stats.moveSpeed, ForceMode2D.Force);
         }
-        else _rigidBody.linearDamping = _friction;
+        else _rigidBody.linearDamping = _stats.friction;
     }
 
     private void Jump()
     {
         if (!_canJump) return;
-        _rigidBody.AddForce(transform.up * _jumpForce, ForceMode2D.Impulse);
+        _rigidBody.AddForce(transform.up * _stats.jumpForce, ForceMode2D.Impulse);
         _canJump = false;
         StartCoroutine(JumpCooldownCoroutine());
     }
 
     private IEnumerator JumpCooldownCoroutine()
     {
-        float lJumpCdTimer = _jumpCooldown;
-        while(lJumpCdTimer > 0)
+        float lJumpCdTimer = _stats.jumpCooldown;
+        while (lJumpCdTimer > 0)
         {
             lJumpCdTimer -= Time.deltaTime;
             yield return null;
@@ -68,7 +75,7 @@ public class Fish : MonoBehaviour
     {
         float lAngle = Vector3.SignedAngle(pFrom, pTo, transform.forward);
         transform.rotation *= Quaternion.AngleAxis(
-            lAngle >= 0 ? Mathf.Clamp(pMaxAngle, 0, lAngle) : Mathf.Clamp(-pMaxAngle, lAngle, 0), 
+            lAngle >= 0 ? Mathf.Clamp(pMaxAngle, 0, lAngle) : Mathf.Clamp(-pMaxAngle, lAngle, 0),
             transform.forward
             );
     }
