@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +8,7 @@ public class InputManager : MonoBehaviour
     private InputSystem_Actions _inputActions;
 
     public Vector2 axis;
+    public event Action JumpPressed;
 
     private void Awake()
     {
@@ -21,10 +23,16 @@ public class InputManager : MonoBehaviour
         _inputActions.Player.Enable();
         _inputActions.Player.Move.performed += MoveAction;
         _inputActions.Player.Move.canceled += MoveAction;
+        _inputActions.Player.Jump.performed += JumpAction;
     }
 
     private void MoveAction(InputAction.CallbackContext pContext)
     {
         axis = pContext.ReadValue<Vector2>();
+    }
+
+    private void JumpAction(InputAction.CallbackContext pContext)
+    {
+        JumpPressed?.Invoke();
     }
 }
