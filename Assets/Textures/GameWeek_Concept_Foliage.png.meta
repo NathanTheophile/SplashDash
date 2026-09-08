@@ -1,0 +1,754 @@
+fileFormatVersion: 2
+guid: c900ee5ac7b3b344681b637d3218b2cc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4335727953743748310
+    second: GameWeek_Concept_Foliage_0
+  - first:
+      213: 3881524681647678122
+    second: GameWeek_Concept_Foliage_1
+  - first:
+      213: 1414214166454829360
+    second: GameWeek_Concept_Foliage_2
+  - first:
+      213: 76759780841288024
+    second: GameWeek_Concept_Foliage_3
+  - first:
+      213: -5258091262843968345
+    second: GameWeek_Concept_Foliage_4
+  - first:
+      213: 2074325887309232164
+    second: GameWeek_Concept_Foliage_5
+  - first:
+      213: 3116935376750927887
+    second: GameWeek_Concept_Foliage_6
+  - first:
+      213: -9210677613087399736
+    second: GameWeek_Concept_Foliage_7
+  - first:
+      213: 7731074428924907689
+    second: GameWeek_Concept_Foliage_8
+  - first:
+      213: 9025910872870610537
+    second: GameWeek_Concept_Foliage_9
+  - first:
+      213: 9145093777450216705
+    second: GameWeek_Concept_Foliage_10
+  - first:
+      213: 8233718720601130729
+    second: GameWeek_Concept_Foliage_11
+  - first:
+      213: -4880144023332895163
+    second: GameWeek_Concept_Foliage_12
+  - first:
+      213: 4718274964385780860
+    second: GameWeek_Concept_Foliage_13
+  - first:
+      213: 3611289970905212235
+    second: GameWeek_Concept_Foliage_14
+  - first:
+      213: -6242530778073092185
+    second: GameWeek_Concept_Foliage_15
+  - first:
+      213: -6506062944237706936
+    second: GameWeek_Concept_Foliage_16
+  - first:
+      213: 6111189367398365244
+    second: GameWeek_Concept_Foliage_17
+  - first:
+      213: 5219846772987549351
+    second: GameWeek_Concept_Foliage_18
+  - first:
+      213: 4278556782395136005
+    second: GameWeek_Concept_Foliage_19
+  - first:
+      213: -7265593238379379602
+    second: GameWeek_Concept_Foliage_20
+  - first:
+      213: -5101914305788308042
+    second: GameWeek_Concept_Foliage_21
+  - first:
+      213: 6561339574676437677
+    second: GameWeek_Concept_Foliage_22
+  - first:
+      213: -7856984357967678407
+    second: GameWeek_Concept_Foliage_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_0
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 1093
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dc90ad2a999b2c30800000000000000
+      internalID: 4335727953743748310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_1
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 1095
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa2658cf122fdd530800000000000000
+      internalID: 3881524681647678122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_2
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 956
+        width: 112
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0318dd3aa4c40a310800000000000000
+      internalID: 1414214166454829360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_3
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 957
+        width: 124
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 851f41e2d94b01100800000000000000
+      internalID: 76759780841288024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_4
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 982
+        width: 93
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a4a991ead18707b0800000000000000
+      internalID: -5258091262843968345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_5
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 971
+        width: 94
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 428b67d776c79cc10800000000000000
+      internalID: 2074325887309232164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_6
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 977
+        width: 97
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f00661ff534914b20800000000000000
+      internalID: 3116935376750927887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_7
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 950
+        width: 106
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c0684bd2891d2080800000000000000
+      internalID: -9210677613087399736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_8
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 956
+        width: 126
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a0dc2c6b3b4a4b60800000000000000
+      internalID: 7731074428924907689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_9
+      rect:
+        serializedVersion: 2
+        x: 1415
+        y: 967
+        width: 104
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 966e9c71e1a724d70800000000000000
+      internalID: 9025910872870610537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 430
+        width: 81
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10d2e8a7656e9ee70800000000000000
+      internalID: 9145093777450216705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_11
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 514
+        width: 86
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e60ae16d8b044270800000000000000
+      internalID: 8233718720601130729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_12
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 435
+        width: 94
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5464f7cedde364cb0800000000000000
+      internalID: -4880144023332895163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_13
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 335
+        width: 192
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7455d4e41eaa7140800000000000000
+      internalID: 4718274964385780860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_14
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 243
+        width: 199
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b456cb85811ed1230800000000000000
+      internalID: 3611289970905212235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_15
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 403
+        width: 95
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7afa289e4531e59a0800000000000000
+      internalID: -6242530778073092185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_16
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 277
+        width: 110
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 841216a0932d5b5a0800000000000000
+      internalID: -6506062944237706936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_17
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 126
+        width: 115
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c387ce6e95e4fc450800000000000000
+      internalID: 6111189367398365244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_18
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 162
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a654edebfe907840800000000000000
+      internalID: 5219846772987549351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_19
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 13
+        width: 138
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 508100e89bc706b30800000000000000
+      internalID: 4278556782395136005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_20
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 0
+        width: 98
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e64cae7c17d6b2b90800000000000000
+      internalID: -7265593238379379602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_21
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 0
+        width: 32
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b5110158fb5239b0800000000000000
+      internalID: -5101914305788308042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_22
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 0
+        width: 59
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daa3d47649f8e0b50800000000000000
+      internalID: 6561339574676437677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Foliage_23
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 0
+        width: 44
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9343981ca5266f290800000000000000
+      internalID: -7856984357967678407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GameWeek_Concept_Foliage_0: 4335727953743748310
+      GameWeek_Concept_Foliage_1: 3881524681647678122
+      GameWeek_Concept_Foliage_10: 9145093777450216705
+      GameWeek_Concept_Foliage_11: 8233718720601130729
+      GameWeek_Concept_Foliage_12: -4880144023332895163
+      GameWeek_Concept_Foliage_13: 4718274964385780860
+      GameWeek_Concept_Foliage_14: 3611289970905212235
+      GameWeek_Concept_Foliage_15: -6242530778073092185
+      GameWeek_Concept_Foliage_16: -6506062944237706936
+      GameWeek_Concept_Foliage_17: 6111189367398365244
+      GameWeek_Concept_Foliage_18: 5219846772987549351
+      GameWeek_Concept_Foliage_19: 4278556782395136005
+      GameWeek_Concept_Foliage_2: 1414214166454829360
+      GameWeek_Concept_Foliage_20: -7265593238379379602
+      GameWeek_Concept_Foliage_21: -5101914305788308042
+      GameWeek_Concept_Foliage_22: 6561339574676437677
+      GameWeek_Concept_Foliage_23: -7856984357967678407
+      GameWeek_Concept_Foliage_3: 76759780841288024
+      GameWeek_Concept_Foliage_4: -5258091262843968345
+      GameWeek_Concept_Foliage_5: 2074325887309232164
+      GameWeek_Concept_Foliage_6: 3116935376750927887
+      GameWeek_Concept_Foliage_7: -9210677613087399736
+      GameWeek_Concept_Foliage_8: 7731074428924907689
+      GameWeek_Concept_Foliage_9: 9025910872870610537
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
