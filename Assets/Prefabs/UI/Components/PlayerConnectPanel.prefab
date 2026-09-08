@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 12310021015380826}
   - component: {fileID: 8692573904949959215}
   m_Layer: 5
-  m_Name: PlayerIcon
+  m_Name: PlayerImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -336,7 +336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2313388068041190493
 RectTransform:
   m_ObjectHideFlags: 0
@@ -374,20 +374,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _bgImage: {fileID: 4851587500762552021}
   _bg: {fileID: 7820492672023922469}
-  _icon: {fileID: 8692573904949959215}
-  _skinMixer:
-  - bgImageColor: {r: 0.78823537, g: 0.2901961, b: 0.2901961, a: 0}
-    bgColor: {r: 0.9960785, g: 0.47450984, b: 0.47450984, a: 0}
-    sprites: {fileID: 21300000, guid: 9cbfbd6dbcf47cf438c1440e2ece32d6, type: 3}
-  - bgImageColor: {r: 0.78823537, g: 0.2901961, b: 0.2901961, a: 0}
-    bgColor: {r: 0.9960785, g: 0.47450984, b: 0.47450984, a: 0}
-    sprites: {fileID: 21300000, guid: 9cbfbd6dbcf47cf438c1440e2ece32d6, type: 3}
-  - bgImageColor: {r: 0.78823537, g: 0.2901961, b: 0.2901961, a: 0}
-    bgColor: {r: 0.9960785, g: 0.47450984, b: 0.47450984, a: 0}
-    sprites: {fileID: 21300000, guid: 9cbfbd6dbcf47cf438c1440e2ece32d6, type: 3}
-  - bgImageColor: {r: 0.78823537, g: 0.2901961, b: 0.2901961, a: 0}
-    bgColor: {r: 0.9960785, g: 0.47450984, b: 0.47450984, a: 0}
-    sprites: {fileID: 21300000, guid: 9cbfbd6dbcf47cf438c1440e2ece32d6, type: 3}
+  _image: {fileID: 8692573904949959215}
+  _skinMixer: {fileID: 11400000, guid: 78709e07acfe52a4ba16329923abf9ac, type: 2}
 --- !u!1 &2758325792232136933
 GameObject:
   m_ObjectHideFlags: 0

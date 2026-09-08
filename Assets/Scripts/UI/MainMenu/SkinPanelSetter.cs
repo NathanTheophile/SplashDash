@@ -2,31 +2,23 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-[Serializable]
-public struct SkinBGMixer
-{
-    public Color bgImageColor;
-    public Color bgColor;
-    public Sprite sprites;
-}
-
 public class SkinPanelSetter : MonoBehaviour
 {
     [SerializeField] private Image _bgImage;
     [SerializeField] private Image _bg;
-    [SerializeField] private Image _icon;
+    [SerializeField] private Image _image;
 
-    [SerializeField] private SkinBGMixer[] _skinMixer = new SkinBGMixer[0];
+    [SerializeField] private PlayersSpritesColorsSO _skinMixer;
 
     public void SetIdImages(int id)
     {
-        bool isEmpty = _skinMixer.Length == 0;
+        bool isEmpty = _skinMixer.data.Length == 0;
         if (isEmpty) return;
 
-        var mixer = _skinMixer[id^_skinMixer.Length];
+        var mixer = _skinMixer.data[id^_skinMixer.data.Length];
 
-        _bgImage.color = mixer.bgImageColor;
-        _bg.color = mixer.bgColor;
-        _icon.sprite = mixer.sprites;
+        _bgImage.color = mixer.mainBGColor;
+        _bg.color = mixer.lightBGColor;
+        _image.sprite = mixer.sprites;
     }
 }

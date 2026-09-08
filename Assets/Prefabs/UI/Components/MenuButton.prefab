@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play Local
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 142c56d2ea01bd94c9fec29352dd906d, type: 2}
+  m_sharedMaterial: {fileID: -3151391629545845576, guid: 142c56d2ea01bd94c9fec29352dd906d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 4992088114546514116}
   - component: {fileID: 5516312581574486513}
   m_Layer: 5
-  m_Name: MainMenuButton
+  m_Name: MenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
