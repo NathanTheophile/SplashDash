@@ -119,7 +119,7 @@ MonoBehaviour:
   _PlayerMovementSystem: {fileID: 4029999846875060756}
   _PlayerDashSystem: {fileID: 2837732270015303134}
   _PlayerPhysicsSystem: {fileID: 478242864041814558}
-  _physicsStates: {fileID: 11400000, guid: 3a83651dce2582e4f9ed3e0db42197ea, type: 2}
+  _PlayerPhysicsStates: {fileID: 11400000, guid: 3a83651dce2582e4f9ed3e0db42197ea, type: 2}
 --- !u!114 &3347078021066471290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,9 +133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTrailEmitter
   _TrailManager: {fileID: 0}
-  trailSpacing: 0.05
   _Fish: {fileID: 6311009766436739871}
   physicsContacts: {fileID: 478242864041814558}
+  trailSpacing: 0.05
 --- !u!114 &478242864041814558
 MonoBehaviour:
   m_ObjectHideFlags: 0

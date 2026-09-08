@@ -32,6 +32,7 @@ public class PlayerTrailEmitter : MonoBehaviour
     #endregion
 
     public DashTrail ActiveDash => _ActiveDash;
+    public void SetTrailManager(TrailManager manager) => _TrailManager = manager;
 
     private void Awake()
     {
