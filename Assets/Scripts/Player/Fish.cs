@@ -1,115 +1,95 @@
-using System.Collections;
+#region _____________________________/ INFOS
+//  AUTHOR : Splash&Dash (2026)
+//  Engine : Unity
+//  Note : MY_CONST, myPublic, m_MyProtected, _MyPrivate, lMyLocal, MyFunc(), pMyParam, onMyCallback, MyStruct
+#endregion
+
 using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
-    private PlayerTrailEmitter _PlayerTrailEmitter;
-    private Rigidbody2D _rigidBody;
-    [SerializeField] private PlayerPhysicsStates _physicsStates;
-    private PlayerStats _stats;
+    #region _________________________/ REFERENCES
+    [SerializeField] private PlayerMovement _PlayerMovementSystem;
+    [SerializeField] private PlayerDash _PlayerDashSystem;
+    [SerializeField] private PlayerPhysics2D _PlayerPhysicsSystem;
+    [SerializeField] private PlayerPhysicsStates _PlayerPhysicsStates;
+    private InputManager _Input;
 
-    private PlayerStates _state;
-    public PlayerStates State 
-    { 
-        get => _state; 
-        set
-        {
-            _stats = _physicsStates.states[(int)value];
-            _state = value;
-        }
-    }
+    #endregion
 
-    private bool _canJump = true;
-    private bool _onWater;
-    private bool _isDashing;
+    #region _________________________/ STATE VALUES
 
-    private float dashDuration => _stats.jumpCooldown * 0.5f;
+    public bool OnWater => _PlayerPhysicsSystem != null && _PlayerPhysicsSystem.IsOnWater;
+    public bool IsDashing => _PlayerDashSystem != null && _PlayerDashSystem.IsDashing;
+    public bool IsStunned { get; private set; }
+    public bool CanControl => isActiveAndEnabled && !IsStunned && !IsDashing;
+    public PlayerStates State => 
+        IsStunned ? PlayerStates.STUNNED :
+        IsDashing ? PlayerStates.IS_DASHING :
+        OnWater ?   PlayerStates.ON_WATER : 
+                    PlayerStates.ON_SAND;
+                    
+    public PlayerStats CurrentStats => GetStats(State);
 
-    private Vector2 _moveDirection;
+    #endregion
 
-    public bool OnWater => _onWater;
-    public bool IsDashing => _isDashing;
+    #region _________________________| INIT
 
-    private void Awake()
+    public PlayerStats GetStats(PlayerStates state) => _PlayerPhysicsStates != null
+        ? _PlayerPhysicsStates.GetStats(state) : null;
+
+    public void SetStunned(bool stunned)
     {
-        _rigidBody = GetComponent<Rigidbody2D>();
-        _PlayerTrailEmitter = GetComponent<PlayerTrailEmitter>();
+        IsStunned = stunned;
+        if (!stunned) return;
+        if (_PlayerMovementSystem != null) _PlayerMovementSystem.SetMoveInput(Vector2.zero);
     }
+
+    private void OnEnable() => BindInput();
+
+    #endregion
+
+    #region _________________________| GAME FLOW METHODS
 
     private void Start()
     {
-        InputManager.Instance.JumpPressed += Jump;
-        State = PlayerStates.ON_SAND;
+        if (_PlayerMovementSystem != null && _PlayerDashSystem != null && _PlayerPhysicsSystem != null &&
+            GetStats(PlayerStates.ON_SAND) != null && GetStats(PlayerStates.ON_WATER) != null &&
+            GetStats(PlayerStates.STUNNED) != null && GetStats(PlayerStates.IS_DASHING) != null) return;
+        enabled = false;
     }
 
-    void Update()
+    private void Update()
     {
-        _moveDirection = InputManager.Instance.axis;
-        RotateTowards(transform.up, new Vector3(_moveDirection.x, _moveDirection.y), _stats.rotationSpeed * Time.deltaTime);
-        _PlayerTrailEmitter.UpdateTrail(transform.position);
+        BindInput();
+        Vector2 moveDirection = Vector2.zero;
+        if (CanControl && _Input != null)
+            moveDirection = _Input.axis;
 
-        _rigidBody.linearVelocity = Vector2.ClampMagnitude(_rigidBody.linearVelocity, _stats.maxMoveSpeed);
+        _PlayerMovementSystem.SetMoveInput(moveDirection);
     }
 
-    private void FixedUpdate()
+    private void BindInput()
     {
-        if (_moveDirection != Vector2.zero)
-        {
-            _rigidBody.linearDamping = 0;
-            _rigidBody.angularVelocity = 0;
-            _rigidBody.AddForce(_moveDirection * _stats.moveSpeed, ForceMode2D.Force);
-        }
-        else _rigidBody.linearDamping = _stats.friction;
+        if (_Input == InputManager.Instance) return;
+        if (_Input != null) _Input.JumpPressed -= Jump;
+        _Input = InputManager.Instance;
+        if (_Input != null) _Input.JumpPressed += Jump;
     }
 
     private void Jump()
     {
-        if (!_canJump) return;
-        _rigidBody.AddForce(transform.up * _stats.jumpForce, ForceMode2D.Impulse);
-        State = PlayerStates.IS_DASHING;
-        _canJump = false;
-        _isDashing = true;
-        _PlayerTrailEmitter.BeginDash(transform.up);
-        StartCoroutine(JumpCooldownCoroutine());
-        StartCoroutine(DashCoroutine());
+        if (isActiveAndEnabled && _PlayerDashSystem != null) _PlayerDashSystem.TryDash();
     }
 
-    private IEnumerator JumpCooldownCoroutine()
+    private void OnDisable()
     {
-        float lJumpCdTimer = _stats.jumpCooldown;
-        while (lJumpCdTimer > 0)
-        {
-            lJumpCdTimer -= Time.deltaTime;
-            yield return null;
-        }
-        _canJump = true;
+        if (_Input != null) _Input.JumpPressed -= Jump;
+        _Input = null;
+        IsStunned = false;
+        if (_PlayerMovementSystem != null) _PlayerMovementSystem.ClearInput();
+        if (_PlayerDashSystem != null) _PlayerDashSystem.ResetDash();
     }
 
-    private IEnumerator DashCoroutine()
-    {
-        yield return new WaitForSeconds(dashDuration);
-        _isDashing = false;
-        _PlayerTrailEmitter.EndDash();
-    }
-
-    internal void SetOnWater(bool pOnWater)
-    {
-        _onWater = pOnWater;
-        State = _onWater ? PlayerStates.ON_WATER : PlayerStates.ON_SAND;
-    }
-
-    private void OnDestroy()
-    {
-        if (InputManager.Instance != null)
-            InputManager.Instance.JumpPressed -= Jump;
-    }
-
-    private void RotateTowards(Vector3 pFrom, Vector3 pTo, float pMaxAngle)
-    {
-        float lAngle = Vector3.SignedAngle(pFrom, pTo, transform.forward);
-        transform.rotation *= Quaternion.AngleAxis(
-            lAngle >= 0 ? Mathf.Clamp(pMaxAngle, 0, lAngle) : Mathf.Clamp(-pMaxAngle, lAngle, 0),
-            transform.forward
-            );
-    }
+    #endregion
 }

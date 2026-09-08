@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b970ee053d792fe42b1993e5061c76e2, type: 3}
-  m_Name: PlayerStats_onWaterAndStunned
+  m_Name: PlayerStats_dashing
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   moveSpeed: 5
   friction: 2

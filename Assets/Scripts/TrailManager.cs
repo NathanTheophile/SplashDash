@@ -1,17 +1,33 @@
+#region _____________________________/ INFOS
+//  AUTHOR : Splash&Dash (2026)
+//  Engine : Unity
+//  Note : MY_CONST, myPublic, m_MyProtected, _MyPrivate, lMyLocal, MyFunc(), pMyParam, onMyCallback, MyStruct
+#endregion
+
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TrailManager : MonoBehaviour
 {
+    #region _________________________/ REFERENCES
     [SerializeField] private WaterTrail _WaterTrailPrefab;
     [SerializeField] private DashTrail _DashTrailPrefab;
+
+    #endregion
+
+    #region _________________________/ TUNING VALUES
     [SerializeField, Min(0.05f)] private float _WaterTrailSpacing = 0.2f;
+
+    #endregion
+
+    #region _________________________/ RUNTIME VALUES
 
     private readonly List<GameObject> _Trails = new();
 
-    public void CreateWaterTrail(Vector2 pStart, Vector2 pEnd)
+    #endregion
+
+    public void CreateWaterTrail(Vector2 pStart, Vector2 pEnd, PlayerTrailEmitter owner)
     {
-        //Debug.Log("Creating water trail from " + pStart + " to " + pEnd);
         Vector2 lOffset = pEnd - pStart;
         float lDistance = lOffset.magnitude;
         int lCount = Mathf.Max(1, Mathf.CeilToInt(lDistance / _WaterTrailSpacing));
@@ -22,6 +38,7 @@ public class TrailManager : MonoBehaviour
             Vector2 lPosition = pStart + lDirection * (i * _WaterTrailSpacing);
             WaterTrail lTrail = Instantiate(_WaterTrailPrefab, lPosition, Quaternion.identity, transform);
             _Trails.Add(lTrail.gameObject);
+            if (owner != null) owner.RememberTrail(lTrail);
         }
     }
 

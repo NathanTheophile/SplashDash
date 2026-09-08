@@ -1,18 +1,41 @@
 #region _____________________________/ INFOS
-//  AUTHOR : Nathan THEOPHILE (2026)
+//  AUTHOR : Splash&Dash (2026)
 //  Engine : Unity
 //  Note : MY_CONST, myPublic, m_MyProtected, _MyPrivate, lMyLocal, MyFunc(), pMyParam, onMyEvent, OnMyCallback, MyStruct
 #endregion
 
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerPhysics2D : MonoBehaviour
 {
-    private int _WaterContacts;
+    #region _________________________/ REFERENCES
+    private readonly Dictionary<Collider2D, WaterTrail> activeWaterOverlaps = new();
     private Fish _Fish;
     private PlayerTrailEmitter _TrailEmitter;
 
-    public bool IsOnWater => _WaterContacts > 0;
+    #endregion
+
+    #region _________________________/ STATE VALUES
+
+    public bool IsOnWater
+    {
+        get
+        {
+            foreach (var overlap in activeWaterOverlaps)
+            {
+                if (overlap.Key == null || !overlap.Key.isActiveAndEnabled) continue;
+                if (overlap.Value != null && _TrailEmitter != null && _TrailEmitter.IsRecentTrail(overlap.Value))
+                    continue;
+                return true;
+            }
+            return false;
+        }
+    }
+
+    #endregion
+
+    private void OnDisable() => ClearContacts();
 
     private void Awake()
     {
@@ -22,37 +45,18 @@ public class PlayerPhysics2D : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Water") || other.GetComponent<WaterTrail>() != null)
-        {
-            _WaterContacts++;
-            UpdateWaterState();
-        }
+        WaterTrail waterTrail = other.GetComponent<WaterTrail>();
+        if (other.CompareTag("Water") || waterTrail != null)
+            activeWaterOverlaps[other] = waterTrail;
         else if (_Fish != null && _Fish.IsDashing)
         {
-            DashTrail lTrail = other.GetComponentInParent<DashTrail>();
-            if (lTrail != null && (_TrailEmitter == null || lTrail != _TrailEmitter.ActiveDash))
-                Destroy(lTrail.gameObject);
+            DashTrail trail = other.GetComponentInParent<DashTrail>();
+            if (trail != null && (_TrailEmitter == null || trail != _TrailEmitter.ActiveDash))
+                Destroy(trail.gameObject);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Water") || other.GetComponent<WaterTrail>() != null)
-        {
-            _WaterContacts = Mathf.Max(0, _WaterContacts - 1);
-            UpdateWaterState();
-        }
-    }
+    private void OnTriggerExit2D(Collider2D other) => activeWaterOverlaps.Remove(other);
 
-    private void UpdateWaterState()
-    {
-        if (_Fish != null)
-            _Fish.SetOnWater(IsOnWater);
-    }
-
-    public void ClearContacts()
-    {
-        _WaterContacts = 0;
-        UpdateWaterState();
-    }
+    public void ClearContacts() => activeWaterOverlaps.Clear();
 }

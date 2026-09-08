@@ -1,20 +1,34 @@
+#region _____________________________/ INFOS
+//  AUTHOR : Splash&Dash (2026)
+//  Engine : Unity
+//  Note : MY_CONST, myPublic, m_MyProtected, _MyPrivate, lMyLocal, MyFunc(), pMyParam, onMyCallback, MyStruct
+#endregion
+
 using UnityEngine;
 
 [RequireComponent(typeof(CircleCollider2D))]
 public class WaterTrail : MonoBehaviour
 {
+    #region _________________________/ TUNING VALUES
     [SerializeField] private Color _DebugColor = Color.cyan;
+
+    #endregion
+
+    #region _________________________/ REFERENCES
+    private CircleCollider2D _Collider;
+
+    #endregion
 
     private void Awake()
     {
-        GetComponent<CircleCollider2D>().isTrigger = true;
+        _Collider = GetComponent<CircleCollider2D>();
+        _Collider.isTrigger = true;
     }
 
     private void Update()
     {
-        CircleCollider2D lCollider = GetComponent<CircleCollider2D>();
-        Vector3 lCenter = lCollider.transform.TransformPoint(lCollider.offset);
-        float lRadius = lCollider.radius * transform.lossyScale.x;
+        Vector3 lCenter = _Collider.transform.TransformPoint(_Collider.offset);
+        float lRadius = _Collider.radius * transform.lossyScale.x;
         const int lSegments = 16;
 
         for (int i = 0; i < lSegments; i++)

@@ -1,5 +1,5 @@
 #region _____________________________/ INFOS
-//  AUTHOR : Nathan THEOPHILE (2026)
+//  AUTHOR : Splash&Dash (2026)
 //  Engine : Unity
 //  Note : MY_CONST, myPublic, m_MyProtected, _MyPrivate, lMyLocal, MyFunc(), pMyParam, onMyEvent, OnMyCallback, MyStruct
 #endregion
@@ -9,14 +9,25 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class DashTrail : MonoBehaviour
 {
+    #region _________________________/ REFERENCES
     [SerializeField] private BoxCollider2D _Box;
+
+    #endregion
+
+    #region _________________________/ TUNING VALUES
     [SerializeField, Min(0.05f)] private float _SquareSize;
     [SerializeField] private Color _DebugColor = Color.magenta;
+
+    #endregion
+
+    #region _________________________/ RUNTIME VALUES
 
     private Vector2 _StartPosition;
     private Vector2 _Direction;
 
     public Vector2 Direction => _Direction;
+
+    #endregion
 
     private void Awake()
     {

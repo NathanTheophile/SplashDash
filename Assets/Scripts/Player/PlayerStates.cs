@@ -1,6 +1,3 @@
-using System;
-
-[Flags]
 public enum PlayerStates
 {
     ON_SAND = 0,
