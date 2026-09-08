@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 023f4d4f16354b546990a44532741335
+guid: b03bdbd4afead394b85e70fabd720a36
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5630228536608303902
-    second: FISH_2_RED_STUNNED_0
+      213: -7510007875450663797
+    second: Sans titre-1_0
   - first:
-      213: 1555077479231810749
-    second: FISH_2_RED_STUNNED_1
+      213: 3625290946071272515
+    second: Sans titre-1_1
   - first:
-      213: 7860565226227577418
-    second: FISH_2_RED_STUNNED_2
+      213: -3452625051811727314
+    second: Sans titre-1_2
   - first:
-      213: 7238648617117718522
-    second: FISH_2_RED_STUNNED_3
+      213: -2588134374729077213
+    second: Sans titre-1_3
   - first:
-      213: 8723321389684944661
-    second: FISH_2_RED_STUNNED_4
+      213: -7179924629250263349
+    second: Sans titre-1_4
   - first:
-      213: -8826384366020952896
-    second: FISH_2_RED_STUNNED_5
+      213: -7384925347679507153
+    second: Sans titre-1_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -61,7 +61,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FISH_2_RED_STUNNED_0
+      name: Sans titre-1_0
       rect:
         serializedVersion: 2
-        x: 188
-        y: 1082
-        width: 71
-        height: 77
+        x: 180
+        y: 539
+        width: 364
+        height: 541
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,86 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2e4d137e9f86dd1b0800000000000000
-      internalID: -5630228536608303902
+      spriteID: b8c806380a717c790800000000000000
+      internalID: -7510007875450663797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FISH_2_RED_STUNNED_1
+      name: Sans titre-1_1
       rect:
         serializedVersion: 2
-        x: 269
-        y: 1140
-        width: 53
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dbc62db6abeb49510800000000000000
-      internalID: 1555077479231810749
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FISH_2_RED_STUNNED_2
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 1152
-        width: 111
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a42351b1d66561d60800000000000000
-      internalID: 7860565226227577418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FISH_2_RED_STUNNED_3
-      rect:
-        serializedVersion: 2
-        x: 459
-        y: 1139
-        width: 23
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: af79c25b098d47460800000000000000
-      internalID: 7238648617117718522
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FISH_2_RED_STUNNED_4
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 180
         y: 0
-        width: 738
-        height: 1122
+        width: 364
+        height: 541
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 51fecb5f5967f0970800000000000000
-      internalID: 8723321389684944661
+      spriteID: 34c940868ee9f4230800000000000000
+      internalID: 3625290946071272515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FISH_2_RED_STUNNED_5
+      name: Sans titre-1_2
       rect:
         serializedVersion: 2
-        x: 493
-        y: 990
-        width: 108
-        height: 159
+        x: 623
+        y: 539
+        width: 464
+        height: 541
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,8 +187,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0cc724cee22628580800000000000000
-      internalID: -8826384366020952896
+      spriteID: e28b524eecfc510d0800000000000000
+      internalID: -3452625051811727314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sans titre-1_3
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 0
+        width: 464
+        height: 541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32eab4baf79151cd0800000000000000
+      internalID: -2588134374729077213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sans titre-1_4
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 539
+        width: 364
+        height: 541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc6b57f2798cb5c90800000000000000
+      internalID: -7179924629250263349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sans titre-1_5
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 539
+        width: 463
+        height: 541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2de8c6f589738990800000000000000
+      internalID: -7384925347679507153
       vertices: []
       indices: 
       edges: []
@@ -263,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -273,12 +273,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FISH_2_RED_STUNNED_0: -5630228536608303902
-      FISH_2_RED_STUNNED_1: 1555077479231810749
-      FISH_2_RED_STUNNED_2: 7860565226227577418
-      FISH_2_RED_STUNNED_3: 7238648617117718522
-      FISH_2_RED_STUNNED_4: 8723321389684944661
-      FISH_2_RED_STUNNED_5: -8826384366020952896
+      Sans titre-1_0: -7510007875450663797
+      Sans titre-1_1: 3625290946071272515
+      Sans titre-1_2: -3452625051811727314
+      Sans titre-1_3: -2588134374729077213
+      Sans titre-1_4: -7179924629250263349
+      Sans titre-1_5: -7384925347679507153
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

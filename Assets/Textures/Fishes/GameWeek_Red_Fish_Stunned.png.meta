@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 023f4d4f16354b546990a44532741335
+guid: a8f5bcbe059339e4a821fb408414ccd1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5630228536608303902
-    second: FISH_2_RED_STUNNED_0
+      213: 2090434546669763852
+    second: GameWeek_Red_Fish_Stunned_0
   - first:
-      213: 1555077479231810749
-    second: FISH_2_RED_STUNNED_1
+      213: -8788805274957242714
+    second: GameWeek_Red_Fish_Stunned_1
   - first:
-      213: 7860565226227577418
-    second: FISH_2_RED_STUNNED_2
+      213: 6537318852368964505
+    second: GameWeek_Red_Fish_Stunned_2
   - first:
-      213: 7238648617117718522
-    second: FISH_2_RED_STUNNED_3
+      213: 2477629012847871066
+    second: GameWeek_Red_Fish_Stunned_3
   - first:
-      213: 8723321389684944661
-    second: FISH_2_RED_STUNNED_4
+      213: 8386006029241913838
+    second: GameWeek_Red_Fish_Stunned_4
   - first:
-      213: -8826384366020952896
-    second: FISH_2_RED_STUNNED_5
+      213: 1258455478500440749
+    second: GameWeek_Red_Fish_Stunned_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FISH_2_RED_STUNNED_0
+      name: GameWeek_Red_Fish_Stunned_0
       rect:
         serializedVersion: 2
-        x: 188
-        y: 1082
-        width: 71
-        height: 77
+        x: 201
+        y: 970
+        width: 78
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2e4d137e9f86dd1b0800000000000000
-      internalID: -5630228536608303902
+      spriteID: c0db4740527b20d10800000000000000
+      internalID: 2090434546669763852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FISH_2_RED_STUNNED_1
+      name: GameWeek_Red_Fish_Stunned_1
       rect:
         serializedVersion: 2
-        x: 269
-        y: 1140
-        width: 53
-        height: 59
+        x: 291
+        y: 1034
+        width: 58
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dbc62db6abeb49510800000000000000
-      internalID: 1555077479231810749
+      spriteID: 6ae1812ea24e70680800000000000000
+      internalID: -8788805274957242714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FISH_2_RED_STUNNED_2
+      name: GameWeek_Red_Fish_Stunned_2
       rect:
         serializedVersion: 2
-        x: 336
-        y: 1152
-        width: 111
-        height: 35
+        x: 365
+        y: 1047
+        width: 124
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a42351b1d66561d60800000000000000
-      internalID: 7860565226227577418
+      spriteID: 99b9aea2cd839ba50800000000000000
+      internalID: 6537318852368964505
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FISH_2_RED_STUNNED_3
+      name: GameWeek_Red_Fish_Stunned_3
       rect:
         serializedVersion: 2
-        x: 459
-        y: 1139
-        width: 23
-        height: 25
+        x: 501
+        y: 1032
+        width: 27
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af79c25b098d47460800000000000000
-      internalID: 7238648617117718522
+      spriteID: a54cffbc57e426220800000000000000
+      internalID: 2477629012847871066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FISH_2_RED_STUNNED_4
+      name: GameWeek_Red_Fish_Stunned_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 738
-        height: 1122
+        width: 832
+        height: 1032
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +231,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 51fecb5f5967f0970800000000000000
-      internalID: 8723321389684944661
+      spriteID: ee19f397d04116470800000000000000
+      internalID: 8386006029241913838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FISH_2_RED_STUNNED_5
+      name: GameWeek_Red_Fish_Stunned_5
       rect:
         serializedVersion: 2
-        x: 493
-        y: 990
-        width: 108
-        height: 159
+        x: 539
+        y: 867
+        width: 120
+        height: 178
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,8 +253,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0cc724cee22628580800000000000000
-      internalID: -8826384366020952896
+      spriteID: daab9a1179ee67110800000000000000
+      internalID: 1258455478500440749
       vertices: []
       indices: 
       edges: []
@@ -273,12 +273,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FISH_2_RED_STUNNED_0: -5630228536608303902
-      FISH_2_RED_STUNNED_1: 1555077479231810749
-      FISH_2_RED_STUNNED_2: 7860565226227577418
-      FISH_2_RED_STUNNED_3: 7238648617117718522
-      FISH_2_RED_STUNNED_4: 8723321389684944661
-      FISH_2_RED_STUNNED_5: -8826384366020952896
+      GameWeek_Red_Fish_Stunned_0: 2090434546669763852
+      GameWeek_Red_Fish_Stunned_1: -8788805274957242714
+      GameWeek_Red_Fish_Stunned_2: 6537318852368964505
+      GameWeek_Red_Fish_Stunned_3: 2477629012847871066
+      GameWeek_Red_Fish_Stunned_4: 8386006029241913838
+      GameWeek_Red_Fish_Stunned_5: 1258455478500440749
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
