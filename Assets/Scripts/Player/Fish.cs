@@ -17,6 +17,8 @@ public class Fish : MonoBehaviour
             _state = value;
         }
     }
+    [SerializeField] private PlayerStates _startState; // FOR TESTING PURPOSES
+
     private Vector2 _moveDirection;
     private bool _canJump = true;
 
@@ -28,7 +30,7 @@ public class Fish : MonoBehaviour
     private void Start()
     {
         InputManager.Instance.JumpPressed += Jump;
-        State = PlayerStates.ON_SAND;
+        State = _startState;
     }
 
     void Update()
