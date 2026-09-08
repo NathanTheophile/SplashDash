@@ -1,57 +1,58 @@
-using System.Collections.Generic;
+#region _____________________________/ INFOS
+//  AUTHOR : Nathan THEOPHILE (2026)
+//  Engine : Unity
+//  Note : MY_CONST, myPublic, m_MyProtected, _MyPrivate, lMyLocal, MyFunc(), pMyParam, onMyEvent, OnMyCallback, MyStruct
+#endregion
+
 using UnityEngine;
 
 public class PlayerPhysics2D : MonoBehaviour
 {
-    private int waterTrailContacts;
+    private int _WaterContacts;
+    private Fish _Fish;
+    private PlayerTrailEmitter _TrailEmitter;
 
-    private readonly List<DashTrail> dashTrails = new();
+    public bool IsOnWater => _WaterContacts > 0;
 
-    public bool IsOnWaterTrail => waterTrailContacts > 0;
-
-    public DashTrail CurrentDashTrail =>
-        dashTrails.Count > 0 ? dashTrails[^1] : null;
+    private void Awake()
+    {
+        _Fish = GetComponent<Fish>();
+        _TrailEmitter = GetComponent<PlayerTrailEmitter>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("WaterTrail"))
-            waterTrailContacts++;
-
-        if (other.CompareTag("DashTrail") &&
-            other.TryGetComponent(out DashTrail dashTrail))
+        if (other.CompareTag("Water") || other.GetComponent<WaterTrail>() != null)
         {
-            dashTrails.Add(dashTrail);
+            _WaterContacts++;
+            UpdateWaterState();
+        }
+        else if (_Fish != null && _Fish.IsDashing)
+        {
+            DashTrail lTrail = other.GetComponentInParent<DashTrail>();
+            if (lTrail != null && (_TrailEmitter == null || lTrail != _TrailEmitter.ActiveDash))
+                Destroy(lTrail.gameObject);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("WaterTrail"))
-            waterTrailContacts = Mathf.Max(0, waterTrailContacts - 1);
-
-        if (other.CompareTag("DashTrail") &&
-            other.TryGetComponent(out DashTrail dashTrail))
+        if (other.CompareTag("Water") || other.GetComponent<WaterTrail>() != null)
         {
-            dashTrails.Remove(dashTrail);
+            _WaterContacts = Mathf.Max(0, _WaterContacts - 1);
+            UpdateWaterState();
         }
     }
 
-    public float GetCurrentAlignment(Vector2 input)
+    private void UpdateWaterState()
     {
-        DashTrail trail = CurrentDashTrail;
-
-        if (trail == null || input == Vector2.zero)
-            return 0f;
-
-        return Vector2.Dot(
-            input.normalized,
-            trail.Direction
-        );
+        if (_Fish != null)
+            _Fish.SetOnWater(IsOnWater);
     }
 
     public void ClearContacts()
     {
-        waterTrailContacts = 0;
-        dashTrails.Clear();
+        _WaterContacts = 0;
+        UpdateWaterState();
     }
 }
