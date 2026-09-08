@@ -112,12 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa619240c22f354ca32002d45a9bbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  _speed: 5
-  _friction: 2
-  _maxMoveSpeed: 5
-  _rotationSpeed: 150
-  _jumpForce: 10
-  _jumpCooldown: 3
+  _stats: {fileID: 11400000, guid: 70e28b3d15cb7504b9a80f77e54c4652, type: 2}
 --- !u!1 &6920667115874175357
 GameObject:
   m_ObjectHideFlags: 0
