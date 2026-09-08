@@ -20,10 +20,10 @@ public class PlayerDash : MonoBehaviour
     #endregion
 
     #region _________________________/ RUNTIME VALUES
-    private bool canDash = true;
+    private bool _IsOnCooldown = true;
 
     public bool IsDashing { get; private set; }
-    public bool CanDash => canDash && _PlayerMovementSystem.CanControl;
+    public bool CanDash => _IsOnCooldown && _PlayerMovementSystem.CanControl;
 
     #endregion
 
@@ -45,7 +45,7 @@ public class PlayerDash : MonoBehaviour
         PlayerStats stats = _PlayerMovementSystem.DashStats;
         Vector2 direction = transform.up;
         _PlayerMovementSystem.QueueImpulse(direction * stats.jumpForce);
-        canDash = false;
+        _IsOnCooldown = false;
         IsDashing = true;
         _PlayerMovementSystem.SetMoveInput(Vector2.zero);
         if (_PlayerTrailEmitter != null && _PlayerTrailEmitter.isActiveAndEnabled) _PlayerTrailEmitter.BeginDash(direction);
@@ -57,7 +57,7 @@ public class PlayerDash : MonoBehaviour
     private System.Collections.IEnumerator DashCooldownCoroutine(float cooldown)
     {
         yield return new WaitForSeconds(Mathf.Max(0, cooldown));
-        canDash = true;
+        _IsOnCooldown = true;
     }
 
     private System.Collections.IEnumerator DashDurationCoroutine()
@@ -76,7 +76,7 @@ public class PlayerDash : MonoBehaviour
     {
         StopAllCoroutines();
         EndDash();
-        canDash = true;
+        _IsOnCooldown = true;
         if (_PlayerMovementSystem != null) _PlayerMovementSystem.ClearInput();
     }
 

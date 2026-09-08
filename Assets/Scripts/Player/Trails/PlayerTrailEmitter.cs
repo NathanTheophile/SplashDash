@@ -11,12 +11,12 @@ public class PlayerTrailEmitter : MonoBehaviour
     #region _________________________/ REFERENCES
     [SerializeField] private TrailManager _TrailManager;
     [SerializeField] private Fish _Fish;
-    [SerializeField] private PlayerPhysics2D physicsContacts;
+    [SerializeField] private PlayerPhysics2D _PlayerPhysicsSystem;
 
     #endregion
 
     #region _________________________/ TUNING VALUES
-    [SerializeField] private float trailSpacing = 0.05f;
+    [SerializeField] private float _TrailSpacing = 0.05f;
 
     #endregion
 
@@ -25,9 +25,9 @@ public class PlayerTrailEmitter : MonoBehaviour
     private Vector2 _LastPosition;
     private DashTrail _ActiveDash;
     private bool _IsDashing;
-    private bool wasSillonBlocked;
-    private readonly WaterTrail[] recentTrails = new WaterTrail[3];
-    private int nextRecentTrail;
+    private bool _WasSillonBlocked;
+    private readonly WaterTrail[] _RecentTrails = new WaterTrail[3];
+    private int _NextRecentTrail;
 
     #endregion
 
@@ -36,7 +36,7 @@ public class PlayerTrailEmitter : MonoBehaviour
 
     private void Awake()
     {
-        if (_Fish != null && physicsContacts != null)
+        if (_Fish != null && _PlayerPhysicsSystem != null)
             return;
 
         enabled = false;
@@ -44,15 +44,15 @@ public class PlayerTrailEmitter : MonoBehaviour
 
     public void RememberTrail(WaterTrail trail)
     {
-        recentTrails[nextRecentTrail] = trail;
-        nextRecentTrail = (nextRecentTrail + 1) % recentTrails.Length;
+        _RecentTrails[_NextRecentTrail] = trail;
+        _NextRecentTrail = (_NextRecentTrail + 1) % _RecentTrails.Length;
     }
 
     public bool IsRecentTrail(WaterTrail trail)
     {
         if (trail == null) return false;
-        for (int i = 0; i < recentTrails.Length; i++)
-            if (recentTrails[i] == trail) return true;
+        for (int i = 0; i < _RecentTrails.Length; i++)
+            if (_RecentTrails[i] == trail) return true;
         return false;
     }
 
@@ -62,10 +62,10 @@ public class PlayerTrailEmitter : MonoBehaviour
     private void OnEnable()
     {
         _LastPosition = transform.position;
-        wasSillonBlocked = IsSillonBlocked;
+        _WasSillonBlocked = IsSillonBlocked;
     }
 
-    private bool IsSillonBlocked => _Fish.IsStunned || physicsContacts.IsOnWater;
+    private bool IsSillonBlocked => _Fish.IsStunned || _PlayerPhysicsSystem.IsOnWater;
 
     public void UpdateTrail(Vector2 position)
     {
@@ -76,14 +76,14 @@ public class PlayerTrailEmitter : MonoBehaviour
         }
 
         bool sillonBlocked = IsSillonBlocked;
-        if (sillonBlocked || sillonBlocked != wasSillonBlocked)
+        if (sillonBlocked || sillonBlocked != _WasSillonBlocked)
         {
-            wasSillonBlocked = sillonBlocked;
+            _WasSillonBlocked = sillonBlocked;
             _LastPosition = position;
             return;
         }
 
-        if (Vector2.Distance(_LastPosition, position) < trailSpacing)
+        if (Vector2.Distance(_LastPosition, position) < _TrailSpacing)
             return;
 
         if (_TrailManager != null)
