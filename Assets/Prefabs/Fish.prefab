@@ -12,6 +12,10 @@ GameObject:
   - component: {fileID: 8339838137004407556}
   - component: {fileID: 4672222769856324405}
   - component: {fileID: 6311009766436739871}
+  - component: {fileID: 3347078021066471290}
+  - component: {fileID: 478242864041814558}
+  - component: {fileID: 4029999846875060756}
+  - component: {fileID: 2837732270015303134}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
@@ -71,7 +75,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.5, y: 1.5}
   m_Direction: 0
 --- !u!50 &4672222769856324405
 Rigidbody2D:
@@ -112,7 +116,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa619240c22f354ca32002d45a9bbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fish
-  _stats: {fileID: 11400000, guid: 70e28b3d15cb7504b9a80f77e54c4652, type: 2}
+  _PlayerMovementSystem: {fileID: 4029999846875060756}
+  _PlayerDashSystem: {fileID: 2837732270015303134}
+  _PlayerPhysicsSystem: {fileID: 478242864041814558}
+  _physicsStates: {fileID: 11400000, guid: 3a83651dce2582e4f9ed3e0db42197ea, type: 2}
+--- !u!114 &3347078021066471290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5966859751823962515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22394215373fb294a865d52a94d47270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerTrailEmitter
+  _TrailManager: {fileID: 0}
+  trailSpacing: 0.05
+  _Fish: {fileID: 6311009766436739871}
+  physicsContacts: {fileID: 478242864041814558}
+--- !u!114 &478242864041814558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5966859751823962515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c79b00a6bb855e43a5e937bb1fc1b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPhysics2D
+--- !u!114 &4029999846875060756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5966859751823962515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10da2f50d3bdbbf4380ca122dd453338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  _PlayerBody: {fileID: 4672222769856324405}
+  _Player: {fileID: 6311009766436739871}
+--- !u!114 &2837732270015303134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5966859751823962515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ec9a4d3ad299d4bbc0b8fd467ac2d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDash
+  _PlayerMovementSystem: {fileID: 4029999846875060756}
+  _PlayerTrailEmitter: {fileID: 3347078021066471290}
+  _DashDuration: 1.5
 --- !u!1 &6920667115874175357
 GameObject:
   m_ObjectHideFlags: 0
