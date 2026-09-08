@@ -5,13 +5,7 @@ public class Fish : MonoBehaviour
 {
     private Rigidbody2D _rigidBody;
 
-    [SerializeField] private float _speed = 5;
-    [SerializeField] private float _friction = 2;
-    [SerializeField] private float _maxMoveSpeed = 5;
-    [SerializeField] private float _rotationSpeed = 1;
-
-    [SerializeField] private float _jumpForce = 10;
-    [SerializeField] private float _jumpCooldown = 3;
+    public PlayerStats stats;
     private bool _canJump = true;
 
     private Vector2 _moveDirection;
@@ -29,9 +23,9 @@ public class Fish : MonoBehaviour
     void Update()
     {
         _moveDirection = InputManager.Instance.axis;
-        RotateTowards(transform.up, new Vector3(_moveDirection.x, _moveDirection.y), _rotationSpeed * Time.deltaTime);
+        RotateTowards(transform.up, new Vector3(_moveDirection.x, _moveDirection.y), stats.rotationSpeed * Time.deltaTime);
 
-        _rigidBody.linearVelocity = Vector2.ClampMagnitude(_rigidBody.linearVelocity, _maxMoveSpeed);
+        _rigidBody.linearVelocity = Vector2.ClampMagnitude(_rigidBody.linearVelocity, stats.maxMoveSpeed);
     }
 
     private void FixedUpdate()
@@ -40,23 +34,23 @@ public class Fish : MonoBehaviour
         {
             _rigidBody.linearDamping = 0;
             _rigidBody.angularVelocity = 0;
-            _rigidBody.AddForce(_moveDirection * _speed, ForceMode2D.Force);
+            _rigidBody.AddForce(_moveDirection * stats.moveSpeed, ForceMode2D.Force);
         }
-        else _rigidBody.linearDamping = _friction;
+        else _rigidBody.linearDamping = stats.friction;
     }
 
     private void Jump()
     {
         if (!_canJump) return;
-        _rigidBody.AddForce(transform.up * _jumpForce, ForceMode2D.Impulse);
+        _rigidBody.AddForce(transform.up * stats.jumpForce, ForceMode2D.Impulse);
         _canJump = false;
         StartCoroutine(JumpCooldownCoroutine());
     }
 
     private IEnumerator JumpCooldownCoroutine()
     {
-        float lJumpCdTimer = _jumpCooldown;
-        while(lJumpCdTimer > 0)
+        float lJumpCdTimer = stats.jumpCooldown;
+        while (lJumpCdTimer > 0)
         {
             lJumpCdTimer -= Time.deltaTime;
             yield return null;
@@ -68,7 +62,7 @@ public class Fish : MonoBehaviour
     {
         float lAngle = Vector3.SignedAngle(pFrom, pTo, transform.forward);
         transform.rotation *= Quaternion.AngleAxis(
-            lAngle >= 0 ? Mathf.Clamp(pMaxAngle, 0, lAngle) : Mathf.Clamp(-pMaxAngle, lAngle, 0), 
+            lAngle >= 0 ? Mathf.Clamp(pMaxAngle, 0, lAngle) : Mathf.Clamp(-pMaxAngle, lAngle, 0),
             transform.forward
             );
     }
