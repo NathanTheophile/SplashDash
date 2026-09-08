@@ -25,7 +25,7 @@ public class VisualKillSetter : MonoBehaviour
         _killerImage.sprite = killerMixer.sprites;
 
         var killedPlayerImage = _skinMixer.data[killedPlayerID ^ _skinMixer.data.Length];
-        _killerImage.sprite = killedPlayerImage.sprites;
+        _killedPlayerImage.sprite = killedPlayerImage.knockedSprite;
 
         _canvasGroup.alpha = 1;
         StartCoroutine(FadeCoroutine());
@@ -39,7 +39,7 @@ public class VisualKillSetter : MonoBehaviour
         _killerImage.enabled = false;
 
         var killedPlayerImage = _skinMixer.data[killedPlayerID ^ _skinMixer.data.Length];
-        _killerImage.sprite = killedPlayerImage.sprites;
+        _killedPlayerImage.sprite = killedPlayerImage.knockedSprite;
 
         _canvasGroup.alpha = 1;
         StartCoroutine(FadeCoroutine());

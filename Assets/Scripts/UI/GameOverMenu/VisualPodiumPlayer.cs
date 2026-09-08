@@ -12,6 +12,7 @@ public class VisualPodiumPlayer : MonoBehaviour
 
     public void SetIdTime(int id, int time)
     {
+        gameObject.SetActive(true);
         _time.text = $"{time} s";
         _name.text = $"Player {id}";
 

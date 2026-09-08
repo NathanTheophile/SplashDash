@@ -15,5 +15,10 @@ public class VisualPodiumSetter : MonoBehaviour
 
             _visualPlayers[i].SetIdTime(score.id, score.time);
         }
+
+        for(int i = data.orderedScores.Length; i < _visualPlayers.Length; i++)
+        {
+            _visualPlayers[i].gameObject.SetActive(false);
+        }
     }
 }

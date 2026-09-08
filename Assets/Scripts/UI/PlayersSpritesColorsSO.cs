@@ -7,6 +7,7 @@ public struct SkinBGMixer
     public Color mainBGColor;
     public Color lightBGColor;
     public Sprite sprites;
+    public Sprite knockedSprite;
 }
 
 [CreateAssetMenu(fileName = "PlayersSpritesColorsSO", menuName = "Scriptable Objects/PlayersSpritesColorsSO")]
