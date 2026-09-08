@@ -710,6 +710,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fish
       objectReference: {fileID: 0}
+    - target: {fileID: 6311009766436739871, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 70e28b3d15cb7504b9a80f77e54c4652, type: 2}
+    - target: {fileID: 6311009766436739871, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
+      propertyPath: _startState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311009766436739871, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
+      propertyPath: _physicsStates
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a83651dce2582e4f9ed3e0db42197ea, type: 2}
+    - target: {fileID: 6311009766436739871, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
+      propertyPath: _StatsMatchingArray
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a83651dce2582e4f9ed3e0db42197ea, type: 2}
     - target: {fileID: 6957456785503517200, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
