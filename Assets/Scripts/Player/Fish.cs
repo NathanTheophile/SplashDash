@@ -5,6 +5,7 @@
 #endregion
 
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Fish : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class Fish : MonoBehaviour
     [SerializeField] private PlayerDash _PlayerDashSystem;
     [SerializeField] private PlayerPhysics2D _PlayerPhysicsSystem;
     [SerializeField] private PlayerPhysicsStates _PlayerPhysicsStates;
-    private InputManager _Input;
 
     #endregion
 
@@ -22,12 +22,9 @@ public class Fish : MonoBehaviour
     public bool IsOnWater => _PlayerPhysicsSystem.IsOnWater;
     public bool IsDashing => _PlayerDashSystem.IsDashing;
     public bool IsStunned { get; private set; }
+    public Vector2 CurrentDirection => _PlayerPhysicsSystem.CurrentDirection; 
     public bool AreControlsEnabled => !IsStunned && !IsDashing;
-    public PlayerStates State => 
-        IsStunned ? PlayerStates.STUNNED :
-        IsDashing ? PlayerStates.IS_DASHING :
-        IsOnWater ?   PlayerStates.ON_WATER : 
-                    PlayerStates.ON_SAND;
+    public PlayerStates State => GetState();
                     
     public PlayerStats CurrentStats => GetStats(State);
 
@@ -49,6 +46,14 @@ public class Fish : MonoBehaviour
 
     public PlayerStats GetStats(PlayerStates state) => _PlayerPhysicsStates.GetStats(state);
 
+    private PlayerStates GetState()
+    {
+        if (IsStunned) return PlayerStates.STUNNED;
+        if (IsDashing) return PlayerStates.IS_DASHING;
+        if (IsOnWater) return PlayerStates.ON_WATER;
+        return PlayerStates.ON_SAND;
+    }
+
     public void SetStunned(bool stunned)
     {
         IsStunned = stunned;
@@ -57,65 +62,36 @@ public class Fish : MonoBehaviour
         _PlayerMovementSystem.SetMoveInput(Vector2.zero);
     }
 
-    private void OnEnable() => BindInput();
-
     #endregion
 
     #region _________________________| UNITY
 
+    private Vector2 _MoveDirection;
+
     private void Update()
     {
-        BindInput();
-        Vector2 moveDirection = Vector2.zero;
-        if (AreControlsEnabled && _Input != null)
-            moveDirection = _Input.axis;
-
-        _PlayerMovementSystem.SetMoveInput(moveDirection);
+        _PlayerMovementSystem.SetMoveInput(_MoveDirection);
     }
 
     #endregion
 
     #region _________________________| INPUTS
 
-    private void BindInput()
+    public void HandleMove(InputAction.CallbackContext pContext)
     {
-        if (_Input == InputManager.Instance) return;
-
-        if (_Input != null)
-        {
-            _Input.DashPressed -= PressDash;
-            _Input.DashReleased -= ReleaseDash;
-        }
-
-        _Input = InputManager.Instance;
-
-        if (_Input != null)
-        {
-            _Input.DashPressed += PressDash;
-            _Input.DashReleased += ReleaseDash;
-        }
+        _MoveDirection = pContext.ReadValue<Vector2>();
     }
 
-    private void PressDash()
+    public void PressDash(InputAction.CallbackContext pContext)
     {
-        if (AreControlsEnabled)
-            _PlayerDashSystem.PressDash();
-    }
-
-    private void ReleaseDash()
-    {
-        _PlayerDashSystem.ReleaseDash();
+        if (AreControlsEnabled && pContext.performed) _PlayerDashSystem.PressDash();
+        else if (pContext.canceled) _PlayerDashSystem.ReleaseDash();
     }
 
     private void OnDisable()
     {
-        if (_Input != null)
-        {
-            _Input.DashPressed -= PressDash;
-            _Input.DashReleased -= ReleaseDash;
-        }        
-        _Input = null;
         IsStunned = false;
+        _MoveDirection = Vector2.zero;
         _PlayerMovementSystem.ClearInput();
         _PlayerDashSystem.ResetDash();
     }

@@ -1,16 +1,18 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(PlayerInputManager))]
 public class InputManager : MonoBehaviour
 {
-    public static InputManager Instance { get; private set; }
-    private InputSystem_Actions _inputActions;
+    private PlayerInputManager _manager;
+    [SerializeField] private GameObject _playerPrefab;
+    private const int MAX_PLAYERS = 4;
+    private InputDevice[] _devicesConnected = new InputDevice[MAX_PLAYERS];
+    private bool _wasdConnected, _arrowsConnected;
 
-    public Vector2 axis;
-    
-    public event Action DashPressed;
-    public event Action DashReleased;
+    public static InputManager Instance { get; private set; }
+
+
 
     private void Awake()
     {
@@ -21,26 +23,46 @@ public class InputManager : MonoBehaviour
         }
         Instance = this;
 
-        _inputActions = new();
-        _inputActions.Player.Enable();
-        _inputActions.Player.Move.performed += MoveAction;
-        _inputActions.Player.Move.canceled += MoveAction;
-        _inputActions.Player.Jump.performed += DashPressedAction;
-        _inputActions.Player.Jump.canceled += DashReleasedAction;
+        _manager = GetComponent<PlayerInputManager>();
     }
 
-    private void MoveAction(InputAction.CallbackContext pContext)
+    void Update()
     {
-        axis = pContext.ReadValue<Vector2>();
+        if (!PlayersAvailable()) return;
+        if (Keyboard.current.leftShiftKey.wasPressedThisFrame && !_wasdConnected)
+        {
+            AddPlayer("WASD", Keyboard.current);
+            _wasdConnected = true;
+        }
+        if (Keyboard.current.rightCtrlKey.wasPressedThisFrame && !_arrowsConnected)
+        {
+            AddPlayer("Arrows", Keyboard.current);
+            _arrowsConnected = true;
+        }
+        foreach (Gamepad gamepad in Gamepad.all)
+        {
+            if (gamepad.buttonSouth.wasPressedThisFrame)
+            {
+                bool lFoundController = false;
+                foreach (InputDevice device in _devicesConnected)
+                {
+                    if (device == gamepad)
+                    {
+                        lFoundController = true;
+                        break;
+                    }
+                }
+                if (!lFoundController) AddPlayer("Gamepad", gamepad);
+            }
+        }
     }
 
-    private void DashPressedAction(InputAction.CallbackContext pContext)
+    private PlayerInput AddPlayer(string pControlScheme, InputDevice pDeviceToPair)
     {
-        DashPressed?.Invoke();
+        _devicesConnected[_manager.playerCount] = pDeviceToPair;
+        PlayerManager.Instance.OnJoin(_manager.playerCount);
+        return PlayerInput.Instantiate(_playerPrefab, controlScheme: pControlScheme, pairWithDevice: pDeviceToPair);
     }
-    
-    private void DashReleasedAction(InputAction.CallbackContext pContext)
-    {
-        DashReleased?.Invoke();
-    }
+
+    private bool PlayersAvailable() => _manager.playerCount < _manager.maxPlayerCount;
 }

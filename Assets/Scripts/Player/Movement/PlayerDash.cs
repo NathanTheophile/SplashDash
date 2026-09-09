@@ -32,23 +32,9 @@ public class PlayerDash : MonoBehaviour
     public bool IsCharging { get; private set; }
     public bool IsDashing { get; private set; }
 
-    public float ChargeRatio
-    {
-        get
-        {
-            if (!IsCharging)
-                return 0f;
-    
-            return Mathf.Clamp01(
-                (Time.time - _ChargeStartTime) / _MaxChargeDuration);
-        }
-    }
+    public float ChargeRatio => GetChargeRatio();
 
-    public bool CanDash =>
-        !_IsOnCooldown &&
-        !IsCharging &&
-        !IsDashing &&
-        _PlayerMovementSystem.AreControlsEnabled;
+    public bool CanDash => CanStartDash();
 
     #endregion
 
@@ -126,6 +112,20 @@ public class PlayerDash : MonoBehaviour
 
     private float GetDashDuration() =>
         Mathf.Lerp(_MinDashDuration, _MaxDashDuration, ChargeRatio);
+
+    private float GetChargeRatio()
+    {
+        if (!IsCharging) return 0f;
+        return Mathf.Clamp01((Time.time - _ChargeStartTime) / _MaxChargeDuration);
+    }
+
+    private bool CanStartDash()
+    {
+        if (_IsOnCooldown) return false;
+        if (IsCharging) return false;
+        if (IsDashing) return false;
+        return _PlayerMovementSystem.AreControlsEnabled;
+    }
 
     private void StartDash(float pDashDuration)
     {

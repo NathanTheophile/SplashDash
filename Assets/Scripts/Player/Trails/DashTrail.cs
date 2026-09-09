@@ -4,13 +4,16 @@
 //  Note : MY_CONST, myPublic, m_MyProtected, _MyPrivate, lMyLocal, MyFunc(), pMyParam, onMyEvent, OnMyCallback, MyStruct
 #endregion
 
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class DashTrail : MonoBehaviour
 {
     #region _________________________/ REFERENCES
-    [SerializeField] private BoxCollider2D _Box;
+    [FormerlySerializedAs("_Box")]
+    [SerializeField] private BoxCollider2D _RootCollider;
 
     #endregion
 
@@ -24,6 +27,7 @@ public class DashTrail : MonoBehaviour
 
     private Vector2 _StartPosition;
     private Vector2 _Direction;
+    private readonly List<BoxCollider2D> _SquareColliders = new();
 
     public Vector2 Direction => _Direction;
 
@@ -31,10 +35,11 @@ public class DashTrail : MonoBehaviour
 
     private void Awake()
     {
-        if (_Box == null)
-            _Box = GetComponent<BoxCollider2D>();
+        if (_RootCollider == null)
+            _RootCollider = GetComponent<BoxCollider2D>();
 
-        _Box.isTrigger = true;
+        _RootCollider.isTrigger = true;
+        _SquareColliders.Add(_RootCollider);
     }
 
     public void Begin(Vector2 pPosition, Vector2 pDashDirection)
@@ -43,8 +48,8 @@ public class DashTrail : MonoBehaviour
         _Direction = pDashDirection.normalized;
 
         transform.SetPositionAndRotation(pPosition, Quaternion.FromToRotation(Vector2.right, _Direction));
-        _Box.size = Vector2.one * _SquareSize;
-        _Box.offset = Vector2.right * (_SquareSize * 0.5f);
+        _RootCollider.size = Vector2.one * _SquareSize;
+        _RootCollider.offset = Vector2.right * (_SquareSize * 0.5f);
         
         SetEnd(pPosition);
     }
@@ -54,34 +59,37 @@ public class DashTrail : MonoBehaviour
         float lDistance = Mathf.Max(0f, Vector2.Dot(pPosition - _StartPosition, _Direction));
         int lSquareCount = Mathf.Max(1, Mathf.CeilToInt(lDistance / _SquareSize));
 
-        while (transform.childCount < lSquareCount - 1)
+        // Keep destroyed slots so extending the dash never recreates a removed square.
+        while (_SquareColliders.Count < lSquareCount)
         {
-            GameObject lSquare = new GameObject($"Square {transform.childCount}");
+            GameObject lSquare = new GameObject($"Square {_SquareColliders.Count}");
             lSquare.transform.SetParent(transform, false);
+            lSquare.transform.localPosition = Vector2.right * ((_SquareColliders.Count + 0.5f) * _SquareSize);
 
-            BoxCollider2D lCollider = lSquare.AddComponent<BoxCollider2D>();
-            lCollider.isTrigger = true;
-            lCollider.size = Vector2.one * _SquareSize;
+            BoxCollider2D squareCollider = lSquare.AddComponent<BoxCollider2D>();
+            squareCollider.isTrigger = true;
+            squareCollider.size = Vector2.one * _SquareSize;
+            _SquareColliders.Add(squareCollider);
         }
+    }
 
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            Transform lSquare = transform.GetChild(i);
-            lSquare.gameObject.SetActive(i < lSquareCount - 1);
-            if (i < lSquareCount - 1)
-                lSquare.localPosition = Vector2.right * ((i + 1.5f) * _SquareSize);
-        }
+    public void RemoveSquare(Collider2D pCollider)
+    {
+        if (pCollider == null || !pCollider.enabled) return;
+
+        // Disable immediately so other players stop receiving its current this frame.
+        pCollider.enabled = false;
+        // The first square shares the container, which must keep the other squares alive.
+        if (pCollider != _RootCollider)
+            Destroy(pCollider.gameObject);
     }
 
     private void Update()
     {
-        DrawSquare(_Box);
-
-        for (int i = 0; i < transform.childCount; i++)
+        foreach (BoxCollider2D squareCollider in _SquareColliders)
         {
-            Transform lSquare = transform.GetChild(i);
-            if (lSquare.gameObject.activeSelf)
-                DrawSquare(lSquare.GetComponent<BoxCollider2D>());
+            if (squareCollider == null || !squareCollider.isActiveAndEnabled) continue;
+            DrawSquare(squareCollider);
         }
     }
 

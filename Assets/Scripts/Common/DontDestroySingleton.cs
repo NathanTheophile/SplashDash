@@ -14,7 +14,7 @@ using UnityEngine;
 
 public class DontDestroySingleton : MonoBehaviour
 {
-    // Change this fo the prefab path in the ressources folder
+    // Path to the prefab inside a Resources folder.
     private const string PATH = "Autoload";
 
     [HideInInspector] public static DontDestroySingleton Instance { get; private set; }

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b970ee053d792fe42b1993e5061c76e2, type: 3}
   m_Name: PlayerStats_stunned
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  moveSpeed: 5
+  moveSpeed: 30
   friction: 2
-  maxMoveSpeed: 5
-  rotationSpeed: 150
-  jumpForce: 10
+  maxMoveSpeed: 17
+  rotationSpeed: 450
+  jumpForce: 17
   jumpCooldown: 3
