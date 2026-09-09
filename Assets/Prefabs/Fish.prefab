@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 478242864041814558}
   - component: {fileID: 4029999846875060756}
   - component: {fileID: 2837732270015303134}
+  - component: {fileID: 8023535382405211063}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
@@ -413,6 +414,23 @@ MonoBehaviour:
   _MinDashDuration: 0.2
   _MaxDashDuration: 0.6
   _MaxChargeDuration: 1
+--- !u!114 &8023535382405211063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5966859751823962515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836e25b07c933da4590b6b9bf5bcc47f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DigPainter
+  _Surface: {fileID: 0}
+  _Mask: {fileID: 8400000, guid: fd66329ee8c887a4fad2e56a0b97c2a2, type: 2}
+  _BrushMaterial: {fileID: 2100000, guid: 048c31466a889104ea7feac03733f87e, type: 2}
+  _BrushSize: 0.02
+  _Fish: {fileID: 6957456785503517200}
 --- !u!1 &6920667115874175357
 GameObject:
   m_ObjectHideFlags: 0
