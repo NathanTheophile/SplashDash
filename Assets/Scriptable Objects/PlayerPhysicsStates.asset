@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38b3e58ec62ea6429293a50f77aec54, type: 3}
+  m_Name: PlayerPhysicsStates
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPhysicsStates
+  states:
+  - {fileID: 11400000, guid: 70e28b3d15cb7504b9a80f77e54c4652, type: 2}
+  - {fileID: 11400000, guid: 1e4e5bbcd41d93b4f84ef384bcc8f5c8, type: 2}
+  - {fileID: 11400000, guid: b2a739165eb4e934dad407940727a905, type: 2}
+  - {fileID: 11400000, guid: 49a4562e6e22c234e9c1b36fb7400409, type: 2}
