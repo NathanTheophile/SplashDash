@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayersColorSO
   m_EditorClassIdentifier: Assembly-CSharp::PlayersSpritesColorsSO
   data:
-  - mainBGColor: {r: 0.9372549, g: 0.4084406, b: 0.18431371, a: 0}
-    lightBGColor: {r: 0.93207544, g: 0.60245407, b: 0.46252042, a: 0}
+  - mainBGColor: {r: 0.9372549, g: 0.4084406, b: 0.18431371, a: 1}
+    lightBGColor: {r: 0.93207544, g: 0.60245407, b: 0.46252042, a: 1}
     sprites: {fileID: 21300000, guid: 82c488e9fdaa1594c8eae758eb8be01c, type: 3}
     knockedSprite: {fileID: 21300000, guid: 82c488e9fdaa1594c8eae758eb8be01c, type: 3}
   - mainBGColor: {r: 0.25882354, g: 0.3803922, b: 0.18823531, a: 1}
