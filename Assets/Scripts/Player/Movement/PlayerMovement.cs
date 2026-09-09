@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private float _DashSpeed;
     private float _ChargeSpeedMultiplier = 1f;
     private bool _IsDashMoving;
+    [SerializeField] private float _MinChargeSpeed;
 
     public PlayerStats CurrentStats => _Player.CurrentStats;
     public PlayerStats DashStats => _Player.GetStats(PlayerStates.IS_DASHING);
@@ -94,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else _PlayerBody.linearDamping = stats.friction;
 
-        _PlayerBody.linearVelocity = Vector2.ClampMagnitude(_PlayerBody.linearVelocity, stats.maxMoveSpeed * _ChargeSpeedMultiplier);
+        _PlayerBody.linearVelocity = Vector2.ClampMagnitude(_PlayerBody.linearVelocity, stats.maxMoveSpeed * Mathf.Clamp(_ChargeSpeedMultiplier, _MinChargeSpeed, _ChargeSpeedMultiplier));
         _PlayerBody.AddForce(direction * stats.moveSpeed * _ChargeSpeedMultiplier, ForceMode2D.Force);
     }
 
