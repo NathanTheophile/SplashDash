@@ -8,7 +8,7 @@ public class PlayerData
 
     public PlayerData(int playerID, int skinID)
     {
-        PlayerID = playerID;
+        PlayerID = playerID; // mdrrr ca sert a rien enft hihihi
         SkinID = skinID;
     }
 }
@@ -17,13 +17,28 @@ public class PlayerManager : MonoBehaviour
 {
     [SerializeField] PlayersSpritesColorsSO _colorMixer;
 
-    private readonly List<PlayerData> _players = new List<PlayerData>();
-    
+    private readonly PlayerData[] _players = new PlayerData[4];
+
+    public static PlayerManager Instance;
+
+    public void Start()
+    {
+        Instance = this;
+    }
+
+    //IDS : 0 1 2 3
     public void OnJoin(int id)
     {
+        if (0 > id || id > 3) return;
         int skinID = Random.Range(0, _colorMixer.data.Length);
         var player = new PlayerData(id, skinID);
 
-        _players.Add(player);
+        _players[id] = player;
+    }
+
+    public PlayerData GetPlayerByID(int id)
+    {
+        if (0 > id || id > 3) return null;
+        return _players[id];
     }
 }
