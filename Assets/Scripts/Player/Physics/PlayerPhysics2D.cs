@@ -73,6 +73,21 @@ public class PlayerPhysics2D : MonoBehaviour
         _CurrentDirectionsByCollider.Remove(other);
         _WaterContactsByCollider.Remove(other);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Fish otherFish = collision.collider.GetComponentInParent<Fish>();
+        if (otherFish != null)
+        {
+            if (!_Fish.IsDashing)
+                _Fish.Stun();
+
+            return;
+        }
+
+        if (collision.collider.CompareTag("Obstacle"))
+            _Fish.Stun();
+    }
     
     
 
