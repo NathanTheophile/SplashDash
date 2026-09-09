@@ -21,11 +21,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     private Vector2 _DashDirection;
     private float _DashSpeed;
+    private float _ChargeSpeedMultiplier = 1f;
     private bool _IsDashMoving;
 
-    public PlayerStats CurrentStats => _Player != null ? _Player.CurrentStats : null;
-    public PlayerStats DashStats => _Player != null ? _Player.GetStats(PlayerStates.IS_DASHING) : null;
-    public bool AreControlsEnabled => _Player != null && _Player.AreControlsEnabled;
+    public PlayerStats CurrentStats => _Player.CurrentStats;
+    public PlayerStats DashStats => _Player.GetStats(PlayerStates.IS_DASHING);
+    public bool AreControlsEnabled => _Player.AreControlsEnabled;
 
     #endregion
 
@@ -33,8 +34,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        if (_PlayerBody != null && _Player != null && CurrentStats != null) return;
-        enabled = false;
+        if (_PlayerBody == null)
+            _PlayerBody = GetComponent<Rigidbody2D>();
+
+        if (_Player == null)
+            _Player = GetComponent<Fish>();
     }
 
     #endregion
@@ -50,6 +54,9 @@ public class PlayerMovement : MonoBehaviour
         _IsDashMoving = true;
         _PlayerBody.angularVelocity = 0;
     }
+
+    public void SetChargeSpeed(float pChargeRatio) => _ChargeSpeedMultiplier = 1f - pChargeRatio;
+    public void ResetChargeSpeed() => _ChargeSpeedMultiplier = 1f;
 
     public void EndDash()
     {
@@ -69,7 +76,6 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         PlayerStats stats = CurrentStats;
-        if (stats == null) return;
 
         if (_IsDashMoving)
         {
@@ -88,8 +94,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else _PlayerBody.linearDamping = stats.friction;
 
-        _PlayerBody.linearVelocity = Vector2.ClampMagnitude(_PlayerBody.linearVelocity, stats.maxMoveSpeed);
-        _PlayerBody.AddForce(direction * stats.moveSpeed, ForceMode2D.Force);
+        _PlayerBody.linearVelocity = Vector2.ClampMagnitude(_PlayerBody.linearVelocity, stats.maxMoveSpeed * _ChargeSpeedMultiplier);
+        _PlayerBody.AddForce(direction * stats.moveSpeed * _ChargeSpeedMultiplier, ForceMode2D.Force);
     }
 
     private void RotateTowards(Vector3 from, Vector3 to, float maxAngle)

@@ -7,9 +7,6 @@ public class PlayerPhysicsStates : ScriptableObject
 
     public PlayerStats GetStats(PlayerStates state)
     {
-        if (states == null)
-            return null;
-
         int index = (int)state;
 
         if (index < 0 || index >= states.Length)

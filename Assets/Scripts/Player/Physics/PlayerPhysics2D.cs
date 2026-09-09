@@ -25,7 +25,7 @@ public class PlayerPhysics2D : MonoBehaviour
             foreach (var overlap in activeWaterOverlaps)
             {
                 if (overlap.Key == null) continue;
-                if (overlap.Value != null && _TrailEmitter != null && _TrailEmitter.IsRecentTrail(overlap.Value))
+                if (overlap.Value != null && _TrailEmitter.IsRecentTrail(overlap.Value))
                     continue;
                 return true;
             }
@@ -48,10 +48,10 @@ public class PlayerPhysics2D : MonoBehaviour
         WaterTrail waterTrail = other.GetComponent<WaterTrail>();
         if (other.CompareTag("Water") || waterTrail != null)
             activeWaterOverlaps[other] = waterTrail;
-        else if (_Fish != null && _Fish.IsDashing)
+        else if (_Fish.IsDashing)
         {
             DashTrail trail = other.GetComponentInParent<DashTrail>();
-            if (trail != null && (_TrailEmitter == null || trail != _TrailEmitter.ActiveDash))
+            if (trail != null && trail != _TrailEmitter.ActiveDash)
                 Destroy(trail.gameObject);
         }
     }

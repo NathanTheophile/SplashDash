@@ -32,6 +32,12 @@ public class PlayerTrailEmitter : MonoBehaviour
 
     private void Awake()
     {
+        if (_Fish == null)
+            _Fish = GetComponent<Fish>();
+
+        if (_PlayerPhysicsSystem == null)
+            _PlayerPhysicsSystem = GetComponent<PlayerPhysics2D>();
+
         if (_TrailManager == null)
             _TrailManager = FindFirstObjectByType<TrailManager>();
     }
@@ -79,13 +85,6 @@ public class PlayerTrailEmitter : MonoBehaviour
             return;
         }
 
-        if (_TrailManager == null)
-        {
-            _LastPosition = position;
-            _DistanceSinceTrail = 0f;
-            return;
-        }
-
         Vector2 lOffset = position - _LastPosition;
         float lDistance = lOffset.magnitude;
         if (lDistance <= 0f)
@@ -112,9 +111,7 @@ public class PlayerTrailEmitter : MonoBehaviour
     {
         _IsDashing = true;
 
-        _ActiveDash = _TrailManager != null
-            ? _TrailManager.CreateDashTrail(transform.position, direction)
-            : null;
+        _ActiveDash = _TrailManager.CreateDashTrail(transform.position, direction);
     }
 
     public void EndDash()

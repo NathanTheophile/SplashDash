@@ -32,7 +32,7 @@ public class TrailManager : MonoBehaviour
     {
         WaterTrail lTrail = Instantiate(_WaterTrailPrefab, pPosition, Quaternion.identity, transform);
         _Trails.Add(lTrail.gameObject);
-        if (pOwner != null) pOwner.RememberTrail(lTrail);
+        pOwner.RememberTrail(lTrail);
     }
 
     public DashTrail CreateDashTrail(Vector2 pPosition, Vector2 pDirection)
