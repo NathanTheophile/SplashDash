@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 {
     #region _________________________/ REFERENCES
     [SerializeField] private Rigidbody2D _PlayerBody;
-    [SerializeField] private Fish _Player;
+    [SerializeField] private Fish _Fish;
 
     #endregion
 
@@ -25,9 +25,9 @@ public class PlayerMovement : MonoBehaviour
     private bool _IsDashMoving;
     [SerializeField] private float _MinChargeSpeed;
 
-    public PlayerStats CurrentStats => _Player.CurrentStats;
-    public PlayerStats DashStats => _Player.GetStats(PlayerStates.IS_DASHING);
-    public bool AreControlsEnabled => _Player.AreControlsEnabled;
+    public PlayerStats CurrentStats => _Fish.CurrentStats;
+    public PlayerStats DashStats => _Fish.GetStats(PlayerStates.IS_DASHING);
+    public bool AreControlsEnabled => _Fish.AreControlsEnabled;
 
     #endregion
 
@@ -38,8 +38,8 @@ public class PlayerMovement : MonoBehaviour
         if (_PlayerBody == null)
             _PlayerBody = GetComponent<Rigidbody2D>();
 
-        if (_Player == null)
-            _Player = GetComponent<Fish>();
+        if (_Fish == null)
+            _Fish = GetComponent<Fish>();
     }
 
     #endregion
@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
         _PlayerBody.angularVelocity = 0;
     }
 
-    public void SetChargeSpeed(float pChargeRatio) => _ChargeSpeedMultiplier = 1f - pChargeRatio;
+    public void SetChargeSpeed(float pChargeRatio) => _ChargeSpeedMultiplier = Mathf.Clamp(1f - pChargeRatio, _MinChargeSpeed, 1f);
     public void ResetChargeSpeed() => _ChargeSpeedMultiplier = 1f;
 
     public void EndDash()
@@ -95,7 +95,9 @@ public class PlayerMovement : MonoBehaviour
         }
         else _PlayerBody.linearDamping = stats.friction;
 
-        _PlayerBody.linearVelocity = Vector2.ClampMagnitude(_PlayerBody.linearVelocity, stats.maxMoveSpeed * Mathf.Clamp(_ChargeSpeedMultiplier, _MinChargeSpeed, _ChargeSpeedMultiplier));
+        //if(InDash && _Fish.IsDashing){}
+        
+        _PlayerBody.linearVelocity = Vector2.ClampMagnitude(_PlayerBody.linearVelocity, stats.maxMoveSpeed * _ChargeSpeedMultiplier);
         _PlayerBody.AddForce(direction * stats.moveSpeed * _ChargeSpeedMultiplier, ForceMode2D.Force);
     }
 
