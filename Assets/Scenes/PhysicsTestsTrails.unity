@@ -166,6 +166,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &721966670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5966859751823962515, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
+  m_PrefabInstance: {fileID: 6045488505825423428}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &721966679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721966670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &964938844
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1297426890}
   - component: {fileID: 1297426891}
+  - component: {fileID: 1297426892}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -330,6 +366,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
   axis: {x: 0, y: 0}
+--- !u!114 &1297426892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297426888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInputManager
+  m_NotificationBehavior: 0
+  m_MaxPlayerCount: -1
+  m_AllowJoining: 1
+  m_JoinBehavior: 0
+  m_PlayerJoinedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_PlayerLeftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_JoinAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: a654445d-ab27-4243-b7b6-febed41b5bd7
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_PlayerPrefab: {fileID: 0}
+  m_SplitScreen: 0
+  m_MaintainAspectRatioInSplitScreen: 0
+  m_FixedNumberOfSplitScreens: -1
+  m_SplitScreenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &1813524806
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,30 +790,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fish
       objectReference: {fileID: 0}
-    - target: {fileID: 6311009766436739871, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
-      propertyPath: stats
-      value: 
-      objectReference: {fileID: 11400000, guid: 70e28b3d15cb7504b9a80f77e54c4652, type: 2}
-    - target: {fileID: 6311009766436739871, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
-      propertyPath: _startState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6311009766436739871, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
-      propertyPath: _physicsStates
-      value: 
-      objectReference: {fileID: 11400000, guid: 3a83651dce2582e4f9ed3e0db42197ea, type: 2}
-    - target: {fileID: 6311009766436739871, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
-      propertyPath: _StatsMatchingArray
-      value: 
-      objectReference: {fileID: 11400000, guid: 3a83651dce2582e4f9ed3e0db42197ea, type: 2}
-    - target: {fileID: 6957456785503517200, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6957456785503517200, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6957456785503517200, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.31
@@ -777,7 +833,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5966859751823962515, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 721966679}
   m_SourcePrefab: {fileID: 100100000, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
