@@ -19,11 +19,13 @@ public class PlayerMovement : MonoBehaviour
 
     #region _________________________/ RUNTIME VALUES
     private Vector2 moveInput;
-    private Vector2 pendingImpulse;
+    private Vector2 _DashDirection;
+    private float _DashSpeed;
+    private bool _IsDashMoving;
 
     public PlayerStats CurrentStats => _Player != null ? _Player.CurrentStats : null;
     public PlayerStats DashStats => _Player != null ? _Player.GetStats(PlayerStates.IS_DASHING) : null;
-    public bool CanControl => isActiveAndEnabled && _Player != null && _Player.CanControl;
+    public bool AreControlsEnabled => _Player != null && _Player.AreControlsEnabled;
 
     #endregion
 
@@ -39,17 +41,27 @@ public class PlayerMovement : MonoBehaviour
 
     #region _________________________| PHYSIC METHODS
 
-    public void SetMoveInput(Vector2 direction) => moveInput = CanControl ? direction : Vector2.zero;
+    public void SetMoveInput(Vector2 direction) => moveInput = AreControlsEnabled ? direction : Vector2.zero;
 
-    public void QueueImpulse(Vector2 impulse)
+    public void BeginDash(Vector2 pDirection, float pSpeed)
     {
-        if (isActiveAndEnabled) pendingImpulse += impulse;
+        _DashDirection = pDirection.normalized;
+        _DashSpeed = pSpeed;
+        _IsDashMoving = true;
+        _PlayerBody.angularVelocity = 0;
+    }
+
+    public void EndDash()
+    {
+        _IsDashMoving = false;
+        _DashDirection = Vector2.zero;
+        _DashSpeed = 0f;
     }
 
     public void ClearInput()
     {
         moveInput = Vector2.zero;
-        pendingImpulse = Vector2.zero;
+        EndDash();
     }
 
     private void OnDisable() => ClearInput();
@@ -58,7 +70,15 @@ public class PlayerMovement : MonoBehaviour
     {
         PlayerStats stats = CurrentStats;
         if (stats == null) return;
-        Vector2 direction = CanControl ? moveInput : Vector2.zero;
+
+        if (_IsDashMoving)
+        {
+            _PlayerBody.linearDamping = 0;
+            _PlayerBody.linearVelocity = _DashDirection * _DashSpeed;
+            return;
+        }
+
+        Vector2 direction = AreControlsEnabled ? moveInput : Vector2.zero;
         if (direction != Vector2.zero)
         {
             RotateTowards(transform.up, new Vector3(direction.x, direction.y),
@@ -70,11 +90,6 @@ public class PlayerMovement : MonoBehaviour
 
         _PlayerBody.linearVelocity = Vector2.ClampMagnitude(_PlayerBody.linearVelocity, stats.maxMoveSpeed);
         _PlayerBody.AddForce(direction * stats.moveSpeed, ForceMode2D.Force);
-        if (pendingImpulse != Vector2.zero)
-        {
-            _PlayerBody.AddForce(pendingImpulse, ForceMode2D.Impulse);
-            pendingImpulse = Vector2.zero;
-        }
     }
 
     private void RotateTowards(Vector3 from, Vector3 to, float maxAngle)

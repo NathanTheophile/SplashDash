@@ -22,7 +22,7 @@ public class Fish : MonoBehaviour
     public bool OnWater => _PlayerPhysicsSystem != null && _PlayerPhysicsSystem.IsOnWater;
     public bool IsDashing => _PlayerDashSystem != null && _PlayerDashSystem.IsDashing;
     public bool IsStunned { get; private set; }
-    public bool CanControl => isActiveAndEnabled && !IsStunned && !IsDashing;
+    public bool AreControlsEnabled => !IsStunned && !IsDashing;
     public PlayerStates State => 
         IsStunned ? PlayerStates.STUNNED :
         IsDashing ? PlayerStates.IS_DASHING :
@@ -42,6 +42,7 @@ public class Fish : MonoBehaviour
     {
         IsStunned = stunned;
         if (!stunned) return;
+        if (_PlayerDashSystem != null) _PlayerDashSystem.CancelCharge();
         if (_PlayerMovementSystem != null) _PlayerMovementSystem.SetMoveInput(Vector2.zero);
     }
 
@@ -49,7 +50,7 @@ public class Fish : MonoBehaviour
 
     #endregion
 
-    #region _________________________| GAME FLOW METHODS
+    #region _________________________| UNITY
 
     private void Start()
     {
@@ -63,28 +64,54 @@ public class Fish : MonoBehaviour
     {
         BindInput();
         Vector2 moveDirection = Vector2.zero;
-        if (CanControl && _Input != null)
+        if (AreControlsEnabled && _Input != null)
             moveDirection = _Input.axis;
 
         _PlayerMovementSystem.SetMoveInput(moveDirection);
     }
 
+    #endregion
+
+    #region _________________________| INPUTS
+
     private void BindInput()
     {
         if (_Input == InputManager.Instance) return;
-        if (_Input != null) _Input.JumpPressed -= Jump;
+
+        if (_Input != null)
+        {
+            _Input.DashPressed -= PressDash;
+            _Input.DashReleased -= ReleaseDash;
+        }
+
         _Input = InputManager.Instance;
-        if (_Input != null) _Input.JumpPressed += Jump;
+
+        if (_Input != null)
+        {
+            _Input.DashPressed += PressDash;
+            _Input.DashReleased += ReleaseDash;
+        }
     }
 
-    private void Jump()
+    private void PressDash()
     {
-        if (isActiveAndEnabled && _PlayerDashSystem != null) _PlayerDashSystem.TryDash();
+        if (_PlayerDashSystem != null && AreControlsEnabled)
+            _PlayerDashSystem.PressDash();
+    }
+
+    private void ReleaseDash()
+    {
+        if (_PlayerDashSystem != null)
+            _PlayerDashSystem.ReleaseDash();
     }
 
     private void OnDisable()
     {
-        if (_Input != null) _Input.JumpPressed -= Jump;
+        if (_Input != null)
+        {
+            _Input.DashPressed -= PressDash;
+            _Input.DashReleased -= ReleaseDash;
+        }        
         _Input = null;
         IsStunned = false;
         if (_PlayerMovementSystem != null) _PlayerMovementSystem.ClearInput();

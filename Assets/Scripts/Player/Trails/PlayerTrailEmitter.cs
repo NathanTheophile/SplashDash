@@ -15,14 +15,10 @@ public class PlayerTrailEmitter : MonoBehaviour
 
     #endregion
 
-    #region _________________________/ TUNING VALUES
-    [SerializeField] private float _TrailSpacing = 0.05f;
-
-    #endregion
-
     #region _________________________/ RUNTIME VALUES
 
     private Vector2 _LastPosition;
+    private float _DistanceSinceTrail;
     private DashTrail _ActiveDash;
     private bool _IsDashing;
     private bool _WasSillonBlocked;
@@ -36,10 +32,8 @@ public class PlayerTrailEmitter : MonoBehaviour
 
     private void Awake()
     {
-        if (_Fish != null && _PlayerPhysicsSystem != null)
-            return;
-
-        enabled = false;
+        if (_TrailManager == null)
+            _TrailManager = FindFirstObjectByType<TrailManager>();
     }
 
     public void RememberTrail(WaterTrail trail)
@@ -62,6 +56,7 @@ public class PlayerTrailEmitter : MonoBehaviour
     private void OnEnable()
     {
         _LastPosition = transform.position;
+        _DistanceSinceTrail = 0f;
         _WasSillonBlocked = IsSillonBlocked;
     }
 
@@ -80,14 +75,36 @@ public class PlayerTrailEmitter : MonoBehaviour
         {
             _WasSillonBlocked = sillonBlocked;
             _LastPosition = position;
+            _DistanceSinceTrail = 0f;
             return;
         }
 
-        if (Vector2.Distance(_LastPosition, position) < _TrailSpacing)
+        if (_TrailManager == null)
+        {
+            _LastPosition = position;
+            _DistanceSinceTrail = 0f;
+            return;
+        }
+
+        Vector2 lOffset = position - _LastPosition;
+        float lDistance = lOffset.magnitude;
+        if (lDistance <= 0f)
             return;
 
-        if (_TrailManager != null)
-            _TrailManager.CreateWaterTrail(_LastPosition, position, this);
+        Vector2 lDirection = lOffset / lDistance;
+        float lSpacing = _TrailManager.WaterTrailSpacing;
+
+        while (_DistanceSinceTrail + lDistance >= lSpacing)
+        {
+            float lDistanceToTrail = lSpacing - _DistanceSinceTrail;
+            _LastPosition += lDirection * lDistanceToTrail;
+            _TrailManager.CreateWaterTrail(_LastPosition, this);
+
+            lDistance -= lDistanceToTrail;
+            _DistanceSinceTrail = 0f;
+        }
+
+        _DistanceSinceTrail += lDistance;
         _LastPosition = position;
     }
 
