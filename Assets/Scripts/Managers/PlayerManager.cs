@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerData
@@ -8,7 +9,7 @@ public class PlayerData
 
     public PlayerData(int playerID, int skinID)
     {
-        PlayerID = playerID; // mdrrr ca sert a rien enft hihihi
+        PlayerID = playerID;
         SkinID = skinID;
     }
 }
@@ -18,7 +19,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] PlayersSpritesColorsSO _colorMixer;
 
     private readonly PlayerData[] _players = new PlayerData[4];
-
+    public int PlayerNumber {  get; private set; }
     public static PlayerManager Instance;
 
     public void Start()
@@ -34,6 +35,18 @@ public class PlayerManager : MonoBehaviour
         var player = new PlayerData(id, skinID);
 
         _players[id] = player;
+
+        PlayerNumber = _players.Count(d => d != null);
+    }
+
+    public void OnQuit(int id)
+    {
+        if (0 > id || id > 3) return;
+
+        _players[id] = null;
+
+
+        PlayerNumber = _players.Count(d => d != null);
     }
 
     public PlayerData GetPlayerByID(int id)
