@@ -5,6 +5,7 @@
 #endregion
 
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Fish : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class Fish : MonoBehaviour
     [SerializeField] private PlayerDash _PlayerDashSystem;
     [SerializeField] private PlayerPhysics2D _PlayerPhysicsSystem;
     [SerializeField] private PlayerPhysicsStates _PlayerPhysicsStates;
-    private InputManager _Input;
 
     #endregion
 
@@ -63,14 +63,16 @@ public class Fish : MonoBehaviour
 
     #region _________________________| UNITY
 
+    private Vector2 _moveDirection;
+
     private void Update()
     {
-        BindInput();
-        Vector2 moveDirection = Vector2.zero;
-        if (AreControlsEnabled && _Input != null)
-            moveDirection = _Input.axis;
+        //BindInput();
+        //_moveDirection = Vector2.zero;
+        //if (AreControlsEnabled && _Input != null)
+        //    moveDirection = _Input.axis;
 
-        _PlayerMovementSystem.SetMoveInput(moveDirection);
+        _PlayerMovementSystem.SetMoveInput(_moveDirection);
     }
 
     #endregion
@@ -79,42 +81,42 @@ public class Fish : MonoBehaviour
 
     private void BindInput()
     {
-        if (_Input == InputManager.Instance) return;
+        //if (_Input == InputManager.Instance) return;
 
-        if (_Input != null)
-        {
-            _Input.DashPressed -= PressDash;
-            _Input.DashReleased -= ReleaseDash;
-        }
+        //if (_Input != null)
+        //{
+        //    _Input.DashPressed -= PressDash;
+        //    _Input.DashReleased -= ReleaseDash;
+        //}
 
-        _Input = InputManager.Instance;
+        //_Input = InputManager.Instance;
 
-        if (_Input != null)
-        {
-            _Input.DashPressed += PressDash;
-            _Input.DashReleased += ReleaseDash;
-        }
+        //if (_Input != null)
+        //{
+        //    _Input.DashPressed += PressDash;
+        //    _Input.DashReleased += ReleaseDash;
+        //}
     }
 
-    private void PressDash()
+    public void HandleMove(InputAction.CallbackContext pContext)
     {
-        if (AreControlsEnabled)
-            _PlayerDashSystem.PressDash();
+        _moveDirection = pContext.ReadValue<Vector2>();
     }
 
-    private void ReleaseDash()
+    public void PressDash(InputAction.CallbackContext pContext)
     {
-        _PlayerDashSystem.ReleaseDash();
+        if (AreControlsEnabled && pContext.performed) _PlayerDashSystem.PressDash();
+        else if (pContext.canceled) _PlayerDashSystem.ReleaseDash();
     }
 
     private void OnDisable()
     {
-        if (_Input != null)
-        {
-            _Input.DashPressed -= PressDash;
-            _Input.DashReleased -= ReleaseDash;
-        }        
-        _Input = null;
+        //if (_Input != null)
+        //{
+        //    _Input.DashPressed -= PressDash;
+        //    _Input.DashReleased -= ReleaseDash;
+        //}        
+        //_Input = null;
         IsStunned = false;
         _PlayerMovementSystem.ClearInput();
         _PlayerDashSystem.ResetDash();
