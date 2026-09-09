@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 2054219036057442558}
   - component: {fileID: 1464600039220100372}
   - component: {fileID: 7681732553735711572}
+  - component: {fileID: 4571589589171117779}
   m_Layer: 5
   m_Name: MainMenuButtonVariant
   m_TagString: Untagged
@@ -305,3 +306,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4571589589171117779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7369483472001118909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af574f1a92afcbc47aa0901cba51b59d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverScaleUI
+  targetTransform: {fileID: 1972817594162678694}
+  hoverScale: {x: 1.1, y: 1.1, z: 1.1}
+  pressedScale: {x: 0.9, y: 0.9, z: 0.9}
+  transitionDuration: 0.1
