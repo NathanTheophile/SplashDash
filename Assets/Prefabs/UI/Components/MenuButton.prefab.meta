@@ -1,11 +1,8 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Prefabs/UI/Components/MenuButton.prefab.meta
-guid: d9a5be68459cf60478445b3c4811fd91
-========
-guid: 6ee47fd8743d7e948b6412051a650509
->>>>>>>> origin/dev:Assets/Prefabs/Fish.prefab.meta
+guid: 8cca8e93dd387bf4daf5637cd1fdd240
 PrefabImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+

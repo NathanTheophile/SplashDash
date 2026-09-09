@@ -8,7 +8,9 @@ public class InputManager : MonoBehaviour
     private InputSystem_Actions _inputActions;
 
     public Vector2 axis;
-    public event Action JumpPressed;
+    
+    public event Action DashPressed;
+    public event Action DashReleased;
 
     private void Awake()
     {
@@ -23,7 +25,8 @@ public class InputManager : MonoBehaviour
         _inputActions.Player.Enable();
         _inputActions.Player.Move.performed += MoveAction;
         _inputActions.Player.Move.canceled += MoveAction;
-        _inputActions.Player.Jump.performed += JumpAction;
+        _inputActions.Player.Jump.performed += DashPressedAction;
+        _inputActions.Player.Jump.canceled += DashReleasedAction;
     }
 
     private void MoveAction(InputAction.CallbackContext pContext)
@@ -31,8 +34,13 @@ public class InputManager : MonoBehaviour
         axis = pContext.ReadValue<Vector2>();
     }
 
-    private void JumpAction(InputAction.CallbackContext pContext)
+    private void DashPressedAction(InputAction.CallbackContext pContext)
     {
-        JumpPressed?.Invoke();
+        DashPressed?.Invoke();
+    }
+    
+    private void DashReleasedAction(InputAction.CallbackContext pContext)
+    {
+        DashReleased?.Invoke();
     }
 }
