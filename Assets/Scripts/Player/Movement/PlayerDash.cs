@@ -67,7 +67,11 @@ public class PlayerDash : MonoBehaviour
 
     private void Update()
     {
-        if (!IsCharging || _DashChargeSlider == null) return;
+        if (!IsCharging) return;
+
+        _PlayerMovementSystem.SetChargeSpeed(ChargeRatio);
+
+        if (_DashChargeSlider == null) return;
 
         _DashChargeSlider.value = Mathf.Lerp(
             _MinDashDuration,
@@ -92,6 +96,7 @@ public class PlayerDash : MonoBehaviour
 
         IsCharging = true;
         _ChargeStartTime = Time.time;
+        _PlayerMovementSystem.SetChargeSpeed(0f);
         ShowDashChargeSlider();
     }
 
@@ -103,6 +108,7 @@ public class PlayerDash : MonoBehaviour
         float lDashDuration = GetDashDuration();
 
         IsCharging = false;
+        _PlayerMovementSystem.ResetChargeSpeed();
         HideDashChargeSlider();
         StartDash(lDashDuration);
     }
@@ -114,6 +120,7 @@ public class PlayerDash : MonoBehaviour
 
         IsCharging = false;
         _ChargeStartTime = 0f;
+        _PlayerMovementSystem.ResetChargeSpeed();
         HideDashChargeSlider();
     }
 
@@ -162,6 +169,7 @@ public class PlayerDash : MonoBehaviour
 
         IsCharging = false;
         _ChargeStartTime = 0f;
+        _PlayerMovementSystem.ResetChargeSpeed();
         _IsOnCooldown = false;
         HideDashChargeSlider();
 

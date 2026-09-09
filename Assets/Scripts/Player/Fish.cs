@@ -19,14 +19,14 @@ public class Fish : MonoBehaviour
 
     #region _________________________/ STATE VALUES
 
-    public bool OnWater => _PlayerPhysicsSystem != null && _PlayerPhysicsSystem.IsOnWater;
-    public bool IsDashing => _PlayerDashSystem != null && _PlayerDashSystem.IsDashing;
+    public bool IsOnWater => _PlayerPhysicsSystem.IsOnWater;
+    public bool IsDashing => _PlayerDashSystem.IsDashing;
     public bool IsStunned { get; private set; }
     public bool AreControlsEnabled => !IsStunned && !IsDashing;
     public PlayerStates State => 
         IsStunned ? PlayerStates.STUNNED :
         IsDashing ? PlayerStates.IS_DASHING :
-        OnWater ?   PlayerStates.ON_WATER : 
+        IsOnWater ?   PlayerStates.ON_WATER : 
                     PlayerStates.ON_SAND;
                     
     public PlayerStats CurrentStats => GetStats(State);
@@ -35,15 +35,26 @@ public class Fish : MonoBehaviour
 
     #region _________________________| INIT
 
-    public PlayerStats GetStats(PlayerStates state) => _PlayerPhysicsStates != null
-        ? _PlayerPhysicsStates.GetStats(state) : null;
+    private void Awake()
+    {
+        if (_PlayerMovementSystem == null)
+            _PlayerMovementSystem = GetComponent<PlayerMovement>();
+
+        if (_PlayerDashSystem == null)
+            _PlayerDashSystem = GetComponent<PlayerDash>();
+
+        if (_PlayerPhysicsSystem == null)
+            _PlayerPhysicsSystem = GetComponent<PlayerPhysics2D>();
+    }
+
+    public PlayerStats GetStats(PlayerStates state) => _PlayerPhysicsStates.GetStats(state);
 
     public void SetStunned(bool stunned)
     {
         IsStunned = stunned;
         if (!stunned) return;
-        if (_PlayerDashSystem != null) _PlayerDashSystem.CancelCharge();
-        if (_PlayerMovementSystem != null) _PlayerMovementSystem.SetMoveInput(Vector2.zero);
+        _PlayerDashSystem.CancelCharge();
+        _PlayerMovementSystem.SetMoveInput(Vector2.zero);
     }
 
     private void OnEnable() => BindInput();
@@ -51,14 +62,6 @@ public class Fish : MonoBehaviour
     #endregion
 
     #region _________________________| UNITY
-
-    private void Start()
-    {
-        if (_PlayerMovementSystem != null && _PlayerDashSystem != null && _PlayerPhysicsSystem != null &&
-            GetStats(PlayerStates.ON_SAND) != null && GetStats(PlayerStates.ON_WATER) != null &&
-            GetStats(PlayerStates.STUNNED) != null && GetStats(PlayerStates.IS_DASHING) != null) return;
-        enabled = false;
-    }
 
     private void Update()
     {
@@ -95,14 +98,13 @@ public class Fish : MonoBehaviour
 
     private void PressDash()
     {
-        if (_PlayerDashSystem != null && AreControlsEnabled)
+        if (AreControlsEnabled)
             _PlayerDashSystem.PressDash();
     }
 
     private void ReleaseDash()
     {
-        if (_PlayerDashSystem != null)
-            _PlayerDashSystem.ReleaseDash();
+        _PlayerDashSystem.ReleaseDash();
     }
 
     private void OnDisable()
@@ -114,8 +116,8 @@ public class Fish : MonoBehaviour
         }        
         _Input = null;
         IsStunned = false;
-        if (_PlayerMovementSystem != null) _PlayerMovementSystem.ClearInput();
-        if (_PlayerDashSystem != null) _PlayerDashSystem.ResetDash();
+        _PlayerMovementSystem.ClearInput();
+        _PlayerDashSystem.ResetDash();
     }
 
     #endregion
