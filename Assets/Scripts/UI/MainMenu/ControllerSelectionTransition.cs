@@ -1,11 +1,15 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControllerSelectionTransition : MonoBehaviour
 {
-    [SerializeField] private CanvasGroup _currentMenuCanvasGroup;
-    [SerializeField] private CanvasGroup _mainButtonsCanvasGroup;
-    [SerializeField] private CanvasGroup _titleCanvasGroup;
+    [SerializeField] private TweenUIBetweenTwoPoints _title;
+    [SerializeField] private TweenUIBetweenTwoPoints _currentMenu;
+    [SerializeField] private TweenUIBetweenTwoPoints _mainButtons;
+
+    [SerializeField] private CanvasGroup _bg;
+    [SerializeField] private CanvasGroup _boueeShadows;
 
     [SerializeField] private float _Duration = 0.5f;
 
@@ -20,18 +24,23 @@ public class ControllerSelectionTransition : MonoBehaviour
         if (TransitionManager.IsPlaying) return;
         TransitionManager.IsPlaying = true;
 
-        _currentMenuCanvasGroup.gameObject.SetActive(true);
-        _currentMenuCanvasGroup.alpha = 0f;
+        _currentMenu.gameObject.SetActive(true);
 
-        _currentMenuCanvasGroup.DOFade(1f, _Duration).OnComplete(OnToTweenComplete);
-        _mainButtonsCanvasGroup.DOFade(0f, _Duration);
-        _titleCanvasGroup.DOFade(0f, _Duration);
+        _bg.alpha = 0f;
+        _bg.DOFade(1f, _Duration).OnComplete(OnToTweenComplete);
+
+        _boueeShadows.alpha = 1f;
+        _boueeShadows.DOFade(0f, 0.2f);
+
+        _title.DoTweenTo(_Duration);
+        _currentMenu.DoTweenTo(_Duration);
+        _mainButtons.DoTweenTo(_Duration);
     }
 
     private void OnToTweenComplete()
     {
         TransitionManager.IsPlaying = false;
-        _mainButtonsCanvasGroup.gameObject.SetActive(false);
+        _mainButtons.gameObject.SetActive(false);
     }
 
     public void TransitionFrom()
@@ -39,18 +48,22 @@ public class ControllerSelectionTransition : MonoBehaviour
         if (TransitionManager.IsPlaying) return;
         TransitionManager.IsPlaying = true;
 
-        _mainButtonsCanvasGroup.gameObject.SetActive(true);
-        _mainButtonsCanvasGroup.alpha = 0f;
-        _titleCanvasGroup.alpha = 0f;
+        _mainButtons.gameObject.SetActive(true);
 
-        _currentMenuCanvasGroup.DOFade(0f, _Duration).OnComplete(OnFromTweenComplete);
-        _mainButtonsCanvasGroup.DOFade(1f, _Duration);
-        _titleCanvasGroup.DOFade(1f, _Duration);
+        _bg.alpha = 1f;
+        _bg.DOFade(0f, _Duration).OnComplete(OnFromTweenComplete);
+
+        _boueeShadows.alpha = 0f;
+        _boueeShadows.DOFade(1f, 0.2f);
+
+        _title.DoTweenFrom(_Duration);
+        _currentMenu.DoTweenFrom(_Duration);
+        _mainButtons.DoTweenFrom(_Duration);
     }
 
     private void OnFromTweenComplete()
     {
         TransitionManager.IsPlaying = false;
-        _currentMenuCanvasGroup.gameObject.SetActive(false);
+        _currentMenu.gameObject.SetActive(false);
     }
 }
