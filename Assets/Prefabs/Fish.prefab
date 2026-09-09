@@ -26,8 +26,8 @@ RectTransform:
   m_GameObject: {fileID: 300000000000000000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 300000000000000010}
   m_Father: {fileID: 6957456785503517200}
@@ -412,8 +412,8 @@ MonoBehaviour:
   _PlayerTrailEmitter: {fileID: 3347078021066471290}
   _DashChargeSlider: {fileID: 300000000000000012}
   _UseChargedDash: 1
-  _MinDashDuration: 0.2
-  _MaxDashDuration: 0.6
+  _MinDashDuration: 0.1
+  _MaxDashDuration: 0.2
   _MaxChargeDuration: 1
 --- !u!114 &8023535382405211063
 MonoBehaviour:
@@ -521,7 +521,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.21, y: 0.21, z: 0.21}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6957456785503517200}
