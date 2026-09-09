@@ -15,10 +15,11 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     #region _________________________/ TUNING VALUES
+    [SerializeField, Min(0f)] private float _CurrentForce = 2.5f;
     #endregion
 
     #region _________________________/ RUNTIME VALUES
-    private Vector2 moveInput;
+    private Vector2 _MoveInput;
     private Vector2 _DashDirection;
     private float _DashSpeed;
     private float _ChargeSpeedMultiplier = 1f;
@@ -46,7 +47,11 @@ public class PlayerMovement : MonoBehaviour
 
     #region _________________________| PHYSIC METHODS
 
-    public void SetMoveInput(Vector2 direction) => moveInput = AreControlsEnabled ? direction : Vector2.zero;
+    public void SetMoveInput(Vector2 inputDirection)
+    {
+        _MoveInput = AreControlsEnabled ? inputDirection : Vector2.zero;
+
+    }
 
     public void BeginDash(Vector2 pDirection, float pSpeed)
     {
@@ -68,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void ClearInput()
     {
-        moveInput = Vector2.zero;
+        _MoveInput = Vector2.zero;
         EndDash();
     }
 
@@ -76,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        PlayerStats stats = CurrentStats;
+        PlayerStats movementStats = CurrentStats;
 
         if (_IsDashMoving)
         {
@@ -85,20 +90,19 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        Vector2 direction = AreControlsEnabled ? moveInput : Vector2.zero;
-        if (direction != Vector2.zero)
+        Vector2 inputDirection = AreControlsEnabled ? _MoveInput : Vector2.zero;
+        if (inputDirection != Vector2.zero)
         {
-            RotateTowards(transform.up, new Vector3(direction.x, direction.y),
-                            stats.rotationSpeed * Time.fixedDeltaTime);
+            RotateTowards(transform.up, new Vector3(inputDirection.x, inputDirection.y),
+                            movementStats.rotationSpeed * Time.fixedDeltaTime);
             _PlayerBody.linearDamping = 0;
             _PlayerBody.angularVelocity = 0;
         }
-        else _PlayerBody.linearDamping = stats.friction;
+        else _PlayerBody.linearDamping = movementStats.friction;
 
-        //if(InDash && _Fish.IsDashing){}
-        
-        _PlayerBody.linearVelocity = Vector2.ClampMagnitude(_PlayerBody.linearVelocity, stats.maxMoveSpeed * _ChargeSpeedMultiplier);
-        _PlayerBody.AddForce(direction * stats.moveSpeed * _ChargeSpeedMultiplier, ForceMode2D.Force);
+        _PlayerBody.linearVelocity = Vector2.ClampMagnitude(_PlayerBody.linearVelocity, movementStats.maxMoveSpeed * _ChargeSpeedMultiplier);
+        _PlayerBody.AddForce(inputDirection * movementStats.moveSpeed * _ChargeSpeedMultiplier, ForceMode2D.Force);
+        _PlayerBody.AddForce(_Fish.CurrentDirection * _CurrentForce, ForceMode2D.Force);
     }
 
     private void RotateTowards(Vector3 from, Vector3 to, float maxAngle)

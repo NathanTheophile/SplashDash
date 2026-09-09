@@ -22,12 +22,9 @@ public class Fish : MonoBehaviour
     public bool IsOnWater => _PlayerPhysicsSystem.IsOnWater;
     public bool IsDashing => _PlayerDashSystem.IsDashing;
     public bool IsStunned { get; private set; }
+    public Vector2 CurrentDirection => _PlayerPhysicsSystem.CurrentDirection; 
     public bool AreControlsEnabled => !IsStunned && !IsDashing;
-    public PlayerStates State => 
-        IsStunned ? PlayerStates.STUNNED :
-        IsDashing ? PlayerStates.IS_DASHING :
-        IsOnWater ?   PlayerStates.ON_WATER : 
-                    PlayerStates.ON_SAND;
+    public PlayerStates State => GetState();
                     
     public PlayerStats CurrentStats => GetStats(State);
 
@@ -48,6 +45,14 @@ public class Fish : MonoBehaviour
     }
 
     public PlayerStats GetStats(PlayerStates state) => _PlayerPhysicsStates.GetStats(state);
+
+    private PlayerStates GetState()
+    {
+        if (IsStunned) return PlayerStates.STUNNED;
+        if (IsDashing) return PlayerStates.IS_DASHING;
+        if (IsOnWater) return PlayerStates.ON_WATER;
+        return PlayerStates.ON_SAND;
+    }
 
     public void SetStunned(bool stunned)
     {
