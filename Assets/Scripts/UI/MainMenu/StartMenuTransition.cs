@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class StartMenuTransition : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class StartMenuTransition : MonoBehaviour
     [SerializeField] private RectTransform _targetRect;
     [SerializeField] private RectTransform _startRect;
     [SerializeField] private float _Duration = 0.5f;
+
+    [Header("Colors")]
+    [SerializeField] private Image _fishes;
+    [SerializeField] private Color _startColor;
+    [SerializeField] private Color _endColor;
 
     private void Start()
     {
@@ -36,6 +42,9 @@ public class StartMenuTransition : MonoBehaviour
 
         _nextMenuCanvasGroup.alpha = 0f;
         _nextMenuCanvasGroup.DOFade(1, _Duration).OnComplete(OnToTweenComplete);
+
+        _fishes.DOColor(_endColor, _Duration);
+
         _nextMenu.SetActive(true);
     }
 
@@ -56,6 +65,8 @@ public class StartMenuTransition : MonoBehaviour
         _titleRect.DOSizeDelta(_startRect.sizeDelta, _Duration).SetEase(Ease.OutSine);
 
         _nextMenuCanvasGroup.DOFade(0f, _Duration).OnComplete(OnFromTweenComplete);
+
+        _fishes.DOColor(_startColor, _Duration);
     }
 
     private void OnFromTweenComplete()
