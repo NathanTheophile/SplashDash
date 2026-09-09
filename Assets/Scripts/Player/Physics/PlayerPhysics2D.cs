@@ -24,7 +24,7 @@ public class PlayerPhysics2D : MonoBehaviour
         {
             foreach (var overlap in activeWaterOverlaps)
             {
-                if (overlap.Key == null || !overlap.Key.isActiveAndEnabled) continue;
+                if (overlap.Key == null) continue;
                 if (overlap.Value != null && _TrailEmitter != null && _TrailEmitter.IsRecentTrail(overlap.Value))
                     continue;
                 return true;

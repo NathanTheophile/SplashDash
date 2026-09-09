@@ -18,6 +18,8 @@ public class TrailManager : MonoBehaviour
     #region _________________________/ TUNING VALUES
     [SerializeField, Min(0.05f)] private float _WaterTrailSpacing = 0.2f;
 
+    public float WaterTrailSpacing => _WaterTrailSpacing;
+
     #endregion
 
     #region _________________________/ RUNTIME VALUES
@@ -26,20 +28,11 @@ public class TrailManager : MonoBehaviour
 
     #endregion
 
-    public void CreateWaterTrail(Vector2 pStart, Vector2 pEnd, PlayerTrailEmitter owner)
+    public void CreateWaterTrail(Vector2 pPosition, PlayerTrailEmitter pOwner)
     {
-        Vector2 lOffset = pEnd - pStart;
-        float lDistance = lOffset.magnitude;
-        int lCount = Mathf.Max(1, Mathf.CeilToInt(lDistance / _WaterTrailSpacing));
-        Vector2 lDirection = lDistance > Mathf.Epsilon ? lOffset / lDistance : Vector2.zero;
-
-        for (int i = 0; i < lCount; i++)
-        {
-            Vector2 lPosition = pStart + lDirection * (i * _WaterTrailSpacing);
-            WaterTrail lTrail = Instantiate(_WaterTrailPrefab, lPosition, Quaternion.identity, transform);
-            _Trails.Add(lTrail.gameObject);
-            if (owner != null) owner.RememberTrail(lTrail);
-        }
+        WaterTrail lTrail = Instantiate(_WaterTrailPrefab, pPosition, Quaternion.identity, transform);
+        _Trails.Add(lTrail.gameObject);
+        if (pOwner != null) pOwner.RememberTrail(lTrail);
     }
 
     public DashTrail CreateDashTrail(Vector2 pPosition, Vector2 pDirection)

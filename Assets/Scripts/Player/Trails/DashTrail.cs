@@ -56,7 +56,7 @@ public class DashTrail : MonoBehaviour
 
         while (transform.childCount < lSquareCount - 1)
         {
-            GameObject lSquare = new($"Square {transform.childCount}");
+            GameObject lSquare = new GameObject($"Square {transform.childCount}");
             lSquare.transform.SetParent(transform, false);
 
             BoxCollider2D lCollider = lSquare.AddComponent<BoxCollider2D>();
