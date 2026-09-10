@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 87181b427c9ae084f9240419606f24e4
+guid: aeedfbd6836e1794ea4ca90e9991bbbe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2577389936887876244
-    second: CADRE_3_0
+      213: -2210369649325372315
+    second: FISH_PURPLE 1 CORP_0
+  - first:
+      213: 2365884469047795901
+    second: FISH_PURPLE 1 CORP_1
+  - first:
+      213: 9014449477973380893
+    second: FISH_PURPLE 1 CORP_2
+  - first:
+      213: -45076954695046747
+    second: FISH_PURPLE 1 CORP_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CADRE_3_0
+      name: FISH_PURPLE 1 CORP_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
-        width: 599
-        height: 480
+        x: 105
+        y: 0
+        width: 622
+        height: 974
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 49a4ed3fd7ab4c320800000000000000
-      internalID: 2577389936887876244
+      spriteID: db0253db36f45d020800000000000000
+      internalID: 2365884469047795901
       vertices: []
       indices: 
       edges: []
@@ -138,7 +147,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 415f92cf2c919e04da1068c6a9f05833
+    spriteID: 54c745c4032be244c9a62c37c84c5e62
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +157,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CADRE_3_0: 2577389936887876244
+      FISH_PURPLE 1 CORP_0: -2210369649325372315
+      FISH_PURPLE 1 CORP_1: 2365884469047795901
+      FISH_PURPLE 1 CORP_2: 9014449477973380893
+      FISH_PURPLE 1 CORP_3: -45076954695046747
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

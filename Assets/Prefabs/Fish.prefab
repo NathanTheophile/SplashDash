@@ -395,7 +395,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   _PlayerBody: {fileID: 4672222769856324405}
-  _Player: {fileID: 6311009766436739871}
+  _Fish: {fileID: 0}
+  _CurrentForce: 2.5
+  _MinChargeSpeed: 0
 --- !u!114 &2837732270015303134
 MonoBehaviour:
   m_ObjectHideFlags: 0
