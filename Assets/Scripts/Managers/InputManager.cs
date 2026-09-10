@@ -59,13 +59,12 @@ public class InputManager : MonoBehaviour
 
     private PlayerInput AddPlayer(string pControlScheme, InputDevice pDeviceToPair)
     {
-        Debug.Log("JE SPAWN");
         _devicesConnected[_manager.playerCount] = pDeviceToPair;
         PlayerManager.Instance.OnJoin(_manager.playerCount);
 
         PlayerInput lNewPlayer = PlayerInput.Instantiate(_playerPrefab, controlScheme: pControlScheme, pairWithDevice: pDeviceToPair);
         Fish lFish = lNewPlayer.GetComponent<Fish>();
-        lFish.FishIndex = _manager.playerCount;
+        lFish.FishIndex = _manager.playerCount -1;
 
         return lNewPlayer;
     }
