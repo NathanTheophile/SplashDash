@@ -11,6 +11,7 @@ public class FishAnimator : MonoBehaviour
     [SerializeField] private SpriteShaker _shaker;
 
     [SerializeField] private PlayersSpritesColorsSO _spritesColors;
+    [SerializeField] private ParticleSystem.EmissionModule _emissionModule;
 
     public void SetStunned()
     {
@@ -27,11 +28,14 @@ public class FishAnimator : MonoBehaviour
         {
             _shaker.ResetShake();
             _shaker.enabled = false;
+            _emissionModule.enabled = false;
             return;
         }
 
         _shaker.enabled = true;
         _shaker.SetShake(ratio);
+
+        if(ratio == 1) _emissionModule.enabled = true;
     }
 
     public void SetSpeed(float speed, float multiplier)

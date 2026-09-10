@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 82e5d5c17cbbb0b48a45bc244b61f4d3
+guid: 0d500fb80a325734e96b03aa40a557f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2652330718583189507
-    second: FISH_ORANGE CORP_0
+      213: -4458542559368810680
+    second: Power_Stacking_Effect_0
   - first:
-      213: -9087140635422058068
-    second: FISH_ORANGE CORP_1
+      213: -7242276730494012205
+    second: Power_Stacking_Effect_1
   - first:
-      213: 8981708133770407344
-    second: FISH_ORANGE CORP_2
+      213: -5863138005763524072
+    second: Power_Stacking_Effect_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +54,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -119,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FISH_ORANGE CORP_0
+      name: Power_Stacking_Effect_0
       rect:
         serializedVersion: 2
-        x: 106
-        y: 0
-        width: 624
-        height: 974
+        x: 625
+        y: 338
+        width: 771
+        height: 1192
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,8 +134,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dff0efb9347013bd0800000000000000
-      internalID: -2652330718583189507
+      spriteID: 84f6cd42a231022c0800000000000000
+      internalID: -4458542559368810680
       vertices: []
       indices: 
       edges: []
@@ -144,7 +144,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e952cb07231e382458b84304dd8a7175
+    spriteID: 6af4409d2b1013b48b5d8f1e3b1ce20a
     internalID: 0
     vertices: []
     indices: 
@@ -154,9 +154,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FISH_ORANGE CORP_0: -2652330718583189507
-      FISH_ORANGE CORP_1: -9087140635422058068
-      FISH_ORANGE CORP_2: 8981708133770407344
+      Power_Stacking_Effect_0: -4458542559368810680
+      Power_Stacking_Effect_1: -7242276730494012205
+      Power_Stacking_Effect_2: -5863138005763524072
+      Power_Stacking_Effect_3: 1287930450
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
