@@ -116,8 +116,8 @@ public class PlayerPhysics2D : MonoBehaviour
         if (otherFish != null)
         {
             _LastEnemyIndex = otherFish.FishIndex;
-            if (!_Fish.IsDashing)
-                _Fish.Stun();
+            if (_Fish.IsDashing)
+                otherFish.Stun();
 
             return;
         }
