@@ -31,16 +31,14 @@ public class BigWaveTransition : MonoBehaviour
     private RectTransform _transform;
 
     public UnityEvent OnAnimationHalfed;
+    public UnityEvent OnCanvasFade;
 
     private void Start()
     {
         _transform = GetComponent<RectTransform>();
     }
 
-    public void ResetWave()
-    {
-        _transform.anchoredPosition = _startPointWave.anchoredPosition;
-    }
+
 
     public void DoTransition()
     {
@@ -52,9 +50,16 @@ public class BigWaveTransition : MonoBehaviour
         StartCoroutine(FinishTransitionCoroutine());
     }
 
+    private void ResetWave()
+    {
+        _transform.anchoredPosition = _startPointWave.anchoredPosition;
+    }
+
     private IEnumerator DoFade()
     {
         _NextBG.gameObject.SetActive(true);
+
+        OnCanvasFade?.Invoke();
 
         float elapsedTime = 0f;
 
@@ -110,8 +115,6 @@ public class BigWaveTransition : MonoBehaviour
             float ratio = _endCurve.Evaluate(elapsedTime / _finalTime);
 
             float yPos = Mathf.Lerp(_startPointBG.anchoredPosition.y, _endPointBG.anchoredPosition.y, ratio);
-
-            Debug.Log((Mathf.Cos(ratio * _frequency) + 1) * 0.5f);
 
             float xPos = _startPointBG.anchoredPosition.x + (Mathf.Cos(ratio * _frequency) * -1 + 1) * 0.5f * _heigth;
 

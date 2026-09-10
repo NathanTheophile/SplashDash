@@ -19,7 +19,9 @@ public class VisualPodiumPlayer : MonoBehaviour
         bool isEmpty = _skinMixer.data.Length == 0;
         if (isEmpty) return;
 
-        var mixer = _skinMixer.data[id ^ _skinMixer.data.Length];
+        var player = PlayerManager.Instance.GetPlayerByID(id);
+
+        var mixer = _skinMixer.data[player.SkinID];
         _image.sprite = mixer.sprites;
     }
 }
