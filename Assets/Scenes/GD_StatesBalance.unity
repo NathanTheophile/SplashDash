@@ -1897,7 +1897,6 @@ GameObject:
   - component: {fileID: 538461804}
   - component: {fileID: 538461807}
   - component: {fileID: 538461806}
-  - component: {fileID: 538461805}
   m_Layer: 0
   m_Name: Deadzone (1)
   m_TagString: Deadzone
@@ -1920,20 +1919,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2087712358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &538461805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 538461803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8510e3e567829b9498d4b77da9014bf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DebugDeadzone
-  spawnPoint: {fileID: 679837798}
-  fishprefab: {fileID: 6311009766436739871, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
 --- !u!61 &538461806
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4211,7 +4196,6 @@ GameObject:
   - component: {fileID: 1166078371}
   - component: {fileID: 1166078374}
   - component: {fileID: 1166078373}
-  - component: {fileID: 1166078372}
   m_Layer: 0
   m_Name: Deadzone (3)
   m_TagString: Deadzone
@@ -4234,20 +4218,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2087712358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1166078372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1166078370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8510e3e567829b9498d4b77da9014bf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DebugDeadzone
-  spawnPoint: {fileID: 679837798}
-  fishprefab: {fileID: 6311009766436739871, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
 --- !u!61 &1166078373
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5493,7 +5463,6 @@ GameObject:
   - component: {fileID: 1385210173}
   - component: {fileID: 1385210176}
   - component: {fileID: 1385210175}
-  - component: {fileID: 1385210174}
   m_Layer: 0
   m_Name: Deadzone
   m_TagString: Deadzone
@@ -5516,20 +5485,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2087712358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1385210174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385210172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8510e3e567829b9498d4b77da9014bf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DebugDeadzone
-  spawnPoint: {fileID: 679837798}
-  fishprefab: {fileID: 6311009766436739871, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
 --- !u!61 &1385210175
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6198,7 +6153,6 @@ GameObject:
   - component: {fileID: 1439534555}
   - component: {fileID: 1439534558}
   - component: {fileID: 1439534557}
-  - component: {fileID: 1439534556}
   m_Layer: 0
   m_Name: Deadzone (2)
   m_TagString: Deadzone
@@ -6221,20 +6175,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2087712358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1439534556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439534554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8510e3e567829b9498d4b77da9014bf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DebugDeadzone
-  spawnPoint: {fileID: 679837798}
-  fishprefab: {fileID: 6311009766436739871, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
 --- !u!61 &1439534557
 BoxCollider2D:
   m_ObjectHideFlags: 0
