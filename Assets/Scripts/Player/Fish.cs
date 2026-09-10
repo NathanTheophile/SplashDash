@@ -110,9 +110,11 @@ public class Fish : MonoBehaviour
     private void Update()
     {
         _PlayerMovementSystem.SetMoveInput(_MoveDirection);
-        _PlayerAnimator.SetSpeed(CurrentStats.moveSpeed * _MoveDirection.magnitude, 1f);
+        float moveSpeed = CurrentStats.moveSpeed * _MoveDirection.magnitude;
 
-        if (CurrentStats.moveSpeed > _SpeedUntilTraceSound)
+        _PlayerAnimator.SetSpeed(moveSpeed, 1f);
+
+        if (moveSpeed> _SpeedUntilTraceSound)
         {
             if (!_StudioEventEmitter.IsPlaying())
                 _StudioEventEmitter.Play();
