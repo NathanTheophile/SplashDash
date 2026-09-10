@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{55211123-924d-4bd8-8e64-10bffacba6d2}">
+		<property name="assetPath">
+			<value>Anne de Bretagne_Danse.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>17.65625</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{18e71b30-c6cd-4afb-b1ac-b1dffd1a25fe}</destination>
+		</relationship>
+	</object>
+</objects>
