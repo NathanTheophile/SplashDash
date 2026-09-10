@@ -5761,7 +5761,7 @@ MonoBehaviour:
   _Surface: {fileID: 484141998703053973, guid: 4f660419c1d83194d97d3f62f81edc16, type: 3}
   _Mask: {fileID: 8400000, guid: fd66329ee8c887a4fad2e56a0b97c2a2, type: 2}
   _BrushMaterial: {fileID: 2100000, guid: 048c31466a889104ea7feac03733f87e, type: 2}
-  _BrushSize: 0.015
+  _BrushSize: 0.0225
   _Fish: {fileID: 5643284702579448360}
 --- !u!114 &3367282043427780237
 MonoBehaviour:

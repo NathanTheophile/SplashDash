@@ -81,8 +81,13 @@ public class DashTrail : MonoBehaviour
         lRenderer.color = _VisualRenderer.color;
         lRenderer.flipX = _VisualRenderer.flipX;
         lRenderer.flipY = _VisualRenderer.flipY;
-        lRenderer.drawMode = _VisualRenderer.drawMode;
-        lRenderer.size = _VisualRenderer.size;
+        lRenderer.drawMode = SpriteDrawMode.Simple;
+        lRenderer.transform.rotation = transform.rotation * Quaternion.Euler(0f, 0f, 90f);
+        Vector2 lSpriteSize = _VisualRenderer.sprite.bounds.size;
+        lRenderer.transform.localScale = new Vector3(
+            _SquareSize / lSpriteSize.x,
+            _SquareSize / lSpriteSize.y,
+            1f);
         lRenderer.maskInteraction = _VisualRenderer.maskInteraction;
         lRenderer.sortingLayerID = _VisualRenderer.sortingLayerID;
         lRenderer.sortingOrder = _VisualRenderer.sortingOrder;
