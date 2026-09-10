@@ -57,19 +57,17 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    private PlayerInput AddPlayer(string pControlScheme, InputDevice pDeviceToPair)
+    private void AddPlayer(string pControlScheme, InputDevice pDeviceToPair)
     {
         _devicesConnected[_manager.playerCount] = pDeviceToPair;
         PlayerManager.Instance.OnJoin(_manager.playerCount);
 
         PlayerInput lNewPlayer = PlayerInput.Instantiate(_playerPrefab, controlScheme: pControlScheme, pairWithDevice: pDeviceToPair);
         Fish lFish = lNewPlayer.GetComponent<Fish>();
-        lFish.FishIndex = _manager.playerCount -1;
+        lFish.SetFishIndex(_manager.playerCount - 1);
 
 
         PlayerManager.Instance.AddPlayerCharacter(lNewPlayer.transform);
-
-        return lNewPlayer;
     }
 
     private bool PlayersAvailable() => _manager.playerCount < _manager.maxPlayerCount;
