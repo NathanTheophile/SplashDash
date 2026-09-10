@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 29f977766c72bc241b781c26c0b73587
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9159755036262327053
+    second: imazaeaezaezaezge_0
+  - first:
+      213: 790275970790372732
+    second: imazaeaezaezaezge_1
+  - first:
+      213: -2212230830670542823
+    second: imazaeaezaezaezge_2
+  - first:
+      213: 3719125132282540379
+    second: imazaeaezaezaezge_3
+  - first:
+      213: 8468011129859505337
+    second: imazaeaezaezaezge_4
+  - first:
+      213: -3947509836188653056
+    second: imazaeaezaezaezge_5
+  - first:
+      213: 5348913356111806458
+    second: imazaeaezaezaezge_6
+  - first:
+      213: -7874038314760335353
+    second: imazaeaezaezaezge_7
+  - first:
+      213: -8614244089556940639
+    second: imazaeaezaezaezge_8
+  - first:
+      213: 6571991458291433988
+    second: imazaeaezaezaezge_9
+  - first:
+      213: -2067309268832907323
+    second: imazaeaezaezaezge_10
+  - first:
+      213: 7245102498219663966
+    second: imazaeaezaezaezge_11
+  - first:
+      213: -3474040542253937588
+    second: imazaeaezaezaezge_12
+  - first:
+      213: 8242321363277491643
+    second: imazaeaezaezaezge_13
+  - first:
+      213: 8145706275065780617
+    second: imazaeaezaezaezge_14
+  - first:
+      213: 3074148569159326427
+    second: imazaeaezaezaezge_15
+  - first:
+      213: 9015623522522564184
+    second: imazaeaezaezaezge_16
+  - first:
+      213: -1513707914629894717
+    second: imazaeaezaezaezge_17
+  - first:
+      213: 8436225036864916040
+    second: imazaeaezaezaezge_18
+  - first:
+      213: -8374976534827963432
+    second: imazaeaezaezaezge_19
+  - first:
+      213: 6051894889789978468
+    second: imazaeaezaezaezge_20
+  - first:
+      213: 2007703721047164326
+    second: imazaeaezaezaezge_21
+  - first:
+      213: 7938315349053061602
+    second: imazaeaezaezaezge_22
+  - first:
+      213: 1764800661578388037
+    second: imazaeaezaezaezge_23
+  - first:
+      213: 983919081446873509
+    second: imazaeaezaezaezge_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 815
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d03e20eccacfd1f70800000000000000
+      internalID: 9159755036262327053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 559
+        width: 263
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c75bc71fecf97fa00800000000000000
+      internalID: 790275970790372732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_2
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 559
+        width: 263
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91807b8c7c39c41e0800000000000000
+      internalID: -2212230830670542823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_3
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 815
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b51bde06a9cfc9330800000000000000
+      internalID: 3719125132282540379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 753
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bc7455d14b648570800000000000000
+      internalID: 8468011129859505337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_5
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 753
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a6d9208b0a739c0800000000000000
+      internalID: -3947509836188653056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_6
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 713
+        width: 35
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afff26d8b582b3a40800000000000000
+      internalID: 5348913356111806458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_7
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 713
+        width: 35
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70015e40fdbc9b290800000000000000
+      internalID: -7874038314760335353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 600
+        width: 93
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a8437904ae047880800000000000000
+      internalID: -8614244089556940639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_9
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 422
+        width: 465
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 402cc525967643b50800000000000000
+      internalID: 6571991458291433988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_10
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 600
+        width: 93
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cf875e4c217f43e0800000000000000
+      internalID: -2067309268832907323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_11
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 451
+        width: 117
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e52adaff556cb8460800000000000000
+      internalID: 7245102498219663966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_12
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 230
+        width: 439
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4c06a7788ab9cfc0800000000000000
+      internalID: -3474040542253937588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_13
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 451
+        width: 117
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbda4c63c9b926270800000000000000
+      internalID: 8242321363277491643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_14
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 374
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98957f903bc5b0170800000000000000
+      internalID: 8145706275065780617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_15
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 132
+        width: 527
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bda548b06d199aa20800000000000000
+      internalID: 3074148569159326427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_16
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 374
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8560d90b3dded1d70800000000000000
+      internalID: 9015623522522564184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_17
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 277
+        width: 86
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cda9ceebaa3efae0800000000000000
+      internalID: -1513707914629894717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_18
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 277
+        width: 86
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84a079759fd731570800000000000000
+      internalID: 8436225036864916040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_19
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 207
+        width: 84
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dbe85fc63b16cb80800000000000000
+      internalID: -8374976534827963432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_20
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 82
+        width: 389
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 467fee38656acf350800000000000000
+      internalID: 6051894889789978468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_21
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 207
+        width: 84
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a50f33a5ebccdb10800000000000000
+      internalID: 2007703721047164326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_22
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 0
+        width: 227
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e9b65f30cf8a2e60800000000000000
+      internalID: 7938315349053061602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_23
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 48
+        width: 341
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54211c4f9d4dd7810800000000000000
+      internalID: 1764800661578388037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imazaeaezaezaezge_24
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 0
+        width: 227
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a99e59013597ad00800000000000000
+      internalID: 983919081446873509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      imazaeaezaezaezge_0: 9159755036262327053
+      imazaeaezaezaezge_1: 790275970790372732
+      imazaeaezaezaezge_10: -2067309268832907323
+      imazaeaezaezaezge_11: 7245102498219663966
+      imazaeaezaezaezge_12: -3474040542253937588
+      imazaeaezaezaezge_13: 8242321363277491643
+      imazaeaezaezaezge_14: 8145706275065780617
+      imazaeaezaezaezge_15: 3074148569159326427
+      imazaeaezaezaezge_16: 9015623522522564184
+      imazaeaezaezaezge_17: -1513707914629894717
+      imazaeaezaezaezge_18: 8436225036864916040
+      imazaeaezaezaezge_19: -8374976534827963432
+      imazaeaezaezaezge_2: -2212230830670542823
+      imazaeaezaezaezge_20: 6051894889789978468
+      imazaeaezaezaezge_21: 2007703721047164326
+      imazaeaezaezaezge_22: 7938315349053061602
+      imazaeaezaezaezge_23: 1764800661578388037
+      imazaeaezaezaezge_24: 983919081446873509
+      imazaeaezaezaezge_3: 3719125132282540379
+      imazaeaezaezaezge_4: 8468011129859505337
+      imazaeaezaezaezge_5: -3947509836188653056
+      imazaeaezaezaezge_6: 5348913356111806458
+      imazaeaezaezaezge_7: -7874038314760335353
+      imazaeaezaezaezge_8: -8614244089556940639
+      imazaeaezaezaezge_9: 6571991458291433988
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
