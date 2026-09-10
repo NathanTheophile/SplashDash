@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
         {
             orderedScores = new PlayerScore[4]
         };
+
+        Fish.OnPlayerDeath += OnPlayerDeath;
     }
 
     public void ResetManager()

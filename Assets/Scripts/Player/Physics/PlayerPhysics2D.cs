@@ -26,7 +26,8 @@ public class PlayerPhysics2D : MonoBehaviour
     public Vector2 CurrentDirection => GetCurrentDirection();
     public bool IsInDeadzone => _DeadzoneContacts.Count > 0;
     public float DeadzoneRatio => Mathf.Clamp01(_DeadzoneTimer / _DeadzoneDuration);
-    public event Action OnDeadzoneExpired;
+    public event Action OnPlayerDied;
+    private int _LastEnemyIndex = -1;
 
     #endregion
 
@@ -39,7 +40,7 @@ public class PlayerPhysics2D : MonoBehaviour
     #region _________________________/ RUNTIME VALUES
 
     private float _DeadzoneTimer;
-    private bool _IsEliminated;
+    private bool _IsDead;
 
     #endregion
 
@@ -53,11 +54,11 @@ public class PlayerPhysics2D : MonoBehaviour
 
     private void Update()
     {
-        if (!IsInDeadzone || _IsEliminated) return;
+        if (!IsInDeadzone || _IsDead) return;
 
         _DeadzoneTimer += Time.deltaTime;
         if (_DeadzoneTimer >= _DeadzoneDuration)
-            Eliminate();
+            Kill();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -115,6 +116,7 @@ public class PlayerPhysics2D : MonoBehaviour
         Fish otherFish = collision.collider.GetComponentInParent<Fish>();
         if (otherFish != null)
         {
+            _LastEnemyIndex = otherFish.FishIndex;
             if (!_Fish.IsDashing)
                 _Fish.Stun();
 
@@ -141,13 +143,12 @@ public class PlayerPhysics2D : MonoBehaviour
         _DeadzoneTimer = 0f;
     }
 
-    private void Eliminate()
+    private void Kill()
     {
-        if (_IsEliminated) return;
+        if (_IsDead) return;
 
-        _IsEliminated = true;
-        OnDeadzoneExpired?.Invoke();
-        Destroy(gameObject);
+        _IsDead = true;
+        _Fish.PlayerDeath(_LastEnemyIndex);
     }
 
     private bool HasWaterOverlap()
