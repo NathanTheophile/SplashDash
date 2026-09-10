@@ -37,6 +37,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTexture:
         m_Texture: {fileID: 8400000, guid: fd66329ee8c887a4fad2e56a0b97c2a2, type: 2}
         m_Scale: {x: 1, y: 1}
@@ -55,10 +59,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BrushSize: 0.02
+    - _BrushSize: 0.01
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _BrushPosition: {r: 0.35630995, g: 0.6055439, b: 0, a: 0}
+    - _BrushPosition: {r: 0.5999434, g: 0.82198894, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

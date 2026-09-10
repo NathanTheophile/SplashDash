@@ -35,6 +35,8 @@ public class ControllerSelectionTransition : MonoBehaviour
         _title.DoTweenTo(_Duration);
         _currentMenu.DoTweenTo(_Duration);
         _mainButtons.DoTweenTo(_Duration);
+
+        InputManager.Instance.EnableDeviceConnection(true);
     }
 
     private void OnToTweenComplete()
@@ -59,6 +61,9 @@ public class ControllerSelectionTransition : MonoBehaviour
         _title.DoTweenFrom(_Duration);
         _currentMenu.DoTweenFrom(_Duration);
         _mainButtons.DoTweenFrom(_Duration);
+
+        InputManager.Instance.EnableDeviceConnection(false);
+        InputManager.Instance.DisconnectAllDevices();
     }
 
     private void OnFromTweenComplete()

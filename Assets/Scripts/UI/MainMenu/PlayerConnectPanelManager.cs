@@ -10,6 +10,18 @@ public class PlayerConnectPanelManager : MonoBehaviour
 
     private PlayerManager _manager;
 
+    public static PlayerConnectPanelManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(this);
+            return;
+        }
+        Instance = this;
+    }
+
     private void Start()
     {
         _manager = PlayerManager.Instance;

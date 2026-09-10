@@ -23,12 +23,14 @@ public class PlayerConnectPanel : MonoBehaviour
     public void SetPanel(int id, InputMode usedInput)
     {
         _skinMixer.gameObject.SetActive(true);
-        _text.text = $"Player {id}";
+        _text.text = $"Player {id + 1}";
 
         var currentsprite = usedInput == 0 ? _keyboardSprite : _controllerSprite;
         _usedInputImage.sprite = currentsprite;
 
-        _skinMixer.SetIdImages(id);
+        var player = PlayerManager.Instance.GetPlayerByID(id);
+
+        _skinMixer.SetIdImages(player.SkinID);
     }
 
     public void RemovePanel()

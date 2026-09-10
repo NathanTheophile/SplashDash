@@ -49,5 +49,14 @@ TagManager:
   - name: Fish
     uniqueID: 2022581909
     locked: 0
+  - name: New Layer 2
+    uniqueID: 4141572815
+    locked: 0
+  - name: New Layer 3
+    uniqueID: 3863671479
+    locked: 0
+  - name: New Layer 4
+    uniqueID: 4068447593
+    locked: 0
   m_RenderingLayers:
   - Default
