@@ -4,6 +4,7 @@
 //  Note : MY_CONST, myPublic, m_MyProtected, _MyPrivate, lMyLocal, MyFunc(), pMyParam, onMyCallback, MyStruct
 #endregion
 
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,6 +17,8 @@ public class Fish : MonoBehaviour
     [SerializeField] private PlayerPhysics2D _PlayerPhysicsSystem;
     [SerializeField] private PlayerPhysicsStates _PlayerPhysicsStates;
     [SerializeField, Min(0.01f)] private float _StunDuration = 0.5f;
+
+    public int FishIndex;
 
     #endregion
 
@@ -30,20 +33,15 @@ public class Fish : MonoBehaviour
                     
     public PlayerStats CurrentStats => GetStats(State);
 
+    public static event Action<int,int> OnPlayerDeath;
+
     #endregion
 
     #region _________________________| INIT
 
     private void Awake()
     {
-        if (_PlayerMovementSystem == null)
-            _PlayerMovementSystem = GetComponent<PlayerMovement>();
 
-        if (_PlayerDashSystem == null)
-            _PlayerDashSystem = GetComponent<PlayerDash>();
-
-        if (_PlayerPhysicsSystem == null)
-            _PlayerPhysicsSystem = GetComponent<PlayerPhysics2D>();
     }
 
     public PlayerStats GetStats(PlayerStates state) => _PlayerPhysicsStates.GetStats(state);
@@ -83,6 +81,8 @@ public class Fish : MonoBehaviour
         _StunRoutine = null;
     }
 
+    public void PlayerDeath(int pKillerIndex) => OnPlayerDeath.Invoke(FishIndex, pKillerIndex);
+
     #endregion
 
     #region _________________________| UNITY
@@ -92,6 +92,7 @@ public class Fish : MonoBehaviour
     private void Update()
     {
         _PlayerMovementSystem.SetMoveInput(_MoveDirection);
+        Destroy(gameObject);
     }
 
     #endregion
