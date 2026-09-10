@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: -1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -921960400615412694, guid: a4038ac64d83d9f43bbd17b0d5057c60, type: 3}
+  m_Sprite: {fileID: -6671622877007384511, guid: 99aecb28166f65c4f8820f2200875ae0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,7 +117,7 @@ Transform:
   m_GameObject: {fileID: 5428232316125521636}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.11056319, w: 0.99386907}
-  m_LocalPosition: {x: -1.53, y: 2.49, z: 0}
+  m_LocalPosition: {x: -1.87, y: 2.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -375,7 +375,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: -1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -921960400615412694, guid: a4038ac64d83d9f43bbd17b0d5057c60, type: 3}
+  m_Sprite: {fileID: -6671622877007384511, guid: 99aecb28166f65c4f8820f2200875ae0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -444,7 +444,7 @@ PrefabInstance:
     - target: {fileID: 7284374346622883233, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2743471845412515474, guid: 1c536090d12d1b84f84fc4b231f8f1d3, type: 3}
+      objectReference: {fileID: -3385697709193310673, guid: a506de2be6d84464099606f5665dddb4, type: 3}
     - target: {fileID: 7284374346622883233, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
       propertyPath: m_DrawMode
       value: 1
@@ -518,6 +518,7 @@ MonoBehaviour:
   _finLeft: {fileID: 4745363472758432198}
   _finRight: {fileID: 8522793898786239419}
   _body: {fileID: 5461292138112841113}
+  _shaker: {fileID: 0}
   _spritesColors: {fileID: 11400000, guid: 78709e07acfe52a4ba16329923abf9ac, type: 2}
 --- !u!114 &1689214858901213172
 MonoBehaviour:
@@ -531,9 +532,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fa6d2a64107ab4ea9160bf76865c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  intensity: 1
-  speed: 20
-  distance: 0.2
+  _intensity: 0
+  _speed: 20
+  _distance: 0.2
 --- !u!1 &8940675264686281131 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5966859751823962515, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
