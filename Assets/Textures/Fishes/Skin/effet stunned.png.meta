@@ -1,10 +1,43 @@
 fileFormatVersion: 2
-guid: 87181b427c9ae084f9240419606f24e4
+guid: d28642d067d3f6e4b90cdbff22608190
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2577389936887876244
-    second: CADRE_3_0
+      213: -2211610269356123868
+    second: effet stunned_0
+  - first:
+      213: -5615445063094612085
+    second: effet stunned_1
+  - first:
+      213: -4506571661655893079
+    second: effet stunned_2
+  - first:
+      213: 5255980944390311029
+    second: effet stunned_3
+  - first:
+      213: -3600626304504991505
+    second: effet stunned_4
+  - first:
+      213: -8585717107495114920
+    second: effet stunned_5
+  - first:
+      213: 5097056547755432014
+    second: effet stunned_6
+  - first:
+      213: 3787115154780387875
+    second: effet stunned_7
+  - first:
+      213: 2123719921990112439
+    second: effet stunned_8
+  - first:
+      213: -8656486875485420711
+    second: effet stunned_9
+  - first:
+      213: 5340072918843004201
+    second: effet stunned_10
+  - first:
+      213: -6626448800681629232
+    second: effet stunned_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +146,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CADRE_3_0
+      name: effet stunned_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
-        width: 599
-        height: 480
+        x: 783
+        y: 1207
+        width: 511
+        height: 499
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 49a4ed3fd7ab4c320800000000000000
-      internalID: 2577389936887876244
+      spriteID: 4291c697d28ce41e0800000000000000
+      internalID: -2211610269356123868
       vertices: []
       indices: 
       edges: []
@@ -138,7 +171,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 415f92cf2c919e04da1068c6a9f05833
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +181,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CADRE_3_0: 2577389936887876244
+      effet stunned_0: -2211610269356123868
+      effet stunned_1: -5615445063094612085
+      effet stunned_10: 5340072918843004201
+      effet stunned_11: -6626448800681629232
+      effet stunned_12: -312164818
+      effet stunned_2: -4506571661655893079
+      effet stunned_3: 5255980944390311029
+      effet stunned_4: -3600626304504991505
+      effet stunned_5: -8585717107495114920
+      effet stunned_6: 5097056547755432014
+      effet stunned_7: 3787115154780387875
+      effet stunned_8: 2123719921990112439
+      effet stunned_9: -8656486875485420711
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 87181b427c9ae084f9240419606f24e4
+guid: 82e5d5c17cbbb0b48a45bc244b61f4d3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2577389936887876244
-    second: CADRE_3_0
+      213: -2652330718583189507
+    second: FISH_ORANGE CORP_0
+  - first:
+      213: -9087140635422058068
+    second: FISH_ORANGE CORP_1
+  - first:
+      213: 8981708133770407344
+    second: FISH_ORANGE CORP_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +54,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CADRE_3_0
+      name: FISH_ORANGE CORP_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
-        width: 599
-        height: 480
+        x: 106
+        y: 0
+        width: 624
+        height: 974
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 49a4ed3fd7ab4c320800000000000000
-      internalID: 2577389936887876244
+      spriteID: dff0efb9347013bd0800000000000000
+      internalID: -2652330718583189507
       vertices: []
       indices: 
       edges: []
@@ -138,7 +144,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 415f92cf2c919e04da1068c6a9f05833
+    spriteID: e952cb07231e382458b84304dd8a7175
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +154,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CADRE_3_0: 2577389936887876244
+      FISH_ORANGE CORP_0: -2652330718583189507
+      FISH_ORANGE CORP_1: -9087140635422058068
+      FISH_ORANGE CORP_2: 8981708133770407344
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

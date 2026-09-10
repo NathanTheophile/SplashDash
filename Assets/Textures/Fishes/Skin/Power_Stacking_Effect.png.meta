@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 87181b427c9ae084f9240419606f24e4
+guid: 0d500fb80a325734e96b03aa40a557f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2577389936887876244
-    second: CADRE_3_0
+      213: -4458542559368810680
+    second: Power_Stacking_Effect_0
+  - first:
+      213: -7242276730494012205
+    second: Power_Stacking_Effect_1
+  - first:
+      213: -5863138005763524072
+    second: Power_Stacking_Effect_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CADRE_3_0
+      name: Power_Stacking_Effect_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
-        width: 599
-        height: 480
+        x: 625
+        y: 338
+        width: 771
+        height: 1192
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 49a4ed3fd7ab4c320800000000000000
-      internalID: 2577389936887876244
+      spriteID: 84f6cd42a231022c0800000000000000
+      internalID: -4458542559368810680
       vertices: []
       indices: 
       edges: []
@@ -138,7 +144,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 415f92cf2c919e04da1068c6a9f05833
+    spriteID: 6af4409d2b1013b48b5d8f1e3b1ce20a
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +154,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CADRE_3_0: 2577389936887876244
+      Power_Stacking_Effect_0: -4458542559368810680
+      Power_Stacking_Effect_1: -7242276730494012205
+      Power_Stacking_Effect_2: -5863138005763524072
+      Power_Stacking_Effect_3: 1287930450
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

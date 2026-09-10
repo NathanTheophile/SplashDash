@@ -64,7 +64,7 @@ public class InputManager : MonoBehaviour
 
         PlayerInput lNewPlayer = PlayerInput.Instantiate(_playerPrefab, controlScheme: pControlScheme, pairWithDevice: pDeviceToPair);
         Fish lFish = lNewPlayer.GetComponent<Fish>();
-        lFish.FishIndex = _manager.playerCount;
+        lFish.FishIndex = _manager.playerCount -1;
 
         PlayerManager.Instance.AddPlayerCharacter(lNewPlayer.transform);
 
