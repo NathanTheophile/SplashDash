@@ -5572,6 +5572,7 @@ GameObject:
   - component: {fileID: 3367282043427780237}
   - component: {fileID: 8209340178279447699}
   - component: {fileID: 4867126066945649648}
+  - component: {fileID: 4467384382953572344}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
@@ -5679,6 +5680,8 @@ MonoBehaviour:
   _PlayerPhysicsStates: {fileID: 11400000, guid: 3a83651dce2582e4f9ed3e0db42197ea, type: 2}
   _PlayerAnimator: {fileID: 4416675344350942089}
   _StunDuration: 2
+  _SpeedUntilTraceSound: 2
+  _StudioEventEmitter: {fileID: 4467384382953572344}
   FishIndex: 0
 --- !u!114 &49000998657234754
 MonoBehaviour:
@@ -10626,6 +10629,39 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &4467384382953572344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8940675264686281131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -348034018
+      Data2: 1268618278
+      Data3: 311484853
+      Data4: -1838680460
+    Path: event:/SFX/Trace
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: Surface
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &9137571107018438585
 GameObject:
   m_ObjectHideFlags: 0

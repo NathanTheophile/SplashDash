@@ -4,6 +4,7 @@
 //  Note : MY_CONST, myPublic, m_MyProtected, _MyPrivate, lMyLocal, MyFunc(), pMyParam, onMyCallback, MyStruct
 #endregion
 
+using FMODUnity;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -19,7 +20,10 @@ public class Fish : MonoBehaviour
     [SerializeField] private FishAnimator _PlayerAnimator;
     [SerializeField, Min(0.01f)] private float _StunDuration = 0.5f;
 
-    public int FishIndex;
+    [SerializeField] private float _SpeedUntilTraceSound = 2f;
+    [SerializeField] private StudioEventEmitter _StudioEventEmitter;
+
+    [HideInInspector] public int FishIndex;
 
     #endregion
 
@@ -59,9 +63,10 @@ public class Fish : MonoBehaviour
 
     public void SetStunned(bool stunned)
     {
+        RuntimeManager.PlayOneShot("event:/SFX/KO", transform.position);
         IsStunned = stunned;
         if (!stunned) return;
-        _PlayerAnimator.RemoveStun();
+        _PlayerAnimator.SetStunned();
         _PlayerDashSystem.CancelCharge();
         _PlayerMovementSystem.SetMoveInput(Vector2.zero);
     }
@@ -98,6 +103,31 @@ public class Fish : MonoBehaviour
     {
         _PlayerMovementSystem.SetMoveInput(_MoveDirection);
         _PlayerAnimator.SetSpeed(CurrentStats.moveSpeed * _MoveDirection.magnitude, 1f);
+
+        if (CurrentStats.moveSpeed > _SpeedUntilTraceSound)
+        {
+            if (!_StudioEventEmitter.IsPlaying())
+                _StudioEventEmitter.Play();
+
+            if(CurrentDirection.magnitude != 0)
+            {
+                _StudioEventEmitter.SetParameter("Surface", 2);
+            }
+            else if(State == PlayerStates.ON_WATER)
+            {
+                _StudioEventEmitter.SetParameter("Surface", 1);
+            }
+            else
+            {
+                _StudioEventEmitter.SetParameter("Surface", 0);
+            }
+
+        }
+        else
+        {
+            if (_StudioEventEmitter.IsPlaying())
+                _StudioEventEmitter.Stop();
+        }
     }
 
     #endregion

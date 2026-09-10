@@ -9,7 +9,7 @@ using UnityEngine;
 public class PlayerTrailEmitter : MonoBehaviour
 {
     #region _________________________/ REFERENCES
-    [SerializeField] private TrailManager _TrailManager;
+    private TrailManager _TrailManager;
     [SerializeField] private Fish _Fish;
     [SerializeField] private PlayerPhysics2D _PlayerPhysicsSystem;
 
