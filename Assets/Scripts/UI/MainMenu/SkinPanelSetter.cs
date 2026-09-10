@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,7 @@ public class SkinPanelSetter : MonoBehaviour
 {
     [SerializeField] private Image _bgImage;
     [SerializeField] private Image _bg;
+    [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private Image _image;
 
     [SerializeField] private PlayersSpritesColorsSO _skinMixer;
@@ -17,8 +19,9 @@ public class SkinPanelSetter : MonoBehaviour
 
         var mixer = _skinMixer.data[id^_skinMixer.data.Length];
 
-        _bgImage.color = mixer.mainBGColor;
-        _bg.color = mixer.lightBGColor;
+        _bgImage.color = mixer.lightBGColor;
+        _bg.color = mixer.mainBGColor;
+        _text.color = mixer.mainBGColor;
         _image.sprite = mixer.sprites;
     }
 }

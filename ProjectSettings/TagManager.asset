@@ -8,6 +8,7 @@ TagManager:
   - Deadzone
   - Dash
   - Sand
+  - Obstacle
   layers:
   - Default
   - TransparentFX
