@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayerDeath(int idPlayer, int idKiller)
     {
+        Debug.Log("JE MORT");
         int playerSkin = _playermanager.GetPlayerByID(idPlayer).SkinID;
         if(idKiller == -1)
         {

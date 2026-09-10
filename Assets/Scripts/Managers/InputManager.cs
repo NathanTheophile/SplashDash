@@ -59,6 +59,7 @@ public class InputManager : MonoBehaviour
 
     private PlayerInput AddPlayer(string pControlScheme, InputDevice pDeviceToPair)
     {
+        Debug.Log("JE SPAWN");
         _devicesConnected[_manager.playerCount] = pDeviceToPair;
         PlayerManager.Instance.OnJoin(_manager.playerCount);
 

@@ -26,6 +26,7 @@ public class Fish : MonoBehaviour
 
     public bool IsOnWater => _PlayerPhysicsSystem.IsOnWater;
     public bool IsDashing => _PlayerDashSystem.IsDashing;
+    public bool IsCharging => _PlayerDashSystem.IsCharging;
     public bool IsStunned { get; private set; }
     public Vector2 CurrentDirection => _PlayerPhysicsSystem.CurrentDirection; 
     public bool AreControlsEnabled => !IsStunned && !IsDashing;

@@ -98,8 +98,7 @@ public class PlayerPhysics2D : MonoBehaviour
             _CurrentDirectionsByCollider.Remove(pCollider);
             return;
         }
-
-        _CurrentDirectionsByCollider[pCollider] = pTrail.Direction;
+        if (_Fish.IsCharging) _CurrentDirectionsByCollider[pCollider] = pTrail.Direction;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -123,7 +122,7 @@ public class PlayerPhysics2D : MonoBehaviour
             return;
         }
 
-        if (collision.collider.CompareTag("Obstacle"))
+        if (collision.collider.CompareTag("Obstacle") && _Fish.IsDashing)
             _Fish.Stun();
     }
     
