@@ -50,16 +50,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void OnPlayerDeath(int idPlayer, int idKiller)
-    {
-        Debug.Log("JE MORT");
-        int playerSkin = _playermanager.GetPlayerByID(idPlayer).SkinID;
-        if(idKiller == -1)
-        {
-            _hud.KillSetter.SetVisual(playerSkin);
-        }
+public void OnPlayerDeath(int idPlayer, int idKiller)
+{
+    if (_playermanager == null)
+        _playermanager = PlayerManager.Instance;
 
-        int killerSkin = _playermanager.GetPlayerByID(idKiller).SkinID;
-        _hud.KillSetter.SetVisual(killerSkin, playerSkin);
+    PlayerData killedPlayer = _playermanager.GetPlayerByID(idPlayer);
+    if (killedPlayer == null)
+        return;
+
+    int playerSkin = killedPlayer.SkinID;
+
+    if (idKiller == -1)
+    {
+        _hud.KillSetter.SetVisual(playerSkin);
+        return;
     }
+
+    PlayerData killer = _playermanager.GetPlayerByID(idKiller);
+    if (killer == null)
+        return;
+
+    _hud.KillSetter.SetVisual(killer.SkinID, playerSkin);
+}
 }
