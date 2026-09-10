@@ -66,6 +66,7 @@ public class InputManager : MonoBehaviour
         Fish lFish = lNewPlayer.GetComponent<Fish>();
         lFish.FishIndex = _manager.playerCount -1;
 
+
         PlayerManager.Instance.AddPlayerCharacter(lNewPlayer.transform);
 
         return lNewPlayer;

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,6 +22,7 @@ public class PlayerManager : MonoBehaviour
 
     private readonly PlayerData[] _players = new PlayerData[4];
     public int PlayerNumber {  get; private set; }
+    public List<int> colorindexes = new ();
     private Transform _playerContainer;
 
     public static PlayerManager Instance;
@@ -44,7 +46,24 @@ public class PlayerManager : MonoBehaviour
     public void OnJoin(int id)
     {
         if (0 > id || id > 3) return;
-        int skinID = Random.Range(0, _colorMixer.data.Length);
+        
+        int skinID = 0;
+
+        bool lvalid = true;
+        while (lvalid)
+        {
+            lvalid = false;
+            skinID = Random.Range(0, _colorMixer.data.Length);
+            foreach(var ind in colorindexes)
+            {
+                if (skinID == ind) lvalid = true;
+            }
+
+
+        }
+
+        colorindexes.Add(skinID);
+
         var player = new PlayerData(id, skinID);
 
         _players[id] = player;
