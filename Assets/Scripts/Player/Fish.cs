@@ -60,7 +60,7 @@ public class Fish : MonoBehaviour
     {
         IsStunned = stunned;
         if (!stunned) return;
-        _PlayerAnimator.SetStunned();
+        _PlayerAnimator.RemoveStun();
         _PlayerDashSystem.CancelCharge();
         _PlayerMovementSystem.SetMoveInput(Vector2.zero);
     }
