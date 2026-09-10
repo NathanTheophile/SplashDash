@@ -664,8 +664,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nom Prenom, Nom Prenom, Nom Prenom, Nom Prenom, Nom Prenom, Nom Prenom,
-    Nom Prenom, Nom Prenom, Nom Prenom,
+  m_text: "Nathan TEOPHILE, Florent MANLHIOT, Eion MAYANCE, Th\xE9o MARIE, Ewan COMBEAU,
+    Rapha\xEBl GUIBE, Robin GALLON, Jonah BORTOT, "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 142c56d2ea01bd94c9fec29352dd906d, type: 2}
   m_sharedMaterial: {fileID: -3151391629545845576, guid: 142c56d2ea01bd94c9fec29352dd906d, type: 2}
@@ -3545,6 +3545,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62bbc2524432b1e4a861a15731e2754a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!1001 &1520021186
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1164713352543706820, guid: 48111c2ed32d1f94cb01b3e3844980d8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164713352543706820, guid: 48111c2ed32d1f94cb01b3e3844980d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164713352543706820, guid: 48111c2ed32d1f94cb01b3e3844980d8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164713352543706820, guid: 48111c2ed32d1f94cb01b3e3844980d8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164713352543706820, guid: 48111c2ed32d1f94cb01b3e3844980d8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164713352543706820, guid: 48111c2ed32d1f94cb01b3e3844980d8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164713352543706820, guid: 48111c2ed32d1f94cb01b3e3844980d8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164713352543706820, guid: 48111c2ed32d1f94cb01b3e3844980d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164713352543706820, guid: 48111c2ed32d1f94cb01b3e3844980d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164713352543706820, guid: 48111c2ed32d1f94cb01b3e3844980d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607404484455521354, guid: 48111c2ed32d1f94cb01b3e3844980d8, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607404484455521354, guid: 48111c2ed32d1f94cb01b3e3844980d8, type: 3}
+      propertyPath: EmissionModule.rateOverTime.minScalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233236169135840544, guid: 48111c2ed32d1f94cb01b3e3844980d8, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233236169135840544, guid: 48111c2ed32d1f94cb01b3e3844980d8, type: 3}
+      propertyPath: EmissionModule.rateOverTime.minScalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985047109592191604, guid: 48111c2ed32d1f94cb01b3e3844980d8, type: 3}
+      propertyPath: m_Name
+      value: ParticleParentTexture
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 48111c2ed32d1f94cb01b3e3844980d8, type: 3}
 --- !u!114 &1606239726 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8640210412838834641, guid: c1f623a833b89e440906e106356cf59e, type: 3}
@@ -5506,3 +5579,4 @@ SceneRoots:
   - {fileID: 1234334280}
   - {fileID: 1023758288}
   - {fileID: 886277886}
+  - {fileID: 1520021186}
