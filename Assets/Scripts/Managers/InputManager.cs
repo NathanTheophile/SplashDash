@@ -64,6 +64,7 @@ public class InputManager : MonoBehaviour
         Fish lFish = lNewPlayer.GetComponent<Fish>();
         lFish.FishIndex = _manager.playerCount -1;
 
+
         InputMode lDeviceType = new();
         if (pDeviceToPair is Keyboard) lDeviceType = InputMode.Keyboard;
         else if (pDeviceToPair is Gamepad) lDeviceType = InputMode.Gamepad;

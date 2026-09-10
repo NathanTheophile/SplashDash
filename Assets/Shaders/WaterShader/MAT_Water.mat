@@ -57,7 +57,7 @@ Material:
     - _Darken: 0.165
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Scale: 3.73
+    - _Scale: 10
     - _TimeScale: 0.4
     - _TimeScaleDeform: 0.18
     - _TimeScaleMove: 0.01

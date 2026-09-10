@@ -13,6 +13,7 @@ public class PlayerDash : MonoBehaviour
     #region _________________________/ REFERENCES
     [SerializeField] private PlayerMovement _PlayerMovementSystem;
     [SerializeField] private PlayerTrailEmitter _PlayerTrailEmitter;
+    [SerializeField] private FishAnimator _PlayerAnimator;
     [SerializeField] private Slider _DashChargeSlider;
 
     #endregion
@@ -56,6 +57,7 @@ public class PlayerDash : MonoBehaviour
         if (!IsCharging) return;
 
         _PlayerMovementSystem.SetChargeSpeed(ChargeRatio);
+        _PlayerAnimator.SetCharge(ChargeRatio);
 
         if (_DashChargeSlider == null) return;
 
@@ -95,6 +97,7 @@ public class PlayerDash : MonoBehaviour
 
         IsCharging = false;
         _PlayerMovementSystem.ResetChargeSpeed();
+        _PlayerAnimator.SetCharge(0f);
         HideDashChargeSlider();
         StartDash(lDashDuration);
     }
