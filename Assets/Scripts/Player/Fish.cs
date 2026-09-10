@@ -41,8 +41,9 @@ public class Fish : MonoBehaviour
 
     #region _________________________| INIT
 
-    private void Awake()
+    public void SetFishIndex(int pFishIndex)
     {
+        FishIndex = pFishIndex;
         _PlayerAnimator.SetSkin(FishIndex);
     }
 

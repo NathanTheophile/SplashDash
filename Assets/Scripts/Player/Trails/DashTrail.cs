@@ -14,6 +14,7 @@ public class DashTrail : MonoBehaviour
     #region _________________________/ REFERENCES
     [FormerlySerializedAs("_Box")]
     [SerializeField] private BoxCollider2D _RootCollider;
+    [SerializeField] private SpriteRenderer _VisualRenderer;
 
     #endregion
 
@@ -35,9 +36,6 @@ public class DashTrail : MonoBehaviour
 
     private void Awake()
     {
-        if (_RootCollider == null)
-            _RootCollider = GetComponent<BoxCollider2D>();
-
         _RootCollider.isTrigger = true;
         _SquareColliders.Add(_RootCollider);
     }
@@ -69,14 +67,29 @@ public class DashTrail : MonoBehaviour
             BoxCollider2D squareCollider = lSquare.AddComponent<BoxCollider2D>();
             squareCollider.isTrigger = true;
             squareCollider.size = Vector2.one * _SquareSize;
+
+            AddVisualRenderer(lSquare);
             _SquareColliders.Add(squareCollider);
         }
     }
 
+    private void AddVisualRenderer(GameObject pSquare)
+    {
+        SpriteRenderer lRenderer = pSquare.AddComponent<SpriteRenderer>();
+        lRenderer.sprite = _VisualRenderer.sprite;
+        lRenderer.sharedMaterial = _VisualRenderer.sharedMaterial;
+        lRenderer.color = _VisualRenderer.color;
+        lRenderer.flipX = _VisualRenderer.flipX;
+        lRenderer.flipY = _VisualRenderer.flipY;
+        lRenderer.drawMode = _VisualRenderer.drawMode;
+        lRenderer.size = _VisualRenderer.size;
+        lRenderer.maskInteraction = _VisualRenderer.maskInteraction;
+        lRenderer.sortingLayerID = _VisualRenderer.sortingLayerID;
+        lRenderer.sortingOrder = _VisualRenderer.sortingOrder;
+    }
+
     public void RemoveSquare(Collider2D pCollider)
     {
-        if (pCollider == null || !pCollider.enabled) return;
-
         // Disable immediately so other players stop receiving its current this frame.
         pCollider.enabled = false;
         // The first square shares the container, which must keep the other squares alive.
