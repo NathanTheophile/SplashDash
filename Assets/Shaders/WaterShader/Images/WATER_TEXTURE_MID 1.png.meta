@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 73171574318a25344869cb0a2dcb59f1
+guid: 9e8eda0f5102dce44a6dbf8dbdd6e395
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7553937217612112824
-    second: WATER_TEXTURE_MID_0
+      213: 6327212452913162996
+    second: WATER_TEXTURE_MID 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WATER_TEXTURE_MID_0
+      name: WATER_TEXTURE_MID 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2048
-        height: 2048
+        width: 2047
+        height: 2047
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b36f5f70e9f4d860800000000000000
-      internalID: 7553937217612112824
+      spriteID: 4fa2152f336cec750800000000000000
+      internalID: 6327212452913162996
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      WATER_TEXTURE_MID_0: 7553937217612112824
+      WATER_TEXTURE_MID 1_0: 6327212452913162996
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
