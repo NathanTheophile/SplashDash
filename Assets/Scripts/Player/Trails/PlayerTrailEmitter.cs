@@ -21,9 +21,9 @@ public class PlayerTrailEmitter : MonoBehaviour
     private float _DistanceSinceTrail;
     private DashTrail _ActiveDash;
     private bool _IsDashing;
-    private bool _WasSillonBlocked;
+    private bool _WasWaterTrailBlocked;
     private readonly WaterTrail[] _RecentTrails = new WaterTrail[3];
-    private int _NextRecentTrail;
+    private int _NextRecentTrailIndex;
 
     #endregion
 
@@ -44,8 +44,8 @@ public class PlayerTrailEmitter : MonoBehaviour
 
     public void RememberTrail(WaterTrail trail)
     {
-        _RecentTrails[_NextRecentTrail] = trail;
-        _NextRecentTrail = (_NextRecentTrail + 1) % _RecentTrails.Length;
+        _RecentTrails[_NextRecentTrailIndex] = trail;
+        _NextRecentTrailIndex = (_NextRecentTrailIndex + 1) % _RecentTrails.Length;
     }
 
     public bool IsRecentTrail(WaterTrail trail)
@@ -63,10 +63,10 @@ public class PlayerTrailEmitter : MonoBehaviour
     {
         _LastPosition = transform.position;
         _DistanceSinceTrail = 0f;
-        _WasSillonBlocked = IsSillonBlocked;
+        _WasWaterTrailBlocked = IsWaterTrailBlocked;
     }
 
-    private bool IsSillonBlocked => _Fish.IsStunned || _PlayerPhysicsSystem.IsOnWater;
+    private bool IsWaterTrailBlocked => _Fish.IsStunned || _PlayerPhysicsSystem.IsOnWater;
 
     public void UpdateTrail(Vector2 position)
     {
@@ -76,10 +76,10 @@ public class PlayerTrailEmitter : MonoBehaviour
                 _ActiveDash.SetEnd(position);
         }
 
-        bool sillonBlocked = IsSillonBlocked;
-        if (sillonBlocked || sillonBlocked != _WasSillonBlocked)
+        bool waterTrailBlocked = IsWaterTrailBlocked;
+        if (waterTrailBlocked || waterTrailBlocked != _WasWaterTrailBlocked)
         {
-            _WasSillonBlocked = sillonBlocked;
+            _WasWaterTrailBlocked = waterTrailBlocked;
             _LastPosition = position;
             _DistanceSinceTrail = 0f;
             return;
@@ -107,11 +107,11 @@ public class PlayerTrailEmitter : MonoBehaviour
         _LastPosition = position;
     }
 
-    public void BeginDash(Vector2 direction)
+    public void BeginDash(Vector2 dashDirection)
     {
         _IsDashing = true;
 
-        _ActiveDash = _TrailManager.CreateDashTrail(transform.position, direction);
+        _ActiveDash = _TrailManager.CreateDashTrail(transform.position, dashDirection);
     }
 
     public void EndDash()

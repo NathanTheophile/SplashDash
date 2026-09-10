@@ -9,7 +9,7 @@ public class PlayerData
 
     public PlayerData(int playerID, int skinID)
     {
-        PlayerID = playerID; // mdrrr ca sert a rien enft hihihi
+        PlayerID = playerID;
         SkinID = skinID;
     }
 }

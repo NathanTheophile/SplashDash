@@ -37,7 +37,7 @@ public class TrailManager : MonoBehaviour
 
     public DashTrail CreateDashTrail(Vector2 pPosition, Vector2 pDirection)
     {
-        Debug.Log("Creating dash trail at " + pPosition + " with direction " + pDirection);
+        //Debug.Log("Creating dash trail at " + pPosition + " with direction " + pDirection);
         DashTrail lTrail = Instantiate(_DashTrailPrefab);
         lTrail.Begin(pPosition, pDirection);
 

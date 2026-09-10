@@ -64,20 +64,5 @@ public class InputManager : MonoBehaviour
         return PlayerInput.Instantiate(_playerPrefab, controlScheme: pControlScheme, pairWithDevice: pDeviceToPair);
     }
 
-    /* envie de clamser
-    public void RemoveAllPlayers()
-    {
-        //_manager.DisableJoining
-
-        int lPlayerCount = _playersConnected.Count;
-        for (int i = lPlayerCount-1; i >= 0; i--)
-        {
-            //_playersConnected[i].devic
-            Destroy(_playersConnected[i].gameObject);
-            _playersConnected.RemoveAt(i);
-        }
-    }
-    */
-
-    private bool PlayersAvailable() => _manager.playerCount <= _manager.maxPlayerCount;
+    private bool PlayersAvailable() => _manager.playerCount < _manager.maxPlayerCount;
 }
