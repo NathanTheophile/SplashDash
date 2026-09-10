@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,9 +9,8 @@ public class GameManager : MonoBehaviour
     private int _time = 0;
     private bool _clockRunning = false;
 
-    [SerializeField] private Transform[] _levelPrefabs;
-
     public static GameManager Instance { get; private set; }
+    public static event System.Action GameStarted;
 
     private void Awake()
     {
@@ -22,8 +20,6 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
-
-        SceneManager.LoadScene(1, LoadSceneMode.Additive);
     }
 
     private void Start()
@@ -40,16 +36,9 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        print("start game");
-        if (_levelPrefabs.Length == 0) return;
-        Instantiate(GetRandomLevel(), SceneManager.GetSceneByName("Gameplay"));
         PlayerManager.Instance.ActivatePlayers();
         InputManager.Instance.EnableDeviceConnection(false);
-    }
-
-    private Transform GetRandomLevel()
-    {
-        return _levelPrefabs[Random.Range(0, _levelPrefabs.Length - 1)];
+        GameStarted?.Invoke();
     }
 
     public void ResetManager()

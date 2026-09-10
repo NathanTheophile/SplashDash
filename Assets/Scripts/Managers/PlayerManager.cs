@@ -30,9 +30,11 @@ public class PlayerManager : MonoBehaviour
     public void Start()
     {
         Instance = this;
+    }
 
-        Scene lGameplayScene = SceneManager.GetSceneByName("Gameplay");
-        foreach (GameObject gameObject in lGameplayScene.GetRootGameObjects())
+    public void SetupGameplay(Scene pGameplayScene)
+    {
+        foreach (GameObject gameObject in pGameplayScene.GetRootGameObjects())
         {
             if (gameObject.name == "PlayerContainer")
             {
@@ -90,17 +92,25 @@ public class PlayerManager : MonoBehaviour
     public void AddPlayerCharacter(Transform pPlayerTransform, int pId, InputMode pDeviceType)
     {
         pPlayerTransform.SetParent(_playerContainer);
-        //pPlayerTransform.gameObject.SetActive(false);
+        pPlayerTransform.GetComponent<Fish>().SetGameplayActive(false);
 
-        PlayerConnectPanelManager.Instance.UpdateText();
-        PlayerConnectPanelManager.Instance.EditPanel(pId, pDeviceType);
+        if (PlayerConnectPanelManager.Instance != null)
+        {
+            PlayerConnectPanelManager.Instance.UpdateText();
+            PlayerConnectPanelManager.Instance.EditPanel(pId, pDeviceType);
+            return;
+        }
+
+        pPlayerTransform.GetComponent<Fish>().SetGameplayActive(true);
     }
 
     public void ActivatePlayers()
     {
-        foreach (Transform playerObject in _playerContainer.GetComponentsInChildren<Transform>())
+        for (int i = 0; i < _playerContainer.childCount; i++)
         {
+            Transform playerObject = _playerContainer.GetChild(i);
             playerObject.gameObject.SetActive(true);
+            playerObject.GetComponent<Fish>().SetGameplayActive(true);
         }
     }
 
