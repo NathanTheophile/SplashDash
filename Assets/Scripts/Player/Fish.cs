@@ -4,6 +4,7 @@
 //  Note : MY_CONST, myPublic, m_MyProtected, _MyPrivate, lMyLocal, MyFunc(), pMyParam, onMyCallback, MyStruct
 #endregion
 
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,12 +18,15 @@ public class Fish : MonoBehaviour
     [SerializeField] private PlayerPhysicsStates _PlayerPhysicsStates;
     [SerializeField, Min(0.01f)] private float _StunDuration = 0.5f;
 
+    public int FishIndex;
+
     #endregion
 
     #region _________________________/ STATE VALUES
 
     public bool IsOnWater => _PlayerPhysicsSystem.IsOnWater;
     public bool IsDashing => _PlayerDashSystem.IsDashing;
+    public bool IsCharging => _PlayerDashSystem.IsCharging;
     public bool IsStunned { get; private set; }
     public Vector2 CurrentDirection => _PlayerPhysicsSystem.CurrentDirection; 
     public bool AreControlsEnabled => !IsStunned && !IsDashing;
@@ -30,20 +34,15 @@ public class Fish : MonoBehaviour
                     
     public PlayerStats CurrentStats => GetStats(State);
 
+    public static event Action<int,int> OnPlayerDeath;
+
     #endregion
 
     #region _________________________| INIT
 
     private void Awake()
     {
-        if (_PlayerMovementSystem == null)
-            _PlayerMovementSystem = GetComponent<PlayerMovement>();
 
-        if (_PlayerDashSystem == null)
-            _PlayerDashSystem = GetComponent<PlayerDash>();
-
-        if (_PlayerPhysicsSystem == null)
-            _PlayerPhysicsSystem = GetComponent<PlayerPhysics2D>();
     }
 
     public PlayerStats GetStats(PlayerStates state) => _PlayerPhysicsStates.GetStats(state);
@@ -82,6 +81,8 @@ public class Fish : MonoBehaviour
         SetStunned(false);
         _StunRoutine = null;
     }
+
+    public void PlayerDeath(int pKillerIndex) { OnPlayerDeath.Invoke(FishIndex, pKillerIndex); Destroy(gameObject);}
 
     #endregion
 
