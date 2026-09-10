@@ -50,7 +50,7 @@ public class SpriteShaker : MonoBehaviour
 
     public void ResetShake()
     {
-        transform.position = _initialLocalPosition;
+        transform.localPosition = _initialLocalPosition;
     }
 
     /// <summary>

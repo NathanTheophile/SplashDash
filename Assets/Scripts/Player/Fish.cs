@@ -16,6 +16,7 @@ public class Fish : MonoBehaviour
     [SerializeField] private PlayerDash _PlayerDashSystem;
     [SerializeField] private PlayerPhysics2D _PlayerPhysicsSystem;
     [SerializeField] private PlayerPhysicsStates _PlayerPhysicsStates;
+    [SerializeField] private FishAnimator _PlayerAnimator;
     [SerializeField, Min(0.01f)] private float _StunDuration = 0.5f;
 
     public int FishIndex;
@@ -42,7 +43,7 @@ public class Fish : MonoBehaviour
 
     private void Awake()
     {
-
+        _PlayerAnimator.SetSkin(FishIndex);
     }
 
     public PlayerStats GetStats(PlayerStates state) => _PlayerPhysicsStates.GetStats(state);
@@ -59,6 +60,7 @@ public class Fish : MonoBehaviour
     {
         IsStunned = stunned;
         if (!stunned) return;
+        _PlayerAnimator.SetStunned();
         _PlayerDashSystem.CancelCharge();
         _PlayerMovementSystem.SetMoveInput(Vector2.zero);
     }
@@ -79,6 +81,7 @@ public class Fish : MonoBehaviour
     {
         yield return new WaitForSeconds(_StunDuration);
         SetStunned(false);
+        _PlayerAnimator.RemoveStun();
         _StunRoutine = null;
     }
 
@@ -93,6 +96,7 @@ public class Fish : MonoBehaviour
     private void Update()
     {
         _PlayerMovementSystem.SetMoveInput(_MoveDirection);
+        _PlayerAnimator.SetSpeed(CurrentStats.moveSpeed * _MoveDirection.magnitude, 1f);
     }
 
     #endregion

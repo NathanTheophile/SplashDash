@@ -11,7 +11,13 @@ public class FishAnimator : MonoBehaviour
     [SerializeField] private SpriteShaker _shaker;
 
     [SerializeField] private PlayersSpritesColorsSO _spritesColors;
-    [SerializeField] private ParticleSystem.EmissionModule _emissionModule;
+    private ParticleSystem.EmissionModule _emissionModule;
+    [SerializeField] private ParticleSystem _ps;
+
+    void Start()
+    {
+        _emissionModule = _ps.emission; 
+    }
 
     public void SetStunned()
     {
@@ -53,7 +59,7 @@ public class FishAnimator : MonoBehaviour
         var skin = _spritesColors.data[player.SkinID].fishSkin;
 
         _body.sprite = skin.fishBody;
-        _finLeft.SetSkin(skin.fishBody);
-        _finRight.SetSkin(skin.fishBody);
+        _finLeft.SetSkin(skin.fishFin);
+        _finRight.SetSkin(skin.fishFin);
     }
 }
