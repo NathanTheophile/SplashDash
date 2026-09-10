@@ -51,6 +51,14 @@ public class Fish : MonoBehaviour
         _PlayerAnimator.SetSkin(FishIndex);
     }
 
+    public void SetGameplayActive(bool pActive)
+    {
+        _PlayerMovementSystem.enabled = pActive;
+        _PlayerDashSystem.enabled = pActive;
+        _PlayerPhysicsSystem.enabled = pActive;
+        enabled = pActive;
+    }
+
     public PlayerStats GetStats(PlayerStates state) => _PlayerPhysicsStates.GetStats(state);
 
     private PlayerStates GetState()
