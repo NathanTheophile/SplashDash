@@ -12,8 +12,6 @@ public class InputManager : MonoBehaviour
 
     public static InputManager Instance { get; private set; }
 
-
-
     private void Awake()
     {
         if (Instance != null)
@@ -28,7 +26,7 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if (!PlayersAvailable()) return;
+        if (!PlayersAvailable() || !_manager.joiningEnabled) return;
         if (Keyboard.current.leftShiftKey.wasPressedThisFrame && !_wasdConnected)
         {
             AddPlayer("WASD", Keyboard.current);
@@ -66,10 +64,27 @@ public class InputManager : MonoBehaviour
         Fish lFish = lNewPlayer.GetComponent<Fish>();
         lFish.FishIndex = _manager.playerCount -1;
 
-        PlayerManager.Instance.AddPlayerCharacter(lNewPlayer.transform);
+        InputMode lDeviceType = new();
+        if (pDeviceToPair is Keyboard) lDeviceType = InputMode.Keyboard;
+        else if (pDeviceToPair is Gamepad) lDeviceType = InputMode.Gamepad;
+        PlayerManager.Instance.AddPlayerCharacter(lNewPlayer.transform, _manager.playerCount - 1, lDeviceType);
 
         return lNewPlayer;
     }
 
     private bool PlayersAvailable() => _manager.playerCount < _manager.maxPlayerCount;
+
+    public void EnableDeviceConnection(bool pEnable)
+    {
+        if (pEnable) _manager.EnableJoining(); 
+        else _manager.DisableJoining();        
+    }
+
+    public void DisconnectAllDevices()
+    {
+        PlayerManager.Instance.DeletePlayers();
+        _wasdConnected = false;
+        _arrowsConnected = false;
+        _devicesConnected = new InputDevice[MAX_PLAYERS];
+    }
 }
