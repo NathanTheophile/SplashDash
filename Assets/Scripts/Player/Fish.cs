@@ -4,6 +4,7 @@
 //  Note : MY_CONST, myPublic, m_MyProtected, _MyPrivate, lMyLocal, MyFunc(), pMyParam, onMyCallback, MyStruct
 #endregion
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,7 @@ public class Fish : MonoBehaviour
     [SerializeField] private PlayerDash _PlayerDashSystem;
     [SerializeField] private PlayerPhysics2D _PlayerPhysicsSystem;
     [SerializeField] private PlayerPhysicsStates _PlayerPhysicsStates;
+    [SerializeField, Min(0.01f)] private float _StunDuration = 0.5f;
 
     #endregion
 
@@ -62,6 +64,25 @@ public class Fish : MonoBehaviour
         _PlayerMovementSystem.SetMoveInput(Vector2.zero);
     }
 
+    private Coroutine _StunRoutine;
+
+    public void Stun()
+    {
+        SetStunned(true);
+
+        if (_StunRoutine != null)
+            StopCoroutine(_StunRoutine);
+
+        _StunRoutine = StartCoroutine(ClearStunAfterDelay());
+    }
+
+    private IEnumerator ClearStunAfterDelay()
+    {
+        yield return new WaitForSeconds(_StunDuration);
+        SetStunned(false);
+        _StunRoutine = null;
+    }
+
     #endregion
 
     #region _________________________| UNITY
@@ -90,6 +111,7 @@ public class Fish : MonoBehaviour
 
     private void OnDisable()
     {
+        _StunRoutine = null;
         IsStunned = false;
         _MoveDirection = Vector2.zero;
         _PlayerMovementSystem.ClearInput();

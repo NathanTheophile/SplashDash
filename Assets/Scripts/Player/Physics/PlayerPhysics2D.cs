@@ -4,6 +4,7 @@
 //  Note : MY_CONST, myPublic, m_MyProtected, _MyPrivate, lMyLocal, MyFunc(), pMyParam, onMyEvent, OnMyCallback, MyStruct
 #endregion
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ public class PlayerPhysics2D : MonoBehaviour
     #region _________________________/ REFERENCES
     private readonly Dictionary<Collider2D, WaterTrail> _WaterContactsByCollider = new();
     private readonly Dictionary<Collider2D, Vector2> _CurrentDirectionsByCollider = new();
+    private readonly HashSet<Collider2D> _DeadzoneContacts = new();
     private Collider2D _SelectedCurrentCollider;
     private Fish _Fish;
     private PlayerTrailEmitter _TrailEmitter;
@@ -22,6 +24,22 @@ public class PlayerPhysics2D : MonoBehaviour
 
     public bool IsOnWater => HasWaterOverlap();
     public Vector2 CurrentDirection => GetCurrentDirection();
+    public bool IsInDeadzone => _DeadzoneContacts.Count > 0;
+    public float DeadzoneRatio => Mathf.Clamp01(_DeadzoneTimer / _DeadzoneDuration);
+    public event Action OnDeadzoneExpired;
+
+    #endregion
+
+    #region _________________________/ TUNING VALUES
+
+    [SerializeField, Min(0.1f)] private float _DeadzoneDuration = 3f;
+
+    #endregion
+
+    #region _________________________/ RUNTIME VALUES
+
+    private float _DeadzoneTimer;
+    private bool _IsEliminated;
 
     #endregion
 
@@ -33,8 +51,23 @@ public class PlayerPhysics2D : MonoBehaviour
         _TrailEmitter = GetComponent<PlayerTrailEmitter>();
     }
 
+    private void Update()
+    {
+        if (!IsInDeadzone || _IsEliminated) return;
+
+        _DeadzoneTimer += Time.deltaTime;
+        if (_DeadzoneTimer >= _DeadzoneDuration)
+            Eliminate();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Deadzone"))
+        {
+            _DeadzoneContacts.Add(other);
+            return;
+        }
+
         DashTrail trail = other.GetComponentInParent<DashTrail>();
         if (trail != null)
         {
@@ -70,8 +103,26 @@ public class PlayerPhysics2D : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        if (_DeadzoneContacts.Remove(other) && _DeadzoneContacts.Count == 0)
+            ResetDeadzone();
+
         _CurrentDirectionsByCollider.Remove(other);
         _WaterContactsByCollider.Remove(other);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Fish otherFish = collision.collider.GetComponentInParent<Fish>();
+        if (otherFish != null)
+        {
+            if (!_Fish.IsDashing)
+                _Fish.Stun();
+
+            return;
+        }
+
+        if (collision.collider.CompareTag("Obstacle"))
+            _Fish.Stun();
     }
     
     
@@ -80,7 +131,23 @@ public class PlayerPhysics2D : MonoBehaviour
     {
         _WaterContactsByCollider.Clear();
         _CurrentDirectionsByCollider.Clear();
+        _DeadzoneContacts.Clear();
         _SelectedCurrentCollider = null;
+        ResetDeadzone();
+    }
+
+    private void ResetDeadzone()
+    {
+        _DeadzoneTimer = 0f;
+    }
+
+    private void Eliminate()
+    {
+        if (_IsEliminated) return;
+
+        _IsEliminated = true;
+        OnDeadzoneExpired?.Invoke();
+        Destroy(gameObject);
     }
 
     private bool HasWaterOverlap()
