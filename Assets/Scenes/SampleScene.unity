@@ -373,18 +373,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -150
       objectReference: {fileID: 0}
-    - target: {fileID: 4984895011538215122, guid: 167cb245d05f8484a83d62fdbed6d82b, type: 3}
-      propertyPath: stopAction
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984895011538215122, guid: 167cb245d05f8484a83d62fdbed6d82b, type: 3}
-      propertyPath: TriggerModule.exit
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984895011538215122, guid: 167cb245d05f8484a83d62fdbed6d82b, type: 3}
-      propertyPath: TriggerModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7361549162546188437, guid: 167cb245d05f8484a83d62fdbed6d82b, type: 3}
       propertyPath: m_Name
       value: SplashEffect
