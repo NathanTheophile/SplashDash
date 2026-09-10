@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2fdd652b90511343947c5eae5a716fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
-  axis: {x: 0, y: 0}
+  _playerPrefab: {fileID: 5966859751823962515, guid: 6ee47fd8743d7e948b6412051a650509, type: 3}
 --- !u!114 &629873995375612693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_NotificationBehavior: 0
   m_MaxPlayerCount: 4
   m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_JoinBehavior: 2
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
