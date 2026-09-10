@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{77fe62f0-080c-4c9a-acd4-5174fd04469c}">
+		<property name="assetPath">
+			<value>SFX_KO.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>4</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{18e71b30-c6cd-4afb-b1ac-b1dffd1a25fe}</destination>
+		</relationship>
+	</object>
+</objects>
