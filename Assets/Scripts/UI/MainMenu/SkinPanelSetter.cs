@@ -17,7 +17,7 @@ public class SkinPanelSetter : MonoBehaviour
         bool isEmpty = _skinMixer.data.Length == 0;
         if (isEmpty) return;
 
-        var mixer = _skinMixer.data[id^_skinMixer.data.Length];
+        var mixer = _skinMixer.data[id];
 
         _bgImage.color = mixer.lightBGColor;
         _bg.color = mixer.mainBGColor;

@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
+
+        SceneManager.LoadScene(1, LoadSceneMode.Additive);
     }
 
     private void Start()
@@ -38,7 +40,11 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        print("start game");
+        if (_levelPrefabs.Length == 0) return;
         Instantiate(GetRandomLevel(), SceneManager.GetSceneByName("Gameplay"));
+        PlayerManager.Instance.ActivatePlayers();
+        InputManager.Instance.EnableDeviceConnection(false);
     }
 
     private Transform GetRandomLevel()
@@ -61,7 +67,7 @@ public class GameManager : MonoBehaviour
     {
         _clockRunning = false;
     }
-    
+
     private void FixedUpdate()
     {
         if (!_clockRunning) return;
@@ -74,27 +80,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
-public void OnPlayerDeath(int idPlayer, int idKiller)
-{
-    if (_playermanager == null)
-        _playermanager = PlayerManager.Instance;
-
-    PlayerData killedPlayer = _playermanager.GetPlayerByID(idPlayer);
-    if (killedPlayer == null)
-        return;
-
-    int playerSkin = killedPlayer.SkinID;
-
-    if (idKiller == -1)
+    public void OnPlayerDeath(int idPlayer, int idKiller)
     {
-        _hud.KillSetter.SetVisual(playerSkin);
-        return;
+        if (_playermanager == null)
+            _playermanager = PlayerManager.Instance;
+
+        PlayerData killedPlayer = _playermanager.GetPlayerByID(idPlayer);
+        if (killedPlayer == null)
+            return;
+
+        int playerSkin = killedPlayer.SkinID;
+
+        if (idKiller == -1)
+        {
+            _hud.KillSetter.SetVisual(playerSkin);
+            return;
+        }
+
+        PlayerData killer = _playermanager.GetPlayerByID(idKiller);
+        if (killer == null)
+            return;
+
+        _hud.KillSetter.SetVisual(killer.SkinID, playerSkin);
     }
-
-    PlayerData killer = _playermanager.GetPlayerByID(idKiller);
-    if (killer == null)
-        return;
-
-    _hud.KillSetter.SetVisual(killer.SkinID, playerSkin);
-}
 }

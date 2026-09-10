@@ -20,7 +20,7 @@ public class PlayerManager : MonoBehaviour
 {
     [SerializeField] PlayersSpritesColorsSO _colorMixer;
 
-    private readonly PlayerData[] _players = new PlayerData[4];
+    private PlayerData[] _players = new PlayerData[4];
     public int PlayerNumber {  get; private set; }
     public List<int> colorindexes = new ();
     private Transform _playerContainer;
@@ -87,8 +87,31 @@ public class PlayerManager : MonoBehaviour
         return _players[id];
     }
 
-    public void AddPlayerCharacter(Transform pPlayerTransform)
+    public void AddPlayerCharacter(Transform pPlayerTransform, int pId, InputMode pDeviceType)
     {
         pPlayerTransform.SetParent(_playerContainer);
+        //pPlayerTransform.gameObject.SetActive(false);
+
+        PlayerConnectPanelManager.Instance.UpdateText();
+        PlayerConnectPanelManager.Instance.EditPanel(pId, pDeviceType);
+    }
+
+    public void ActivatePlayers()
+    {
+        foreach (Transform playerObject in _playerContainer.GetComponentsInChildren<Transform>())
+        {
+            playerObject.gameObject.SetActive(true);
+        }
+    }
+
+    public void DeletePlayers()
+    {
+        int lPlayerCount = _playerContainer.childCount;
+        for (int i = lPlayerCount - 1; i >= 0; i--)
+        {
+            Destroy(_playerContainer.GetChild(i).gameObject);
+        }
+        _players = new PlayerData[4];
+        PlayerNumber = _players.Count(d => d != null);
     }
 }
