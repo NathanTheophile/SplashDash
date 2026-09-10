@@ -355,7 +355,7 @@ MonoBehaviour:
   _PlayerDashSystem: {fileID: 2837732270015303134}
   _PlayerPhysicsSystem: {fileID: 478242864041814558}
   _PlayerPhysicsStates: {fileID: 11400000, guid: 3a83651dce2582e4f9ed3e0db42197ea, type: 2}
-  _StunDuration: 0.5
+  _StunDuration: 2
 --- !u!114 &3347078021066471290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,7 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   _PlayerBody: {fileID: 4672222769856324405}
   _Fish: {fileID: 0}
-  _CurrentForce: 2.5
+  _CurrentForce: 35
   _MinChargeSpeed: 0
 --- !u!114 &2837732270015303134
 MonoBehaviour:
@@ -434,7 +434,7 @@ MonoBehaviour:
   _Surface: {fileID: 4899426642072995528, guid: 03d164cea6318db419c755024c1824a6, type: 3}
   _Mask: {fileID: 8400000, guid: fd66329ee8c887a4fad2e56a0b97c2a2, type: 2}
   _BrushMaterial: {fileID: 2100000, guid: 048c31466a889104ea7feac03733f87e, type: 2}
-  _BrushSize: 0.02
+  _BrushSize: 0.01
   _Fish: {fileID: 6957456785503517200}
 --- !u!114 &29236776650790581
 MonoBehaviour:
