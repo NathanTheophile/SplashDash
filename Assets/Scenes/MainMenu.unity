@@ -665,7 +665,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Nathan TEOPHILE, Florent MANLHIOT, Eion MAYANCE, Th\xE9o MARIE, Ewan COMBEAU,
-    Rapha\xEBl GUIBE, Robin GALLON, Jonah BORTOT, "
+    Rapha\xEBl GUIBE, Robin GALLON, Jonah BORTOT, Keyi LI"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 142c56d2ea01bd94c9fec29352dd906d, type: 2}
   m_sharedMaterial: {fileID: -3151391629545845576, guid: 142c56d2ea01bd94c9fec29352dd906d, type: 2}
@@ -709,7 +709,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
