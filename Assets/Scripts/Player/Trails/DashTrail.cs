@@ -86,6 +86,12 @@ public class DashTrail : MonoBehaviour
         lRenderer.maskInteraction = _VisualRenderer.maskInteraction;
         lRenderer.sortingLayerID = _VisualRenderer.sortingLayerID;
         lRenderer.sortingOrder = _VisualRenderer.sortingOrder;
+
+        Vector2 lSpriteSize = _VisualRenderer.sprite.bounds.size;
+        lRenderer.transform.localScale = new Vector3(
+            _SquareSize / lSpriteSize.x,
+            _SquareSize / lSpriteSize.y,
+            1f);
     }
 
     public void RemoveSquare(Collider2D pCollider)
