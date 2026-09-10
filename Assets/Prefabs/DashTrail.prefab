@@ -93,5 +93,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DashTrail
   _RootCollider: {fileID: 8936352330513568507}
   _VisualRenderer: {fileID: 6129392039945015531, guid: e3354b75002b8624f852fff3de0d8c4a, type: 3}
-  _SquareSize: 1
+  _SquareSize: 1.5
   _DebugColor: {r: 1, g: 0, b: 1, a: 1}
