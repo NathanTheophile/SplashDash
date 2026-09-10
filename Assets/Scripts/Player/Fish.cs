@@ -1,82 +1,122 @@
+#region _____________________________/ INFOS
+//  AUTHOR : Splash&Dash (2026)
+//  Engine : Unity
+//  Note : MY_CONST, myPublic, m_MyProtected, _MyPrivate, lMyLocal, MyFunc(), pMyParam, onMyCallback, MyStruct
+#endregion
+
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Fish : MonoBehaviour
 {
-    private Rigidbody2D _rigidBody;
-    [SerializeField] private PlayerPhysicsStates _physicsStates;
-    private PlayerStats _stats;
+    #region _________________________/ REFERENCES
+    [SerializeField] private PlayerMovement _PlayerMovementSystem;
+    [SerializeField] private PlayerDash _PlayerDashSystem;
+    [SerializeField] private PlayerPhysics2D _PlayerPhysicsSystem;
+    [SerializeField] private PlayerPhysicsStates _PlayerPhysicsStates;
+    [SerializeField, Min(0.01f)] private float _StunDuration = 0.5f;
 
-    private PlayerStates _state;
-    public PlayerStates State 
-    { 
-        get => _state; 
-        set
-        {
-            _stats = _physicsStates.states[(int)value];
-            _state = value;
-        }
-    }
-    [SerializeField] private PlayerStates _startState; // FOR TESTING PURPOSES
+    #endregion
 
-    private Vector2 _moveDirection;
-    private bool _canJump = true;
+    #region _________________________/ STATE VALUES
+
+    public bool IsOnWater => _PlayerPhysicsSystem.IsOnWater;
+    public bool IsDashing => _PlayerDashSystem.IsDashing;
+    public bool IsStunned { get; private set; }
+    public Vector2 CurrentDirection => _PlayerPhysicsSystem.CurrentDirection; 
+    public bool AreControlsEnabled => !IsStunned && !IsDashing;
+    public PlayerStates State => GetState();
+                    
+    public PlayerStats CurrentStats => GetStats(State);
+
+    #endregion
+
+    #region _________________________| INIT
 
     private void Awake()
     {
-        _rigidBody = GetComponent<Rigidbody2D>();
+        if (_PlayerMovementSystem == null)
+            _PlayerMovementSystem = GetComponent<PlayerMovement>();
+
+        if (_PlayerDashSystem == null)
+            _PlayerDashSystem = GetComponent<PlayerDash>();
+
+        if (_PlayerPhysicsSystem == null)
+            _PlayerPhysicsSystem = GetComponent<PlayerPhysics2D>();
     }
 
-    private void Start()
+    public PlayerStats GetStats(PlayerStates state) => _PlayerPhysicsStates.GetStats(state);
+
+    private PlayerStates GetState()
     {
-        InputManager.Instance.JumpPressed += Jump;
-        State = _startState;
+        if (IsStunned) return PlayerStates.STUNNED;
+        if (IsDashing) return PlayerStates.IS_DASHING;
+        if (IsOnWater) return PlayerStates.ON_WATER;
+        return PlayerStates.ON_SAND;
     }
 
-    void Update()
+    public void SetStunned(bool stunned)
     {
-        _moveDirection = InputManager.Instance.axis;
-        RotateTowards(transform.up, new Vector3(_moveDirection.x, _moveDirection.y), _stats.rotationSpeed * Time.deltaTime);
-
-        _rigidBody.linearVelocity = Vector2.ClampMagnitude(_rigidBody.linearVelocity, _stats.maxMoveSpeed);
+        IsStunned = stunned;
+        if (!stunned) return;
+        _PlayerDashSystem.CancelCharge();
+        _PlayerMovementSystem.SetMoveInput(Vector2.zero);
     }
 
-    private void FixedUpdate()
+    private Coroutine _StunRoutine;
+
+    public void Stun()
     {
-        if (_moveDirection != Vector2.zero)
-        {
-            _rigidBody.linearDamping = 0;
-            _rigidBody.angularVelocity = 0;
-            _rigidBody.AddForce(_moveDirection * _stats.moveSpeed, ForceMode2D.Force);
-        }
-        else _rigidBody.linearDamping = _stats.friction;
+        SetStunned(true);
+
+        if (_StunRoutine != null)
+            StopCoroutine(_StunRoutine);
+
+        _StunRoutine = StartCoroutine(ClearStunAfterDelay());
     }
 
-    private void Jump()
+    private IEnumerator ClearStunAfterDelay()
     {
-        if (!_canJump) return;
-        _rigidBody.AddForce(transform.up * _stats.jumpForce, ForceMode2D.Impulse);
-        _canJump = false;
-        StartCoroutine(JumpCooldownCoroutine());
+        yield return new WaitForSeconds(_StunDuration);
+        SetStunned(false);
+        _StunRoutine = null;
     }
 
-    private IEnumerator JumpCooldownCoroutine()
+    #endregion
+
+    #region _________________________| UNITY
+
+    private Vector2 _MoveDirection;
+
+    private void Update()
     {
-        float lJumpCdTimer = _stats.jumpCooldown;
-        while (lJumpCdTimer > 0)
-        {
-            lJumpCdTimer -= Time.deltaTime;
-            yield return null;
-        }
-        _canJump = true;
+        _PlayerMovementSystem.SetMoveInput(_MoveDirection);
     }
 
-    private void RotateTowards(Vector3 pFrom, Vector3 pTo, float pMaxAngle)
+    #endregion
+
+    #region _________________________| INPUTS
+
+    public void HandleMove(InputAction.CallbackContext pContext)
     {
-        float lAngle = Vector3.SignedAngle(pFrom, pTo, transform.forward);
-        transform.rotation *= Quaternion.AngleAxis(
-            lAngle >= 0 ? Mathf.Clamp(pMaxAngle, 0, lAngle) : Mathf.Clamp(-pMaxAngle, lAngle, 0),
-            transform.forward
-            );
+        _MoveDirection = pContext.ReadValue<Vector2>();
     }
+
+    public void PressDash(InputAction.CallbackContext pContext)
+    {
+        if (AreControlsEnabled && pContext.performed) _PlayerDashSystem.PressDash();
+        else if (pContext.canceled) _PlayerDashSystem.ReleaseDash();
+    }
+
+    private void OnDisable()
+    {
+        _StunRoutine = null;
+        IsStunned = false;
+        _MoveDirection = Vector2.zero;
+        _PlayerMovementSystem.ClearInput();
+        _PlayerDashSystem.ResetDash();
+    }
+
+    #endregion
 }
