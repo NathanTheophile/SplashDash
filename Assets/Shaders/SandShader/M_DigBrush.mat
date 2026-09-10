@@ -59,6 +59,6 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _BrushPosition: {r: 0.9193816, g: 0.6839608, b: 0, a: 0}
+    - _BrushPosition: {r: 0.49366784, g: 0.6184065, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
