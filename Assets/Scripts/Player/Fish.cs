@@ -82,7 +82,7 @@ public class Fish : MonoBehaviour
         _StunRoutine = null;
     }
 
-    public void PlayerDeath(int pKillerIndex) => OnPlayerDeath.Invoke(FishIndex, pKillerIndex);
+    public void PlayerDeath(int pKillerIndex) { OnPlayerDeath.Invoke(FishIndex, pKillerIndex); Destroy(gameObject);}
 
     #endregion
 
@@ -93,7 +93,6 @@ public class Fish : MonoBehaviour
     private void Update()
     {
         _PlayerMovementSystem.SetMoveInput(_MoveDirection);
-        Destroy(gameObject);
     }
 
     #endregion
