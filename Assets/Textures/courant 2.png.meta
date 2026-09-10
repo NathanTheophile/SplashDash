@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: 1d340c70b651f8d40a1a89f81f0a256b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4217617554157808974
+    second: courant 2_0
+  - first:
+      213: -647832694924917845
+    second: courant 2_1
+  - first:
+      213: 2842359392227616797
+    second: courant 2_2
+  - first:
+      213: -4932016722151120417
+    second: courant 2_3
+  - first:
+      213: -6263933352778385874
+    second: courant 2_4
+  - first:
+      213: -2324159787120183035
+    second: courant 2_5
+  - first:
+      213: 2422350470731087497
+    second: courant 2_6
+  - first:
+      213: 5796503999803020693
+    second: courant 2_7
+  - first:
+      213: 6228104956578901495
+    second: courant 2_8
+  - first:
+      213: 3512753842123000438
+    second: courant 2_9
+  - first:
+      213: -3398937207174215636
+    second: courant 2_10
+  - first:
+      213: 3077815209028700665
+    second: courant 2_11
+  - first:
+      213: -4907750867004431143
+    second: courant 2_12
+  - first:
+      213: -8879047682563612131
+    second: courant 2_13
+  - first:
+      213: 6868192248887091251
+    second: courant 2_14
+  - first:
+      213: 8182991771747309395
+    second: courant 2_15
+  - first:
+      213: 9147488812822895463
+    second: courant 2_16
+  - first:
+      213: -7797954685627967912
+    second: courant 2_17
+  - first:
+      213: 6157090471227567076
+    second: courant 2_18
+  - first:
+      213: 9107086652671505811
+    second: courant 2_19
+  - first:
+      213: 3269581915952702071
+    second: courant 2_20
+  - first:
+      213: -7639849927901357580
+    second: courant 2_21
+  - first:
+      213: 3696883596498298005
+    second: courant 2_22
+  - first:
+      213: -2568090510477790569
+    second: courant 2_23
+  - first:
+      213: -2366065934709166160
+    second: courant 2_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: courant 2_0
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 463
+        width: 267
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b2d8fd2e230875c0800000000000000
+      internalID: -4217617554157808974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_1
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 761
+        width: 115
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba3cd19a89f6207f0800000000000000
+      internalID: -647832694924917845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_2
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 655
+        width: 197
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d18e8b9cec6127720800000000000000
+      internalID: 2842359392227616797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_3
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 763
+        width: 173
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd165e11ce4fd8bb0800000000000000
+      internalID: -4932016722151120417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_4
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 761
+        width: 115
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e263ceaadc90219a0800000000000000
+      internalID: -6263933352778385874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_5
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 641
+        width: 42
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 509347fccfceebfd0800000000000000
+      internalID: -2324159787120183035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_6
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 421
+        width: 223
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98e3d614beaed9120800000000000000
+      internalID: 2422350470731087497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_7
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 641
+        width: 42
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 595d3673da1517050800000000000000
+      internalID: 5796503999803020693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_8
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 545
+        width: 44
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fd2cb8c57cae6650800000000000000
+      internalID: 6228104956578901495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_9
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 545
+        width: 44
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67a412f020fcfb030800000000000000
+      internalID: 3512753842123000438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_10
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 515
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c28c5805e9c84d0d0800000000000000
+      internalID: -3398937207174215636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_11
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 515
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f9437a20a896ba20800000000000000
+      internalID: 3077815209028700665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_12
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 308
+        width: 59
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d4e51eb69a24ebb0800000000000000
+      internalID: -4907750867004431143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_13
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 56
+        width: 133
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d126a090d2947c480800000000000000
+      internalID: -8879047682563612131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_14
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 232
+        width: 235
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 330a10c0678b05f50800000000000000
+      internalID: 6868192248887091251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_15
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 56
+        width: 133
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35751fa39a3df8170800000000000000
+      internalID: 8182991771747309395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_16
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 308
+        width: 59
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76b1b2b1c9862fe70800000000000000
+      internalID: 9147488812822895463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_17
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 183
+        width: 47
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8565d8c578918c390800000000000000
+      internalID: -7797954685627967912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_18
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 183
+        width: 47
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eb26737921627550800000000000000
+      internalID: 6157090471227567076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_19
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 152
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 395bf272f0fd26e70800000000000000
+      internalID: 9107086652671505811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_20
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 152
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 772e668fd63ef5d20800000000000000
+      internalID: 3269581915952702071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_21
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 123
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f9552ed7fcc9f590800000000000000
+      internalID: -7639849927901357580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_22
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 123
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 594ef394b08fd4330800000000000000
+      internalID: 3696883596498298005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_23
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 64
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7927beb794f4c5cd0800000000000000
+      internalID: -2568090510477790569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: courant 2_24
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 64
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bfe18e719b0a2fd0800000000000000
+      internalID: -2366065934709166160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      courant 2_0: -4217617554157808974
+      courant 2_1: -647832694924917845
+      courant 2_10: -3398937207174215636
+      courant 2_11: 3077815209028700665
+      courant 2_12: -4907750867004431143
+      courant 2_13: -8879047682563612131
+      courant 2_14: 6868192248887091251
+      courant 2_15: 8182991771747309395
+      courant 2_16: 9147488812822895463
+      courant 2_17: -7797954685627967912
+      courant 2_18: 6157090471227567076
+      courant 2_19: 9107086652671505811
+      courant 2_2: 2842359392227616797
+      courant 2_20: 3269581915952702071
+      courant 2_21: -7639849927901357580
+      courant 2_22: 3696883596498298005
+      courant 2_23: -2568090510477790569
+      courant 2_24: -2366065934709166160
+      courant 2_3: -4932016722151120417
+      courant 2_4: -6263933352778385874
+      courant 2_5: -2324159787120183035
+      courant 2_6: 2422350470731087497
+      courant 2_7: 5796503999803020693
+      courant 2_8: 6228104956578901495
+      courant 2_9: 3512753842123000438
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
