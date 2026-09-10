@@ -8,6 +8,7 @@ public class FishAnimator : MonoBehaviour
     [SerializeField] private FinAnimator _finRight;
 
     [SerializeField] private SpriteRenderer _body;
+    [SerializeField] private SpriteShaker _shaker;
 
     [SerializeField] private PlayersSpritesColorsSO _spritesColors;
 
@@ -18,6 +19,19 @@ public class FishAnimator : MonoBehaviour
     public void RemoveStun()
     {
         _stunSprite.SetActive(false);
+    }
+
+    public void SetCharge(float ratio)
+    {
+        if(ratio <= 0)
+        {
+            _shaker.ResetShake();
+            _shaker.enabled = false;
+            return;
+        }
+
+        _shaker.enabled = true;
+        _shaker.SetShake(ratio);
     }
 
     public void SetSpeed(float speed, float multiplier)
