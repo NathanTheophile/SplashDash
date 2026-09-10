@@ -92,7 +92,7 @@ public class Fish : MonoBehaviour
     private void Update()
     {
         _PlayerMovementSystem.SetMoveInput(_MoveDirection);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     #endregion
