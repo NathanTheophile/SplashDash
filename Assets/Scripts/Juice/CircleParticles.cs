@@ -46,7 +46,7 @@ public class CircleParticleSystem : MonoBehaviour
 
             float rotation = angle;
             print(rotation);
-            particles[i].rotation = -rotation + rotationOffset;
+            particles[i].rotation = -rotation + rotationOffset - transform.rotation.eulerAngles.z;
             particles[i].velocity = position * _startSpeed;
         }
 
