@@ -4,6 +4,7 @@
 //  Note : MY_CONST, myPublic, m_MyProtected, _MyPrivate, lMyLocal, MyFunc(), pMyParam, onMyCallback, MyStruct
 #endregion
 
+using FMODUnity;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -19,7 +20,10 @@ public class Fish : MonoBehaviour
     [SerializeField] private FishAnimator _PlayerAnimator;
     [SerializeField, Min(0.01f)] private float _StunDuration = 0.5f;
 
-    public int FishIndex;
+    [SerializeField] private float _SpeedUntilTraceSound = 2f;
+    [SerializeField] private StudioEventEmitter _StudioEventEmitter;
+
+    [HideInInspector] public int FishIndex;
 
     #endregion
 
@@ -47,6 +51,14 @@ public class Fish : MonoBehaviour
         _PlayerAnimator.SetSkin(FishIndex);
     }
 
+    public void SetGameplayActive(bool pActive)
+    {
+        _PlayerMovementSystem.enabled = pActive;
+        _PlayerDashSystem.enabled = pActive;
+        _PlayerPhysicsSystem.enabled = pActive;
+        enabled = pActive;
+    }
+
     public PlayerStats GetStats(PlayerStates state) => _PlayerPhysicsStates.GetStats(state);
 
     private PlayerStates GetState()
@@ -59,9 +71,10 @@ public class Fish : MonoBehaviour
 
     public void SetStunned(bool stunned)
     {
+        RuntimeManager.PlayOneShot("event:/SFX/KO", transform.position);
         IsStunned = stunned;
         if (!stunned) return;
-        _PlayerAnimator.RemoveStun();
+        _PlayerAnimator.SetStunned();
         _PlayerDashSystem.CancelCharge();
         _PlayerMovementSystem.SetMoveInput(Vector2.zero);
     }
@@ -86,7 +99,7 @@ public class Fish : MonoBehaviour
         _StunRoutine = null;
     }
 
-    public void PlayerDeath(int pKillerIndex) => OnPlayerDeath.Invoke(FishIndex, pKillerIndex);
+    public void PlayerDeath(int pKillerIndex) => OnPlayerDeath?.Invoke(FishIndex, pKillerIndex);
 
     #endregion
 
@@ -97,7 +110,34 @@ public class Fish : MonoBehaviour
     private void Update()
     {
         _PlayerMovementSystem.SetMoveInput(_MoveDirection);
-        _PlayerAnimator.SetSpeed(CurrentStats.moveSpeed * _MoveDirection.magnitude, 1f);
+        float moveSpeed = CurrentStats.moveSpeed * _MoveDirection.magnitude;
+
+        _PlayerAnimator.SetSpeed(moveSpeed, 1f);
+
+        if (moveSpeed> _SpeedUntilTraceSound)
+        {
+            if (!_StudioEventEmitter.IsPlaying())
+                _StudioEventEmitter.Play();
+
+            if(CurrentDirection.magnitude != 0)
+            {
+                _StudioEventEmitter.SetParameter("Surface", 2);
+            }
+            else if(State == PlayerStates.ON_WATER)
+            {
+                _StudioEventEmitter.SetParameter("Surface", 1);
+            }
+            else
+            {
+                _StudioEventEmitter.SetParameter("Surface", 0);
+            }
+
+        }
+        else
+        {
+            if (_StudioEventEmitter.IsPlaying())
+                _StudioEventEmitter.Stop();
+        }
     }
 
     #endregion

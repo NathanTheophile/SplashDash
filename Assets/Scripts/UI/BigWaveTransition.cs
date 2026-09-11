@@ -26,12 +26,27 @@ public class BigWaveTransition : MonoBehaviour
     [SerializeField] private float _finalTime = 0.7f;
     [SerializeField] private float _frequency = 2f;
     [SerializeField] private float _heigth = 1f;
-
-
     private RectTransform _transform;
 
     public UnityEvent OnAnimationHalfed;
     public UnityEvent OnCanvasFade;
+
+    public void PrepareGameplay()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+    }
+
+    private void OnSceneLoaded(Scene pScene, LoadSceneMode pMode)
+    {
+        if (pScene.name != "Gameplay") return;
+
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        PlayerManager.Instance.SetupGameplay(pScene);
+        GameManager.Instance.SetupGameplay(pScene);
+        FindFirstObjectByType<LevelManager>().SpawnLevel(pScene);
+        InputManager.Instance.EnableDeviceConnection(true);
+    }
 
     private void Start()
     {

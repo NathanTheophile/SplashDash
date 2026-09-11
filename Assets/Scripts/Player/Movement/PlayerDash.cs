@@ -4,6 +4,7 @@
 //  Note : MY_CONST, myPublic, m_MyProtected, _MyPrivate, lMyLocal, MyFunc(), pMyParam, onMyCallback, MyStruct
 #endregion
 
+using FMODUnity;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,6 +37,8 @@ public class PlayerDash : MonoBehaviour
     public float ChargeRatio => GetChargeRatio();
 
     public bool CanDash => CanStartDash();
+
+    private FMOD.Studio.EventInstance _chargeEvent;
 
     #endregion
 
@@ -71,6 +74,12 @@ public class PlayerDash : MonoBehaviour
 
     #region _________________________| GAME FLOW METHODS
 
+    private void Start()
+    {
+        _chargeEvent = RuntimeManager.CreateInstance("event:/SFX/Dash/Charge");
+        RuntimeManager.AttachInstanceToGameObject(_chargeEvent, gameObject);
+    }
+
     public void PressDash()
     {
         if (!CanDash)
@@ -78,10 +87,16 @@ public class PlayerDash : MonoBehaviour
 
         if (!_UseChargedDash)
         {
+            if (_chargeEvent.isValid())
+            {
+                _chargeEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            }
+
             StartDash(_MinDashDuration);
             return;
         }
 
+        _chargeEvent.start();
         IsCharging = true;
         _ChargeStartTime = Time.time;
         _PlayerMovementSystem.SetChargeSpeed(0f);
@@ -93,19 +108,28 @@ public class PlayerDash : MonoBehaviour
         if (!IsCharging)
             return;
 
+        if (_chargeEvent.isValid())
+        {
+            _chargeEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
+
         float lDashDuration = GetDashDuration();
 
+        StartDash(lDashDuration);
+
         IsCharging = false;
+
         _PlayerMovementSystem.ResetChargeSpeed();
         _PlayerAnimator.SetCharge(0f);
         HideDashChargeSlider();
-        StartDash(lDashDuration);
     }
 
     public void CancelCharge()
     {
         if (!IsCharging)
             return;
+
+        _chargeEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
         IsCharging = false;
         _ChargeStartTime = 0f;
@@ -134,7 +158,17 @@ public class PlayerDash : MonoBehaviour
     {
         PlayerStats lStats = _PlayerMovementSystem.DashStats;
         Vector2 lDirection = transform.up;
-    
+
+
+        if(ChargeRatio == 1)
+        {
+            RuntimeManager.PlayOneShot("event:/SFX/Dash/Big", transform.position);
+        }
+        else
+        {
+            RuntimeManager.PlayOneShot("event:/SFX/Dash/Normal", transform.position);
+        }
+
         _IsOnCooldown = true;
         IsDashing = true;
     
@@ -207,5 +241,13 @@ public class PlayerDash : MonoBehaviour
             _DashChargeSlider.gameObject.SetActive(false);
     }
 
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+        if (_chargeEvent.isValid())
+        {
+            _chargeEvent.release();
+        }
+    }
     #endregion
 }

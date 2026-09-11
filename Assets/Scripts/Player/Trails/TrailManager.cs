@@ -6,6 +6,7 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class TrailManager : MonoBehaviour
 {
@@ -16,9 +17,10 @@ public class TrailManager : MonoBehaviour
     #endregion
 
     #region _________________________/ TUNING VALUES
-    [SerializeField, Min(0.05f)] private float _WaterTrailSpacing = 0.2f;
+    [FormerlySerializedAs("_WaterTrailSpacing")]
+    [SerializeField, Min(0.05f)] private float _WaterTrailColliderSpacing = 0.9f;
 
-    public float WaterTrailSpacing => _WaterTrailSpacing;
+    public float WaterTrailColliderSpacing => _WaterTrailColliderSpacing;
 
     #endregion
 

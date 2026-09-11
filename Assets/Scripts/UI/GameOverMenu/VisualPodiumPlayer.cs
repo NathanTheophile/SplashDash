@@ -14,7 +14,7 @@ public class VisualPodiumPlayer : MonoBehaviour
     {
         gameObject.SetActive(true);
         _time.text = $"{time} s";
-        _name.text = $"Player {id}";
+        _name.text = $"Player {id + 1}";
 
         bool isEmpty = _skinMixer.data.Length == 0;
         if (isEmpty) return;

@@ -9,7 +9,7 @@ using UnityEngine;
 public class PlayerTrailEmitter : MonoBehaviour
 {
     #region _________________________/ REFERENCES
-    [SerializeField] private TrailManager _TrailManager;
+    private TrailManager _TrailManager;
     [SerializeField] private Fish _Fish;
     [SerializeField] private PlayerPhysics2D _PlayerPhysicsSystem;
 
@@ -91,7 +91,7 @@ public class PlayerTrailEmitter : MonoBehaviour
             return;
 
         Vector2 lDirection = lOffset / lDistance;
-        float lSpacing = _TrailManager.WaterTrailSpacing;
+        float lSpacing = _TrailManager.WaterTrailColliderSpacing;
 
         while (_DistanceSinceTrail + lDistance >= lSpacing)
         {

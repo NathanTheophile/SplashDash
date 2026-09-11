@@ -4,6 +4,7 @@
 //  Note : MY_CONST, myPublic, m_MyProtected, _MyPrivate, lMyLocal, MyFunc(), pMyParam, onMyEvent, OnMyCallback, MyStruct
 #endregion
 
+using FMODUnity;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -83,8 +84,6 @@ public class PlayerPhysics2D : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (!_Fish.IsDashing) return;
-
         DashTrail trail = other.GetComponentInParent<DashTrail>();
         if (trail != null)
             HandleCurrentContact(other, trail);
@@ -98,7 +97,9 @@ public class PlayerPhysics2D : MonoBehaviour
             _CurrentDirectionsByCollider.Remove(pCollider);
             return;
         }
-        if (_Fish.IsCharging) _CurrentDirectionsByCollider[pCollider] = pTrail.Direction;
+
+        if (!_Fish.IsDashing)
+            _CurrentDirectionsByCollider[pCollider] = pTrail.Direction;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -117,7 +118,10 @@ public class PlayerPhysics2D : MonoBehaviour
         {
             _LastEnemyIndex = otherFish.FishIndex;
             if (_Fish.IsDashing)
+            {
                 otherFish.Stun();
+                RuntimeManager.PlayOneShot("event:/SFX/Dash/Hit", transform.position);
+            }
 
             return;
         }
@@ -146,6 +150,7 @@ public class PlayerPhysics2D : MonoBehaviour
     {
         if (_IsDead) return;
 
+        RuntimeManager.PlayOneShot("event:/SFX/Death", transform.position);
         _IsDead = true;
         _Fish.PlayerDeath(_LastEnemyIndex);
     }
