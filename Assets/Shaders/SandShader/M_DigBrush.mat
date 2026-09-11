@@ -59,10 +59,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BrushSize: 0.015
+    - _BrushSize: 0.0225
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _BrushPosition: {r: 0.7436308, g: 0.35782966, b: 0, a: 0}
+    - _BrushPosition: {r: 0.3786889, g: 0.8103419, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
