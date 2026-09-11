@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triangle
       objectReference: {fileID: 0}
+    - target: {fileID: 6351204293639836099, guid: 588ba26fa69064b4c8c151fd05e8c7da, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7544915153325830151, guid: 588ba26fa69064b4c8c151fd05e8c7da, type: 3}
       propertyPath: m_SortingOrder
       value: -100

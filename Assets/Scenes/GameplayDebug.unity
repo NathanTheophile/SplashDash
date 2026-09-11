@@ -427,63 +427,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!1001 &804756057
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3589529125496865783, guid: 54cfd871e29154640b2b3b3a90a625a9, type: 3}
-      propertyPath: m_Name
-      value: ISLAND_MOON_Ready
-      objectReference: {fileID: 0}
-    - target: {fileID: 8876553802814704770, guid: 54cfd871e29154640b2b3b3a90a625a9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8876553802814704770, guid: 54cfd871e29154640b2b3b3a90a625a9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8876553802814704770, guid: 54cfd871e29154640b2b3b3a90a625a9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8876553802814704770, guid: 54cfd871e29154640b2b3b3a90a625a9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8876553802814704770, guid: 54cfd871e29154640b2b3b3a90a625a9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8876553802814704770, guid: 54cfd871e29154640b2b3b3a90a625a9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8876553802814704770, guid: 54cfd871e29154640b2b3b3a90a625a9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8876553802814704770, guid: 54cfd871e29154640b2b3b3a90a625a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8876553802814704770, guid: 54cfd871e29154640b2b3b3a90a625a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8876553802814704770, guid: 54cfd871e29154640b2b3b3a90a625a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 54cfd871e29154640b2b3b3a90a625a9, type: 3}
 --- !u!1 &1369106156
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,9 +457,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   _levelPrefabs:
-  - {fileID: 4776689397085896136, guid: a12abb6e60534aa468fd1a945a175034, type: 3}
-  - {fileID: 391220008486434333, guid: 32c0dd592625bc040b1e51e295aee238, type: 3}
-  - {fileID: 7151664248299010956, guid: 54cfd871e29154640b2b3b3a90a625a9, type: 3}
+  - {fileID: 2285158499683771061, guid: a12abb6e60534aa468fd1a945a175034, type: 3}
+  - {fileID: 3243358599343668789, guid: 32c0dd592625bc040b1e51e295aee238, type: 3}
+  - {fileID: 4956398078678417883, guid: 54cfd871e29154640b2b3b3a90a625a9, type: 3}
 --- !u!4 &1369106158
 Transform:
   m_ObjectHideFlags: 0
@@ -674,4 +617,3 @@ SceneRoots:
   - {fileID: 1426802664}
   - {fileID: 1369106158}
   - {fileID: 25882908}
-  - {fileID: 804756057}
