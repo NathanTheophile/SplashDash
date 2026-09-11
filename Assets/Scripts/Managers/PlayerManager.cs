@@ -106,11 +106,25 @@ public class PlayerManager : MonoBehaviour
 
     public void ActivatePlayers()
     {
+        Scene lGameplayScene = SceneManager.GetSceneByName("Gameplay");
+        GameObject lIslandPrefab = null;
+        foreach (GameObject lObject in lGameplayScene.GetRootGameObjects())
+        {
+            if (lObject.name.Contains("ISLAND")) lIslandPrefab = lObject;
+        }
+        Transform lSpawnpoints = null;
+        foreach(Transform transform in lIslandPrefab.GetComponentsInChildren<Transform>())
+        {
+            if (transform.name == "SpawnPoints") lSpawnpoints = transform;
+        }
+        
+
         for (int i = 0; i < _playerContainer.childCount; i++)
         {
             Transform playerObject = _playerContainer.GetChild(i);
             playerObject.gameObject.SetActive(true);
             playerObject.GetComponent<Fish>().SetGameplayActive(true);
+            playerObject.position = lSpawnpoints.GetChild(i).position;
         }
     }
 
