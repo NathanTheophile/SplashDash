@@ -514,9 +514,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   _levelPrefabs:
-  - {fileID: 4901904509315289903, guid: a12abb6e60534aa468fd1a945a175034, type: 3}
-  - {fileID: 4457991411813913622, guid: 32c0dd592625bc040b1e51e295aee238, type: 3}
-  - {fileID: 8876553802814704770, guid: 54cfd871e29154640b2b3b3a90a625a9, type: 3}
+  - {fileID: 4776689397085896136, guid: a12abb6e60534aa468fd1a945a175034, type: 3}
+  - {fileID: 391220008486434333, guid: 32c0dd592625bc040b1e51e295aee238, type: 3}
+  - {fileID: 7151664248299010956, guid: 54cfd871e29154640b2b3b3a90a625a9, type: 3}
 --- !u!4 &1369106158
 Transform:
   m_ObjectHideFlags: 0
