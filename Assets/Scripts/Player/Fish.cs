@@ -157,6 +157,9 @@ public class Fish : MonoBehaviour
 
     private void OnDisable()
     {
+        if (_StudioEventEmitter.IsPlaying())
+            _StudioEventEmitter.Stop();
+
         _StunRoutine = null;
         IsStunned = false;
         _MoveDirection = Vector2.zero;
