@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1242585740810027092}
   m_Layer: 0
   m_Name: Pierre_9
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 1156398169251050124}
   m_Layer: 0
   m_Name: palmier 2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 359823175121605440}
   m_Layer: 0
   m_Name: Pierre_2 (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -518,7 +518,7 @@ GameObject:
   - component: {fileID: 6450463180458281446}
   m_Layer: 0
   m_Name: palmier 2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 2540974346307738504}
   m_Layer: 0
   m_Name: Pierre_10 (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -737,7 +737,7 @@ GameObject:
   - component: {fileID: 6765044153190459079}
   m_Layer: 0
   m_Name: palmier 3
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -864,7 +864,7 @@ GameObject:
   - component: {fileID: 7458106279837141077}
   m_Layer: 0
   m_Name: Pierre_ 5 (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -956,7 +956,7 @@ GameObject:
   - component: {fileID: 4282986908671791213}
   m_Layer: 0
   m_Name: palmier 2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1084,7 +1084,7 @@ GameObject:
   - component: {fileID: 7460745786267662312}
   m_Layer: 0
   m_Name: palmier 1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1211,7 +1211,7 @@ GameObject:
   - component: {fileID: 3342538939086530058}
   m_Layer: 0
   m_Name: Pierre_2 (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1303,7 +1303,7 @@ GameObject:
   - component: {fileID: 4389008092807174817}
   m_Layer: 0
   m_Name: palmier 3 (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1430,7 +1430,7 @@ GameObject:
   - component: {fileID: 6156611815659462272}
   m_Layer: 0
   m_Name: Pierre_3
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1643,7 +1643,7 @@ GameObject:
   - component: {fileID: 3757616608297049180}
   m_Layer: 0
   m_Name: Pierre_ 5
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1735,7 +1735,7 @@ GameObject:
   - component: {fileID: 3486090109376991086}
   m_Layer: 0
   m_Name: Pierre_8
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1929,7 +1929,7 @@ GameObject:
   - component: {fileID: 2050533944914725727}
   m_Layer: 0
   m_Name: Pierre_2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2099,7 +2099,7 @@ GameObject:
   - component: {fileID: 6754928000723819790}
   m_Layer: 0
   m_Name: Pierre_7
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2276,7 +2276,7 @@ GameObject:
   - component: {fileID: 1947332640638632049}
   m_Layer: 0
   m_Name: palmier 1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2404,7 +2404,7 @@ GameObject:
   - component: {fileID: 1226132137912324814}
   m_Layer: 0
   m_Name: Pierre_7 (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2724,7 +2724,7 @@ GameObject:
   - component: {fileID: 942835774889911539}
   m_Layer: 0
   m_Name: palmier 2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2996,7 +2996,7 @@ GameObject:
   - component: {fileID: 7031459000778212100}
   m_Layer: 0
   m_Name: palmier 3
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3124,7 +3124,7 @@ GameObject:
   - component: {fileID: 3679934672786104283}
   m_Layer: 0
   m_Name: Pierre_1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3440,7 +3440,7 @@ GameObject:
   - component: {fileID: 9048574482696646905}
   m_Layer: 0
   m_Name: Pierre_6
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3563,7 +3563,7 @@ GameObject:
   - component: {fileID: 4434485335497611176}
   m_Layer: 0
   m_Name: palmier 4
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3691,7 +3691,7 @@ GameObject:
   - component: {fileID: 6426879801873696380}
   m_Layer: 0
   m_Name: palmier 1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3819,7 +3819,7 @@ GameObject:
   - component: {fileID: 5041445051162213790}
   m_Layer: 0
   m_Name: palmier 1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3978,7 +3978,7 @@ GameObject:
   - component: {fileID: 4668832447356374378}
   m_Layer: 0
   m_Name: palmier 3
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4105,7 +4105,7 @@ GameObject:
   - component: {fileID: 4423701820346605692}
   m_Layer: 0
   m_Name: Pierre_10
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4196,7 +4196,7 @@ GameObject:
   - component: {fileID: 7448507673684485963}
   m_Layer: 0
   m_Name: Pierre_4
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
