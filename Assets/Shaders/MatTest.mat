@@ -70,7 +70,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Darken: 0.46
+    - _Darken: 4
     - _EnableExternalAlpha: 0
     - _ZWrite: 0
     m_Colors:
