@@ -140,6 +140,7 @@ public class PlayerManager : MonoBehaviour
             Destroy(_playerContainer.GetChild(i).gameObject);
         }
         _players = new PlayerData[4];
+        colorindexes.Clear();
         PlayerNumber = _players.Count(d => d != null);
     }
 }

@@ -1,7 +1,5 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PlayerConnectPanelManager : MonoBehaviour
@@ -11,7 +9,6 @@ public class PlayerConnectPanelManager : MonoBehaviour
     [SerializeField] private Button _startButton;
 
     private PlayerManager _manager;
-    private bool _selectionPending;
 
     public static PlayerConnectPanelManager Instance { get; private set; }
 
@@ -42,30 +39,12 @@ public class PlayerConnectPanelManager : MonoBehaviour
         {
             _startText.gameObject.SetActive(false);
             _startButton.interactable = true;
-            SelectStartButtonWithController();
             return;
         }
 
         _startButton.interactable = false;
         _startText.gameObject.SetActive(true);
         _startText.text = $"Need {2 - playerNbr} More Players to Start the Game";
-    }
-
-    private void SelectStartButtonWithController()
-    {
-        if (_selectionPending || EventSystem.current == null)
-            return;
-
-        _selectionPending = true;
-        StartCoroutine(SelectStartButtonNextFrame());
-    }
-
-    private IEnumerator SelectStartButtonNextFrame()
-    {
-        yield return null;
-
-        _selectionPending = false;
-        EventSystem.current?.SetSelectedGameObject(_startButton.gameObject);
     }
 
     public void EditPanel(int id, InputMode usedInput)
