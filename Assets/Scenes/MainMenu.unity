@@ -142,6 +142,8 @@ MonoBehaviour:
   _background: {fileID: 1057235549}
   _menuButtons: {fileID: 957111548}
   _controllersSelection: {fileID: 1774436695}
+  _mainMenuCamera: {fileID: 860574549}
+  _startMenuTransition: {fileID: 1719077276}
   _duration: 1
 --- !u!1 &54934302
 GameObject:
@@ -2464,7 +2466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8637377a147e04ab4a65a7c3a845cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  _hud: {fileID: 216850609079114818, guid: 9a175dae39bb49543a39643de4de0b9f, type: 3}
+  _hud: {fileID: 0}
 --- !u!114 &1022678239 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}

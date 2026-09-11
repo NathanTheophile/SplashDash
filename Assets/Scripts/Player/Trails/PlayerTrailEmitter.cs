@@ -91,7 +91,7 @@ public class PlayerTrailEmitter : MonoBehaviour
             return;
 
         Vector2 lDirection = lOffset / lDistance;
-        float lSpacing = _TrailManager.WaterTrailSpacing;
+        float lSpacing = _TrailManager.WaterTrailColliderSpacing;
 
         while (_DistanceSinceTrail + lDistance >= lSpacing)
         {

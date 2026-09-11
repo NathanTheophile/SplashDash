@@ -22,10 +22,10 @@ public class VisualKillSetter : MonoBehaviour
 
         _killerImage.enabled = true;
 
-        var killerMixer = _skinMixer.data[killerID ^ _skinMixer.data.Length];
+        var killerMixer = _skinMixer.data[killerID % _skinMixer.data.Length];
         _killerImage.sprite = killerMixer.sprites;
 
-        var killedPlayerImage = _skinMixer.data[killedPlayerID ^ _skinMixer.data.Length];
+        var killedPlayerImage = _skinMixer.data[killedPlayerID % _skinMixer.data.Length];
         _killedPlayerImage.sprite = killedPlayerImage.knockedSprite;
 
         _canvasGroup.alpha = 1;
@@ -40,7 +40,7 @@ public class VisualKillSetter : MonoBehaviour
 
         _killerImage.enabled = false;
 
-        var killedPlayerImage = _skinMixer.data[killedPlayerID ^ _skinMixer.data.Length];
+        var killedPlayerImage = _skinMixer.data[killedPlayerID % _skinMixer.data.Length];
         _killedPlayerImage.sprite = killedPlayerImage.knockedSprite;
 
         _canvasGroup.alpha = 1;

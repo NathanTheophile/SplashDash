@@ -5,6 +5,7 @@
 #endregion
 
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -75,14 +76,32 @@ public class DashTrail : MonoBehaviour
 
     private void AddVisualRenderer(GameObject pSquare)
     {
-        SpriteRenderer lRenderer = pSquare.AddComponent<SpriteRenderer>();
+        GameObject lVisual = new GameObject("Visual");
+        lVisual.transform.SetParent(pSquare.transform, false);
+
+        SpriteRenderer lRenderer = lVisual.AddComponent<SpriteRenderer>();
         lRenderer.sprite = _VisualRenderer.sprite;
         lRenderer.sharedMaterial = _VisualRenderer.sharedMaterial;
-        lRenderer.color = _VisualRenderer.color;
+        lRenderer.color = new Color(
+            _VisualRenderer.color.r,
+            _VisualRenderer.color.g,
+            _VisualRenderer.color.b,
+            1f);
         lRenderer.flipX = _VisualRenderer.flipX;
         lRenderer.flipY = _VisualRenderer.flipY;
-        lRenderer.drawMode = _VisualRenderer.drawMode;
-        lRenderer.size = _VisualRenderer.size;
+        lRenderer.drawMode = SpriteDrawMode.Simple;
+        lVisual.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
+        Vector2 lSpriteSize = _VisualRenderer.sprite.bounds.size;
+        const float lVisualSize = 1.8f;
+        lVisual.transform.localScale = new Vector3(
+            lVisualSize / lSpriteSize.x,
+            lVisualSize / lSpriteSize.y,
+            1f);
+        lVisual.transform
+            .DOScale(lVisual.transform.localScale * 1.15f, 0.35f)
+            .SetEase(Ease.InOutSine)
+            .SetLoops(-1, LoopType.Yoyo)
+            .SetLink(lVisual);
         lRenderer.maskInteraction = _VisualRenderer.maskInteraction;
         lRenderer.sortingLayerID = _VisualRenderer.sortingLayerID;
         lRenderer.sortingOrder = _VisualRenderer.sortingOrder;

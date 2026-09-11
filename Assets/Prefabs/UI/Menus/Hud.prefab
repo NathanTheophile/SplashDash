@@ -148,7 +148,6 @@ GameObject:
   - component: {fileID: 4071822988901009246}
   - component: {fileID: 6695828737415558654}
   - component: {fileID: 1333196043787161477}
-  - component: {fileID: 4888541635208471926}
   - component: {fileID: 7307733427276889114}
   m_Layer: 5
   m_Name: Kill
@@ -223,7 +222,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2478360119424133576}
+  m_GameObject: {fileID: 5165076051328350834}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b0015f375f8b884cb3219b20ad39f4c, type: 3}
@@ -255,6 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5542096957059759068}
   - component: {fileID: 216850609079114818}
+  - component: {fileID: 4888541635208471926}
   m_Layer: 5
   m_Name: Hud
   m_TagString: Untagged

@@ -114,6 +114,24 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    public void SetPlayerGameplayActive(int pPlayerID, bool pActive)
+    {
+        for (int i = 0; i < _playerContainer.childCount; i++)
+        {
+            Fish fish = _playerContainer.GetChild(i).GetComponent<Fish>();
+            if (fish.FishIndex != pPlayerID) continue;
+
+            fish.SetGameplayActive(pActive);
+            return;
+        }
+    }
+
+    public void DeactivatePlayers()
+    {
+        for (int i = 0; i < _playerContainer.childCount; i++)
+            _playerContainer.GetChild(i).GetComponent<Fish>().SetGameplayActive(false);
+    }
+
     public void DeletePlayers()
     {
         int lPlayerCount = _playerContainer.childCount;
@@ -122,6 +140,7 @@ public class PlayerManager : MonoBehaviour
             Destroy(_playerContainer.GetChild(i).gameObject);
         }
         _players = new PlayerData[4];
+        colorindexes.Clear();
         PlayerNumber = _players.Count(d => d != null);
     }
 }

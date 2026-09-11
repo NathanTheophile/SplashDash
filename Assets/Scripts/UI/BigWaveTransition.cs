@@ -43,6 +43,7 @@ public class BigWaveTransition : MonoBehaviour
 
         SceneManager.sceneLoaded -= OnSceneLoaded;
         PlayerManager.Instance.SetupGameplay(pScene);
+        GameManager.Instance.SetupGameplay(pScene);
         FindFirstObjectByType<LevelManager>().SpawnLevel(pScene);
         InputManager.Instance.EnableDeviceConnection(true);
     }
