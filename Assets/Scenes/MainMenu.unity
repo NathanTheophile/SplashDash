@@ -1135,7 +1135,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 446353055}
-  - component: {fileID: 446353056}
   m_Layer: 0
   m_Name: '| MANAGERS'
   m_TagString: Untagged
@@ -1160,25 +1159,6 @@ Transform:
   - {fileID: 886277886}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &446353056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446353054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0c83eb33482343479d94654d3cf00e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Music
-  musicEvent:
-    Guid:
-      Data1: -465469199
-      Data2: 1118496407
-      Data3: -1851042172
-      Data4: -1154933212
-    Path: event:/AMB/Menu
 --- !u!1 &496245750
 GameObject:
   m_ObjectHideFlags: 0
@@ -2189,6 +2169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 886277886}
   - component: {fileID: 886277885}
+  - component: {fileID: 886277887}
   m_Layer: 0
   m_Name: TransitionManager
   m_TagString: Untagged
@@ -2230,6 +2211,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 446353055}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &886277887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886277884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c83eb33482343479d94654d3cf00e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Music
+  musicEvent:
+    Guid:
+      Data1: -835565452
+      Data2: 1264468566
+      Data3: -653954160
+      Data4: 1453122011
+    Path: event:/Music/InGame
 --- !u!1 &946069897
 GameObject:
   m_ObjectHideFlags: 0
@@ -2596,6 +2596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1057235550}
+  - component: {fileID: 1057235551}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -2628,6 +2629,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1057235551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057235549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c83eb33482343479d94654d3cf00e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Music
+  musicEvent:
+    Guid:
+      Data1: -465469199
+      Data2: 1118496407
+      Data3: -1851042172
+      Data4: -1154933212
+    Path: event:/AMB/Menu
 --- !u!1 &1132769581
 GameObject:
   m_ObjectHideFlags: 0
