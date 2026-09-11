@@ -36,6 +36,12 @@ public class TransitionManager : MonoBehaviour
         state = nextState.gameOver;
     }
 
+    public void ResetToMenu()
+    {
+        state = nextState.empty;
+        _gameOverScreen.SetActive(false);
+    }
+
     private void OnHalf()
     {
         switch (state)

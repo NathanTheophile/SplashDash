@@ -142,6 +142,8 @@ MonoBehaviour:
   _background: {fileID: 1057235549}
   _menuButtons: {fileID: 957111548}
   _controllersSelection: {fileID: 1774436695}
+  _mainMenuCamera: {fileID: 860574549}
+  _startMenuTransition: {fileID: 1719077276}
   _duration: 1
 --- !u!1 &54934302
 GameObject:
