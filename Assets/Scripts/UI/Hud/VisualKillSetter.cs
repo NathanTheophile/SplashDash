@@ -18,13 +18,14 @@ public class VisualKillSetter : MonoBehaviour
     {
         bool isEmpty = _skinMixer.data.Length == 0;
         if (isEmpty) return;
+        StopAllCoroutines();
 
         _killerImage.enabled = true;
 
-        var killerMixer = _skinMixer.data[killerID ^ _skinMixer.data.Length];
+        var killerMixer = _skinMixer.data[killerID % _skinMixer.data.Length];
         _killerImage.sprite = killerMixer.sprites;
 
-        var killedPlayerImage = _skinMixer.data[killedPlayerID ^ _skinMixer.data.Length];
+        var killedPlayerImage = _skinMixer.data[killedPlayerID % _skinMixer.data.Length];
         _killedPlayerImage.sprite = killedPlayerImage.knockedSprite;
 
         _canvasGroup.alpha = 1;
@@ -35,10 +36,11 @@ public class VisualKillSetter : MonoBehaviour
     {
         bool isEmpty = _skinMixer.data.Length == 0;
         if (isEmpty) return;
+        StopAllCoroutines();
 
         _killerImage.enabled = false;
 
-        var killedPlayerImage = _skinMixer.data[killedPlayerID ^ _skinMixer.data.Length];
+        var killedPlayerImage = _skinMixer.data[killedPlayerID % _skinMixer.data.Length];
         _killedPlayerImage.sprite = killedPlayerImage.knockedSprite;
 
         _canvasGroup.alpha = 1;
@@ -54,7 +56,7 @@ public class VisualKillSetter : MonoBehaviour
 
             if(elapsedTime > WAIT_TIME)
             {
-                float remmaped = math.remap(WAIT_TIME, FADE_TIME, 0f, 1f, elapsedTime);
+                float remmaped = math.remap(WAIT_TIME, FADE_TIME, 1f, 0f, elapsedTime);
                 _canvasGroup.alpha = remmaped;
             }
 

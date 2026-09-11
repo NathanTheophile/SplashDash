@@ -16,24 +16,42 @@ MonoBehaviour:
   - mainBGColor: {r: 0.9372549, g: 0.4084406, b: 0.18431371, a: 1}
     lightBGColor: {r: 0.93207544, g: 0.60245407, b: 0.46252042, a: 1}
     sprites: {fileID: 21300000, guid: 82c488e9fdaa1594c8eae758eb8be01c, type: 3}
-    knockedSprite: {fileID: 21300000, guid: 82c488e9fdaa1594c8eae758eb8be01c, type: 3}
+    knockedSprite: {fileID: 21300000, guid: a8f5bcbe059339e4a821fb408414ccd1, type: 3}
+    fishSkin:
+      fishFin: {fileID: -6132409717022989900, guid: 90b552f7dff9ec646876137c78dc2653, type: 3}
+      fishBody: {fileID: -2652330718583189507, guid: 82e5d5c17cbbb0b48a45bc244b61f4d3, type: 3}
   - mainBGColor: {r: 0.25882354, g: 0.3803922, b: 0.18823531, a: 1}
     lightBGColor: {r: 0.4210537, g: 0.5396226, b: 0.35330006, a: 1}
     sprites: {fileID: 21300000, guid: 7872e5f0730ea364ab8d6d2dec97561d, type: 3}
-    knockedSprite: {fileID: 21300000, guid: 7872e5f0730ea364ab8d6d2dec97561d, type: 3}
+    knockedSprite: {fileID: 21300000, guid: 8260d2a2f1aca2d4e9dce87e9f426cd5, type: 3}
+    fishSkin:
+      fishFin: {fileID: -6671622877007384511, guid: 99aecb28166f65c4f8820f2200875ae0, type: 3}
+      fishBody: {fileID: -3385697709193310673, guid: a506de2be6d84464099606f5665dddb4, type: 3}
   - mainBGColor: {r: 0.38039216, g: 0.18823531, b: 0.36379513, a: 1}
     lightBGColor: {r: 0.6377357, g: 0.38865778, b: 0.6163862, a: 1}
     sprites: {fileID: 21300000, guid: 583dc0d6466aba343bd26a2dd80d752d, type: 3}
-    knockedSprite: {fileID: 21300000, guid: 583dc0d6466aba343bd26a2dd80d752d, type: 3}
+    knockedSprite: {fileID: 21300000, guid: 092d71ed3f4563049ae8a2a130171074, type: 3}
+    fishSkin:
+      fishFin: {fileID: -7041921596578814376, guid: aa98ffce129c0954e993a321b4fdbcc8, type: 3}
+      fishBody: {fileID: 2365884469047795901, guid: aeedfbd6836e1794ea4ca90e9991bbbe, type: 3}
   - mainBGColor: {r: 0.29050782, g: 0.2671057, b: 0.7735849, a: 1}
     lightBGColor: {r: 0.4912356, g: 0.46955496, b: 0.93207544, a: 1}
     sprites: {fileID: 21300000, guid: eba0273d4cd0b36459d439d338603a23, type: 3}
     knockedSprite: {fileID: 21300000, guid: ad1b7fd9437fccd4890a31a67b611fd6, type: 3}
+    fishSkin:
+      fishFin: {fileID: -8868481862984633167, guid: a57e8e11f41eec243a534e060f7db2ac, type: 3}
+      fishBody: {fileID: -5677597115045680727, guid: 5d4799af208bbd74295facab9e72888a, type: 3}
   - mainBGColor: {r: 0.78867924, g: 0.3199359, b: 0.33459014, a: 1}
     lightBGColor: {r: 0.7735849, g: 0.40138835, b: 0.41144776, a: 1}
     sprites: {fileID: 21300000, guid: b9e1f5909fb4b48418a9de009f3c0bd2, type: 3}
     knockedSprite: {fileID: 21300000, guid: 023f4d4f16354b546990a44532741335, type: 3}
+    fishSkin:
+      fishFin: {fileID: 8503143638436932900, guid: 4b98b86410299d64b91f138f8f284d75, type: 3}
+      fishBody: {fileID: -6525337909497212370, guid: e8c4262f7c607c349a958fe8ca978364, type: 3}
   - mainBGColor: {r: 0.8792453, g: 0.675194, b: 0.7827766, a: 1}
     lightBGColor: {r: 0.9245283, g: 0.84951943, b: 0.8518881, a: 1}
     sprites: {fileID: 21300000, guid: a1bf9230dabfc8e46b9108a7062b69cc, type: 3}
     knockedSprite: {fileID: 21300000, guid: 40d1caac1d1ed0641b649f9aa7e45605, type: 3}
+    fishSkin:
+      fishFin: {fileID: -921960400615412694, guid: a4038ac64d83d9f43bbd17b0d5057c60, type: 3}
+      fishBody: {fileID: -2743471845412515474, guid: 1c536090d12d1b84f84fc4b231f8f1d3, type: 3}

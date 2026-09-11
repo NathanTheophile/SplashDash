@@ -5,6 +5,7 @@
 #endregion
 
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -14,6 +15,7 @@ public class DashTrail : MonoBehaviour
     #region _________________________/ REFERENCES
     [FormerlySerializedAs("_Box")]
     [SerializeField] private BoxCollider2D _RootCollider;
+    [SerializeField] private SpriteRenderer _VisualRenderer;
 
     #endregion
 
@@ -35,9 +37,6 @@ public class DashTrail : MonoBehaviour
 
     private void Awake()
     {
-        if (_RootCollider == null)
-            _RootCollider = GetComponent<BoxCollider2D>();
-
         _RootCollider.isTrigger = true;
         _SquareColliders.Add(_RootCollider);
     }
@@ -69,14 +68,47 @@ public class DashTrail : MonoBehaviour
             BoxCollider2D squareCollider = lSquare.AddComponent<BoxCollider2D>();
             squareCollider.isTrigger = true;
             squareCollider.size = Vector2.one * _SquareSize;
+
+            AddVisualRenderer(lSquare);
             _SquareColliders.Add(squareCollider);
         }
     }
 
+    private void AddVisualRenderer(GameObject pSquare)
+    {
+        GameObject lVisual = new GameObject("Visual");
+        lVisual.transform.SetParent(pSquare.transform, false);
+
+        SpriteRenderer lRenderer = lVisual.AddComponent<SpriteRenderer>();
+        lRenderer.sprite = _VisualRenderer.sprite;
+        lRenderer.sharedMaterial = _VisualRenderer.sharedMaterial;
+        lRenderer.color = new Color(
+            _VisualRenderer.color.r,
+            _VisualRenderer.color.g,
+            _VisualRenderer.color.b,
+            1f);
+        lRenderer.flipX = _VisualRenderer.flipX;
+        lRenderer.flipY = _VisualRenderer.flipY;
+        lRenderer.drawMode = SpriteDrawMode.Simple;
+        lVisual.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
+        Vector2 lSpriteSize = _VisualRenderer.sprite.bounds.size;
+        const float lVisualSize = 1.8f;
+        lVisual.transform.localScale = new Vector3(
+            lVisualSize / lSpriteSize.x,
+            lVisualSize / lSpriteSize.y,
+            1f);
+        lVisual.transform
+            .DOScale(lVisual.transform.localScale * 1.15f, 0.35f)
+            .SetEase(Ease.InOutSine)
+            .SetLoops(-1, LoopType.Yoyo)
+            .SetLink(lVisual);
+        lRenderer.maskInteraction = _VisualRenderer.maskInteraction;
+        lRenderer.sortingLayerID = _VisualRenderer.sortingLayerID;
+        lRenderer.sortingOrder = _VisualRenderer.sortingOrder;
+    }
+
     public void RemoveSquare(Collider2D pCollider)
     {
-        if (pCollider == null || !pCollider.enabled) return;
-
         // Disable immediately so other players stop receiving its current this frame.
         pCollider.enabled = false;
         // The first square shares the container, which must keep the other squares alive.

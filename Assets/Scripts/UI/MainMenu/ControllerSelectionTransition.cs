@@ -10,9 +10,28 @@ public class ControllerSelectionTransition : MonoBehaviour
 
     [SerializeField] private CanvasGroup _bg;
     [SerializeField] private CanvasGroup _boueeShadows;
+    [SerializeField] private BigWaveTransition _sceneLoader;
+    [SerializeField] private Camera _mainMenuCamera;
 
     [SerializeField] private float _Duration = 0.5f;
 
+    private void OnEnable()
+    {
+        GameManager.GameStarted += OnGameStarted;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.GameStarted -= OnGameStarted;
+    }
+
+    private void OnGameStarted()
+    {
+        _mainMenuCamera.enabled = false;
+        _bg.transform.parent.gameObject.SetActive(false);
+        _currentMenu.gameObject.SetActive(false);
+        _sceneLoader.DoTransition();
+    }
 
     public void DoTransition()
     {
@@ -35,6 +54,8 @@ public class ControllerSelectionTransition : MonoBehaviour
         _title.DoTweenTo(_Duration);
         _currentMenu.DoTweenTo(_Duration);
         _mainButtons.DoTweenTo(_Duration);
+
+        _sceneLoader.PrepareGameplay();
     }
 
     private void OnToTweenComplete()
@@ -59,6 +80,9 @@ public class ControllerSelectionTransition : MonoBehaviour
         _title.DoTweenFrom(_Duration);
         _currentMenu.DoTweenFrom(_Duration);
         _mainButtons.DoTweenFrom(_Duration);
+
+        InputManager.Instance.EnableDeviceConnection(false);
+        InputManager.Instance.DisconnectAllDevices();
     }
 
     private void OnFromTweenComplete()

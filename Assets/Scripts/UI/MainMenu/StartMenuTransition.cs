@@ -25,9 +25,12 @@ public class StartMenuTransition : MonoBehaviour
     [SerializeField] private TweenUIBetweenTwoPoints _tweenersBouee2;
     [SerializeField] private CanvasGroup _boueeShadows;
 
+    [SerializeField] private Button _clickButton;
+
     private void Start()
     {
-        _buttonInput.OnButtonEvent.AddListener(DoTransition);
+        //_buttonInput.OnButtonEvent.AddListener(DoTransition);
+        _clickButton.onClick.AddListener(DoTransition);
     }
 
     public void DoTransition()
@@ -96,6 +99,8 @@ public class StartMenuTransition : MonoBehaviour
 
     private void OnDestroy()
     {
-        _buttonInput.OnButtonEvent.RemoveListener(DoTransition);
+        //_buttonInput.OnButtonEvent.RemoveListener(DoTransition);
+
+        _clickButton.onClick.RemoveListener(DoTransition);
     }
 }
