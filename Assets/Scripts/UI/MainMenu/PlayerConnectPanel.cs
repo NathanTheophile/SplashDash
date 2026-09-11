@@ -35,6 +35,7 @@ public class PlayerConnectPanel : MonoBehaviour
 
     public void RemovePanel()
     {
+        _skinMixer.ResetImage();
         _skinMixer.gameObject.SetActive(false);
     }
 }

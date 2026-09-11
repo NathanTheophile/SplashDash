@@ -24,4 +24,9 @@ public class SkinPanelSetter : MonoBehaviour
         _text.color = mixer.mainBGColor;
         _image.sprite = mixer.sprites;
     }
+
+    public void ResetImage()
+    {
+        _bg.color = Color.white;
+    }
 }

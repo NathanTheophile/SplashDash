@@ -15,6 +15,11 @@ public class TweenUIBetweenTwoPoints : MonoBehaviour
         _object = gameObject.GetComponent<RectTransform>();
     }
 
+    public void ResetTween()
+    {
+        _object.anchoredPosition = _start.anchoredPosition;
+    }
+
     public Tween DoTweenTo(float duration)
     {
         _object.anchoredPosition = _start.anchoredPosition;
