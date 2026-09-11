@@ -84,8 +84,6 @@ public class PlayerPhysics2D : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (!_Fish.IsDashing) return;
-
         DashTrail trail = other.GetComponentInParent<DashTrail>();
         if (trail != null)
             HandleCurrentContact(other, trail);
@@ -99,7 +97,9 @@ public class PlayerPhysics2D : MonoBehaviour
             _CurrentDirectionsByCollider.Remove(pCollider);
             return;
         }
-        if (_Fish.IsCharging) _CurrentDirectionsByCollider[pCollider] = pTrail.Direction;
+
+        if (!_Fish.IsDashing)
+            _CurrentDirectionsByCollider[pCollider] = pTrail.Direction;
     }
 
     private void OnTriggerExit2D(Collider2D other)
