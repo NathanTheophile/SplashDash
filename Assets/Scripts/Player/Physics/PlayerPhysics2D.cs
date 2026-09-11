@@ -45,6 +45,9 @@ public class PlayerPhysics2D : MonoBehaviour
 
     #endregion
 
+    [SerializeField] private ParticleSystem _splashParticles;
+    [SerializeField] private ParticleSystem _leaveParticles;
+
     private void OnDisable() => ClearContacts();
 
     private void Awake()
@@ -121,13 +124,22 @@ public class PlayerPhysics2D : MonoBehaviour
             {
                 otherFish.Stun();
                 RuntimeManager.PlayOneShot("event:/SFX/Dash/Hit", transform.position);
+                CreateSplashParticles();
             }
 
             return;
         }
 
         if (collision.collider.CompareTag("Obstacle") && _Fish.IsDashing)
+        {
             _Fish.Stun();
+            CreateSplashParticles();
+            if (collision.collider.name.Contains("palmier"))
+            {
+                Instantiate(_leaveParticles, collision.transform.position, Quaternion.identity);
+                Destroy(collision.gameObject);
+            }
+        }
     }
     
     
@@ -183,5 +195,10 @@ public class PlayerPhysics2D : MonoBehaviour
         }
 
         return Vector2.zero;
+    }
+
+    private void CreateSplashParticles()
+    {
+        Instantiate(_splashParticles, transform.position + transform.up * 1.89f, transform.rotation);
     }
 }

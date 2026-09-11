@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 6817218044224339879}
   m_Layer: 0
   m_Name: Pierre_6
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -619,7 +619,7 @@ GameObject:
   - component: {fileID: 5955548463612248079}
   - component: {fileID: 1485425235213972858}
   m_Layer: 0
-  m_Name: bouer requin 1 (5)
+  m_Name: Pierre_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -709,7 +709,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6356766766158984531}
   m_Layer: 0
-  m_Name: SpawnPoint3
+  m_Name: palmier 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1026,7 +1026,7 @@ GameObject:
   - component: {fileID: 6895616900226628357}
   m_Layer: 0
   m_Name: palmier 4
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1152,7 +1152,7 @@ GameObject:
   - component: {fileID: 7714498804859246236}
   - component: {fileID: 1259048670786784460}
   m_Layer: 0
-  m_Name: Pierre_8
+  m_Name: Pierre_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1242,7 +1242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5890574861086147504}
   m_Layer: 0
-  m_Name: SpawnPoints
+  m_Name: Pierre_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1497,7 +1497,7 @@ GameObject:
   - component: {fileID: 3914362877669717366}
   - component: {fileID: 3269777008042888084}
   m_Layer: 0
-  m_Name: bouer requin 1 (9)
+  m_Name: palmier 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2043,7 +2043,7 @@ GameObject:
   - component: {fileID: 7657293720796045317}
   - component: {fileID: 5348850381305342558}
   m_Layer: 0
-  m_Name: Pierre_2
+  m_Name: Pierre_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2316,7 +2316,7 @@ GameObject:
   - component: {fileID: 4369372170538874372}
   - component: {fileID: 2256135725660331989}
   m_Layer: 0
-  m_Name: bouer requin 1 (3)
+  m_Name: palmier 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2669,7 +2669,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4636539281262442037}
+  m_GameObject: {fileID: 2474025422259079231}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7, y: -7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8098071355939952649}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2508753929069244284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8624300167499588307}
+  - component: {fileID: 3837560691744434822}
+  - component: {fileID: 6994883481567155900}
+  m_Layer: 0
+  m_Name: palmier 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8624300167499588307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2508753929069244284}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.11535, y: 5.3075223, z: 0}
@@ -2785,7 +2818,7 @@ GameObject:
   - component: {fileID: 7233573431508752028}
   - component: {fileID: 7908628573249071946}
   m_Layer: 0
-  m_Name: Pierre_7
+  m_Name: Pierre_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3166,7 +3199,7 @@ GameObject:
   - component: {fileID: 4956398078678417883}
   - component: {fileID: 2200385192804060677}
   m_Layer: 0
-  m_Name: ISLAND_MOON_Ready
+  m_Name: Pierre_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3299,7 +3332,7 @@ GameObject:
   - component: {fileID: 6618241981898283299}
   - component: {fileID: 3405829197262858323}
   m_Layer: 0
-  m_Name: bouer requin 1 (8)
+  m_Name: Pierre_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3390,7 +3423,7 @@ GameObject:
   - component: {fileID: 1195198133636161256}
   - component: {fileID: 1114340924545777595}
   m_Layer: 0
-  m_Name: bouer requin 1 (4)
+  m_Name: Pierre_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3482,7 +3515,7 @@ GameObject:
   - component: {fileID: 7729995649669994362}
   - component: {fileID: 5723229978725512685}
   m_Layer: 0
-  m_Name: palmier 4
+  m_Name: palmier 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3610,7 +3643,7 @@ GameObject:
   - component: {fileID: 6007718003786692589}
   m_Layer: 0
   m_Name: Pierre_1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4182,7 +4215,7 @@ GameObject:
   - component: {fileID: 4071635363756140441}
   m_Layer: 0
   m_Name: palmier 1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4321,7 +4354,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7053430884327311237}
+  m_GameObject: {fileID: 5422225467299340100}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5246693539718297529}
+  - {fileID: 3235508158973242525}
+  - {fileID: 7391551359036327431}
+  - {fileID: 4457901598115714784}
+  m_Father: {fileID: 7151664248299010956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6343481080553135850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7962966156380926670}
+  - component: {fileID: 688375590410921638}
+  m_Layer: 0
+  m_Name: Pierre_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7962966156380926670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6343481080553135850}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.0903077, y: 4.2950654, z: 0}
@@ -4438,7 +4507,7 @@ GameObject:
   - component: {fileID: 805732250950566678}
   m_Layer: 0
   m_Name: palmier 4
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4564,7 +4633,7 @@ GameObject:
   - component: {fileID: 7649776392583366512}
   - component: {fileID: 1524475801542279099}
   m_Layer: 0
-  m_Name: Pierre_3
+  m_Name: Pierre_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4687,7 +4756,7 @@ GameObject:
   - component: {fileID: 4705282980651808578}
   - component: {fileID: 617621726655330052}
   m_Layer: 0
-  m_Name: Pierre_1
+  m_Name: Pierre_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5164,7 +5233,7 @@ GameObject:
   - component: {fileID: 6314361055231329343}
   - component: {fileID: 5912599219849562028}
   m_Layer: 0
-  m_Name: bouer requin 1
+  m_Name: palmier 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5255,7 +5324,7 @@ GameObject:
   - component: {fileID: 6050112339897101323}
   - component: {fileID: 3257952878642757570}
   m_Layer: 0
-  m_Name: bouer requin 1 (6)
+  m_Name: Pierre_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5347,7 +5416,7 @@ GameObject:
   - component: {fileID: 1933946277071397698}
   - component: {fileID: 209772774624282254}
   m_Layer: 0
-  m_Name: palmier 1
+  m_Name: palmier 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5474,7 +5543,7 @@ GameObject:
   - component: {fileID: 954826896575636944}
   - component: {fileID: 1621350883793907026}
   m_Layer: 0
-  m_Name: bouer requin 1 (10)
+  m_Name: palmier 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5565,7 +5634,7 @@ GameObject:
   - component: {fileID: 8019047033854675715}
   - component: {fileID: 8588036223128547638}
   m_Layer: 0
-  m_Name: Pierre_4
+  m_Name: palmier 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
