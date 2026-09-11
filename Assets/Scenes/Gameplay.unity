@@ -186,8 +186,57 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6351204293639836099, guid: 588ba26fa69064b4c8c151fd05e8c7da, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 74629777}
+    - targetCorrespondingSourceObject: {fileID: 6351204293639836099, guid: 588ba26fa69064b4c8c151fd05e8c7da, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 74629778}
   m_SourcePrefab: {fileID: 100100000, guid: 588ba26fa69064b4c8c151fd05e8c7da, type: 3}
+--- !u!1 &74629776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6351204293639836099, guid: 588ba26fa69064b4c8c151fd05e8c7da, type: 3}
+  m_PrefabInstance: {fileID: 74629775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &74629777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74629776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c83eb33482343479d94654d3cf00e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  musicEvent:
+    Guid:
+      Data1: -835565452
+      Data2: 1264468566
+      Data3: -653954160
+      Data4: 1453122011
+    Path: event:/Music/InGame
+--- !u!114 &74629778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74629776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c83eb33482343479d94654d3cf00e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Music
+  musicEvent:
+    Guid:
+      Data1: -1437258556
+      Data2: 1167225030
+      Data3: 1581917588
+      Data4: 88084524
+    Path: event:/AMB/Sea
 --- !u!1001 &184109039
 PrefabInstance:
   m_ObjectHideFlags: 0
