@@ -78,7 +78,7 @@ Material:
     - _deformScaleTop: 0.66
     m_Colors:
     - _BornesOpacity: {r: 0.3, g: 0.9, b: 0, a: 0}
-    - _DarkWaterColor: {r: 0.07208969, g: 0.14615893, b: 0.16981131, a: 1}
+    - _DarkWaterColor: {r: 0.07515521, g: 0.20923212, b: 0.25157225, a: 1}
     - _LightWaterColor: {r: 0.15503722, g: 0.6649101, b: 0.735849, a: 1}
     - _MoveDirectionBottom: {r: 1.2, g: 1.6, b: 0, a: 0}
     - _MoveDirectionTop: {r: -1.5, g: -0.7, b: 0, a: 0}

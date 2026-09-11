@@ -5435,7 +5435,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 254967463539226632, guid: 99d1bfa82a177104a9f250590b921254, type: 3}
       propertyPath: m_LocalScale.x
-      value: 14.658128
+      value: 38.141914
       objectReference: {fileID: 0}
     - target: {fileID: 254967463539226632, guid: 99d1bfa82a177104a9f250590b921254, type: 3}
       propertyPath: m_LocalScale.y
@@ -5447,7 +5447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 254967463539226632, guid: 99d1bfa82a177104a9f250590b921254, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30
+      value: -41.742
       objectReference: {fileID: 0}
     - target: {fileID: 254967463539226632, guid: 99d1bfa82a177104a9f250590b921254, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5489,6 +5489,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triangle_DeadZone (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6956043194518142406, guid: 99d1bfa82a177104a9f250590b921254, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 15959ef7f50a5924bb754618db77bc70, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5509,7 +5513,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 254967463539226632, guid: 99d1bfa82a177104a9f250590b921254, type: 3}
       propertyPath: m_LocalScale.x
-      value: 14.658128
+      value: 37.78572
       objectReference: {fileID: 0}
     - target: {fileID: 254967463539226632, guid: 99d1bfa82a177104a9f250590b921254, type: 3}
       propertyPath: m_LocalScale.y
@@ -5521,7 +5525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 254967463539226632, guid: 99d1bfa82a177104a9f250590b921254, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30
+      value: 41.5641
       objectReference: {fileID: 0}
     - target: {fileID: 254967463539226632, guid: 99d1bfa82a177104a9f250590b921254, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5563,6 +5567,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triangle_DeadZone
       objectReference: {fileID: 0}
+    - target: {fileID: 6956043194518142406, guid: 99d1bfa82a177104a9f250590b921254, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 15959ef7f50a5924bb754618db77bc70, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5637,6 +5645,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triangle_DeadZone (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6956043194518142406, guid: 99d1bfa82a177104a9f250590b921254, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 15959ef7f50a5924bb754618db77bc70, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5711,6 +5723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triangle_DeadZone (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6956043194518142406, guid: 99d1bfa82a177104a9f250590b921254, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 15959ef7f50a5924bb754618db77bc70, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
