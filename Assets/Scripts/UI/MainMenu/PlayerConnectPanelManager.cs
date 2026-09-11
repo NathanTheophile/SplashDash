@@ -22,6 +22,11 @@ public class PlayerConnectPanelManager : MonoBehaviour
         Instance = this;
     }
 
+    private void OnEnable()
+    {
+        UpdateText();
+    }
+
     private void Start()
     {
         _manager = PlayerManager.Instance;
