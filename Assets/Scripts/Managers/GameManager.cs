@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,6 +40,18 @@ public class GameManager : MonoBehaviour
         PlayerManager.Instance.ActivatePlayers();
         InputManager.Instance.EnableDeviceConnection(false);
         GameStarted?.Invoke();
+    }
+
+    public void SetupGameplay(Scene pGameplayScene)
+    {
+        foreach (GameObject rootObject in pGameplayScene.GetRootGameObjects())
+        {
+            HUD hud = rootObject.GetComponentInChildren<HUD>(true);
+            if (hud == null) continue;
+
+            _hud = hud;
+            return;
+        }
     }
 
     public void ResetManager()
