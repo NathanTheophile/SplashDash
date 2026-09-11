@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Threading.Tasks;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
@@ -29,6 +28,7 @@ public class BigWaveTransition : MonoBehaviour
     [SerializeField] private float _frequency = 2f;
     [SerializeField] private float _heigth = 1f;
     private RectTransform _transform;
+    private bool _isReloadingGameplay;
 
     public UnityEvent OnAnimationHalfed;
     public UnityEvent OnCanvasFade;
@@ -43,6 +43,37 @@ public class BigWaveTransition : MonoBehaviour
 
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+    }
+
+    public void PrepareReplay()
+    {
+        if (_isReloadingGameplay) return;
+
+        _isReloadingGameplay = true;
+        StartCoroutine(ReloadGameplayCoroutine());
+    }
+
+    private IEnumerator ReloadGameplayCoroutine()
+    {
+        Scene gameplayScene = SceneManager.GetSceneByName("Gameplay");
+        if (gameplayScene.isLoaded)
+            yield return SceneManager.UnloadSceneAsync(gameplayScene);
+
+        SceneManager.sceneLoaded += OnReplaySceneLoaded;
+        yield return SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+    }
+
+    private void OnReplaySceneLoaded(Scene pScene, LoadSceneMode pMode)
+    {
+        if (pScene.name != "Gameplay") return;
+
+        SceneManager.sceneLoaded -= OnReplaySceneLoaded;
+        _isReloadingGameplay = false;
+        PlayerManager.Instance.SetupGameplay(pScene);
+        GameManager.Instance.SetupGameplay(pScene);
+        FindFirstObjectByType<LevelManager>().SpawnLevel(pScene);
+        InputManager.Instance.RespawnPlayers();
+        TransitionManager.Instance.GoToGameplay();
     }
 
     private void OnSceneLoaded(Scene pScene, LoadSceneMode pMode)
@@ -154,8 +185,4 @@ public class BigWaveTransition : MonoBehaviour
         }
     }
 
-    private async Task LoadScene(int id)
-    {
-        await SceneManager.LoadSceneAsync(id, LoadSceneMode.Additive);
-    }
 }

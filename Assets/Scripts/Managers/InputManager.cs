@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] private GameObject _playerPrefab;
     private const int MAX_PLAYERS = 4;
     private InputDevice[] _devicesConnected = new InputDevice[MAX_PLAYERS];
+    private string[] _controlSchemes = new string[MAX_PLAYERS];
     private bool _wasdConnected, _arrowsConnected;
 
     public static InputManager Instance { get; private set; }
@@ -57,16 +58,32 @@ public class InputManager : MonoBehaviour
 
     private void AddPlayer(string pControlScheme, InputDevice pDeviceToPair)
     {
-        _devicesConnected[_manager.playerCount] = pDeviceToPair;
-        PlayerManager.Instance.OnJoin(_manager.playerCount);
+        int playerID = _manager.playerCount;
+        _devicesConnected[playerID] = pDeviceToPair;
+        _controlSchemes[playerID] = pControlScheme;
+        PlayerManager.Instance.OnJoin(playerID);
 
-        PlayerInput lNewPlayer = PlayerInput.Instantiate(_playerPrefab, controlScheme: pControlScheme, pairWithDevice: pDeviceToPair);
+        SpawnPlayer(playerID);
+    }
+
+    private void SpawnPlayer(int pPlayerID)
+    {
+        PlayerInput lNewPlayer = PlayerInput.Instantiate(_playerPrefab, controlScheme: _controlSchemes[pPlayerID], pairWithDevice: _devicesConnected[pPlayerID]);
         Fish lFish = lNewPlayer.GetComponent<Fish>();
-        lFish.SetFishIndex(_manager.playerCount - 1);
+        lFish.SetFishIndex(pPlayerID);
         InputMode lDeviceType = new();
-        if (pDeviceToPair is Keyboard) lDeviceType = InputMode.Keyboard;
-        else if (pDeviceToPair is Gamepad) lDeviceType = InputMode.Gamepad;
-        PlayerManager.Instance.AddPlayerCharacter(lNewPlayer.transform, _manager.playerCount - 1, lDeviceType);
+        if (_devicesConnected[pPlayerID] is Keyboard) lDeviceType = InputMode.Keyboard;
+        else if (_devicesConnected[pPlayerID] is Gamepad) lDeviceType = InputMode.Gamepad;
+        PlayerManager.Instance.AddPlayerCharacter(lNewPlayer.transform, pPlayerID, lDeviceType);
+    }
+
+    public void RespawnPlayers()
+    {
+        for (int playerID = 0; playerID < _devicesConnected.Length; playerID++)
+        {
+            if (_devicesConnected[playerID] == null) continue;
+            SpawnPlayer(playerID);
+        }
     }
 
     private bool PlayersAvailable() => _manager.playerCount < _manager.maxPlayerCount;
@@ -83,5 +100,6 @@ public class InputManager : MonoBehaviour
         _wasdConnected = false;
         _arrowsConnected = false;
         _devicesConnected = new InputDevice[MAX_PLAYERS];
+        _controlSchemes = new string[MAX_PLAYERS];
     }
 }

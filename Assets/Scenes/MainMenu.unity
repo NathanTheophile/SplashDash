@@ -3769,7 +3769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 463698358087557907, guid: 324453f513680df43a740bc165bea4f6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DoBackToMenus
+      value: DoReplay
       objectReference: {fileID: 0}
     - target: {fileID: 463698358087557907, guid: 324453f513680df43a740bc165bea4f6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName

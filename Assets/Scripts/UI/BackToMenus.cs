@@ -42,6 +42,12 @@ public class BackToMenus : MonoBehaviour
         _menu.DOFade(0f, _duration).OnComplete(OnTransitionComplete);
     }
 
+    public void DoReplay()
+    {
+        FindFirstObjectByType<TrailManager>()?.ClearTrails();
+        _transition.PrepareReplay();
+    }
+
     private void OnTransitionComplete()
     {
         _menu.alpha = 1f;

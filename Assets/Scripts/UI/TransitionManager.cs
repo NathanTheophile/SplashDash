@@ -65,6 +65,7 @@ public class TransitionManager : MonoBehaviour
                 _mainMenuCamera.SetActive(false);
                 _bg.gameObject.SetActive(false);
                 _currentMenu.gameObject.SetActive(false);
+                _gameOverScreen.SetActive(false);
 
                 _gameManager.StartGame();
                 _transition.EndTransition();
