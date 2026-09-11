@@ -99,7 +99,7 @@ public class Fish : MonoBehaviour
         _StunRoutine = null;
     }
 
-    public void PlayerDeath(int pKillerIndex) => OnPlayerDeath.Invoke(FishIndex, pKillerIndex);
+    public void PlayerDeath(int pKillerIndex) => OnPlayerDeath?.Invoke(FishIndex, pKillerIndex);
 
     #endregion
 

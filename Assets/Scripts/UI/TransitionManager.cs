@@ -29,8 +29,9 @@ public class TransitionManager : MonoBehaviour
         _transition.OnCanvasFade.AddListener(OnFade);
     }
 
-    public void GoToGameOver()
+    public void GoToGameOver(GameScoresData pScores)
     {
+        _gameOverScreen.GetComponentInChildren<VisualPodiumSetter>(true).SetGameScores(pScores);
         _transition.DoTransition();
         state = nextState.gameOver;
     }
