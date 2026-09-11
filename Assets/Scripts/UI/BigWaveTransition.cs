@@ -21,6 +21,8 @@ public class BigWaveTransition : MonoBehaviour
     [SerializeField] private AnimationCurve _waveCurve;
     [SerializeField] private AnimationCurve _endCurve;
 
+    [SerializeField] private GameObject _bigWave;
+
     [SerializeField] private float _waveTime = 1f;
     [SerializeField] private float _wavefadeTime = 0.5f;
     [SerializeField] private float _finalTime = 0.7f;
@@ -33,6 +35,12 @@ public class BigWaveTransition : MonoBehaviour
 
     public void PrepareGameplay()
     {
+        Scene scene = SceneManager.GetSceneByName("Gameplay");
+        if (scene.isLoaded)
+        {
+            SceneManager.UnloadSceneAsync(scene);
+        }
+
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
     }
@@ -57,17 +65,23 @@ public class BigWaveTransition : MonoBehaviour
 
     public void DoTransition()
     {
+        gameObject.SetActive(true);
+        _bigWave.SetActive(true);
         StartCoroutine(StartTransitionCoroutine());
     }
 
     public void EndTransition()
     {
+        _bigWave.SetActive(true);
+        _NextBG.gameObject.SetActive(true);
+        gameObject.SetActive(true);
         StartCoroutine(FinishTransitionCoroutine());
     }
 
     private void ResetWave()
     {
         _transform.anchoredPosition = _startPointWave.anchoredPosition;
+        _image.color = new Color(1, 1, 1, 1);
     }
 
     private IEnumerator DoFade()
@@ -108,6 +122,7 @@ public class BigWaveTransition : MonoBehaviour
 
             if(elapsedTime > _waveTime - _wavefadeTime && !active)
             {
+                _NextBG.anchoredPosition = _startPointBG.anchoredPosition;
                 StartCoroutine(DoFade());
                 active = true;
             }
@@ -116,6 +131,7 @@ public class BigWaveTransition : MonoBehaviour
         }
 
         OnAnimationHalfed?.Invoke();
+
 
         _image.color = new Color(1, 1, 1, 0);
     }

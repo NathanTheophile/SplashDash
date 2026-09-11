@@ -13,6 +13,8 @@ public class ControllerSelectionTransition : MonoBehaviour
     [SerializeField] private BigWaveTransition _sceneLoader;
     [SerializeField] private Camera _mainMenuCamera;
 
+    [SerializeField] private PlayerConnectPanelManager _playerConnectPanelManager;
+
     [SerializeField] private float _Duration = 0.5f;
 
     private void OnEnable()
@@ -23,14 +25,15 @@ public class ControllerSelectionTransition : MonoBehaviour
     private void OnDisable()
     {
         GameManager.GameStarted -= OnGameStarted;
+
+        _currentMenu.ResetTween();
+        _title.ResetTween();
+        _mainButtons.ResetTween();
     }
 
-    private void OnGameStarted()
+    public void OnGameStarted()
     {
-        _mainMenuCamera.enabled = false;
-        _bg.transform.parent.gameObject.SetActive(false);
-        _currentMenu.gameObject.SetActive(false);
-        _sceneLoader.DoTransition();
+        //TransitionManager.Instance.GoToGameplay();
     }
 
     public void DoTransition()
@@ -55,12 +58,15 @@ public class ControllerSelectionTransition : MonoBehaviour
         _currentMenu.DoTweenTo(_Duration);
         _mainButtons.DoTweenTo(_Duration);
 
+        _playerConnectPanelManager.ResetAll();
         _sceneLoader.PrepareGameplay();
     }
+
 
     private void OnToTweenComplete()
     {
         TransitionManager.IsPlaying = false;
+        _title.gameObject.SetActive(false);
         _mainButtons.gameObject.SetActive(false);
     }
 
@@ -70,6 +76,7 @@ public class ControllerSelectionTransition : MonoBehaviour
         TransitionManager.IsPlaying = true;
 
         _mainButtons.gameObject.SetActive(true);
+        _title.gameObject.SetActive(true);
 
         _bg.alpha = 1f;
         _bg.DOFade(0f, _Duration).OnComplete(OnFromTweenComplete);
@@ -89,5 +96,6 @@ public class ControllerSelectionTransition : MonoBehaviour
     {
         TransitionManager.IsPlaying = false;
         _currentMenu.gameObject.SetActive(false);
+        _title.gameObject.SetActive(true);
     }
 }

@@ -7,11 +7,11 @@ public class BackToMenus : MonoBehaviour
     [SerializeField] private BigWaveTransition _transition;
     [SerializeField] private CanvasGroup _menu;
 
-    [SerializeField] private GameObject _title;
+    [SerializeField] private StartMenuTransition _title;
     [SerializeField] private GameObject _background;
     [SerializeField] private GameObject _menuButtons;
     [SerializeField] private GameObject _controllersSelection;
-    [SerializeField] private Camera _mainMenuCamera;
+    [SerializeField] private GameObject _mainMenuCamera;
     [SerializeField] private StartMenuTransition _startMenuTransition;
 
     [SerializeField] private float _duration = 1f;
@@ -27,14 +27,17 @@ public class BackToMenus : MonoBehaviour
         if (gameplayScene.isLoaded)
             SceneManager.UnloadSceneAsync(gameplayScene);
 
-        _mainMenuCamera.enabled = true;
+        _mainMenuCamera.SetActive(false);
         _transition.EndTransition();
 
-        _title.SetActive(true);
+        _title.gameObject.SetActive(true);
+        _title.TransitionFrom();
+
         _background.SetActive(true);
         _menuButtons.SetActive(false);
         _controllersSelection.SetActive(false);
         _startMenuTransition.TransitionFrom();
+        _mainMenuCamera.SetActive(true);
 
         _menu.DOFade(0f, _duration).OnComplete(OnTransitionComplete);
     }

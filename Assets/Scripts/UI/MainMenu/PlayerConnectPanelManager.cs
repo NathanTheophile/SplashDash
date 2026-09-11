@@ -29,6 +29,14 @@ public class PlayerConnectPanelManager : MonoBehaviour
         UpdateText();
     }
 
+    public void ResetAll()
+    {
+        foreach (var panel in _panels)
+        {
+            panel.RemovePanel();
+        }
+    }
+
     public void UpdateText()
     {
         if(_manager == null) return;

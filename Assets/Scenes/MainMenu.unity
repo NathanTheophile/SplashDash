@@ -138,11 +138,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _transition: {fileID: 1022678239}
   _menu: {fileID: 1640868689}
-  _title: {fileID: 1719077273}
+  _title: {fileID: 1719077276}
   _background: {fileID: 1057235549}
   _menuButtons: {fileID: 957111548}
   _controllersSelection: {fileID: 1774436695}
-  _mainMenuCamera: {fileID: 860574549}
+  _mainMenuCamera: {fileID: 860574546}
   _startMenuTransition: {fileID: 1719077276}
   _duration: 1
 --- !u!1 &54934302
@@ -2190,6 +2190,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _transition: {fileID: 1022678239}
   _gameOverScreen: {fileID: 1640868687}
+  _gameManager: {fileID: 1019423571}
+  _mainMenuCamera: {fileID: 860574546}
+  _bg: {fileID: 1057235549}
+  _currentMenu: {fileID: 1774436695}
+  _title: {fileID: 1719077273}
 --- !u!4 &886277886
 Transform:
   m_ObjectHideFlags: 0
@@ -2783,6 +2788,7 @@ GameObject:
   - component: {fileID: 1234334279}
   - component: {fileID: 1234334278}
   - component: {fileID: 1234334277}
+  - component: {fileID: 1234334281}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2879,6 +2885,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1234334281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234334276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0fc10f30dd7f5a4f99c6ca8fdfd6309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1234499229
 GameObject:
   m_ObjectHideFlags: 0
@@ -3107,6 +3125,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5516312581574486513, guid: 8cca8e93dd387bf4daf5637cd1fdd240, type: 3}
       propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516312581574486513, guid: 8cca8e93dd387bf4daf5637cd1fdd240, type: 3}
+      propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5516312581574486513, guid: 8cca8e93dd387bf4daf5637cd1fdd240, type: 3}
@@ -4344,6 +4366,7 @@ MonoBehaviour:
   _boueeShadows: {fileID: 1711237714}
   _sceneLoader: {fileID: 1022678239}
   _mainMenuCamera: {fileID: 860574549}
+  _playerConnectPanelManager: {fileID: 1823773818}
   _Duration: 0.75
 --- !u!114 &1774436699
 MonoBehaviour:
@@ -5308,6 +5331,74 @@ PrefabInstance:
     - target: {fileID: 4137198023603146572, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: _bigWave
+      value: 
+      objectReference: {fileID: 1023443067}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: OnCanvasFade.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: OnAnimationHalfed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: OnCanvasFade.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: OnCanvasFade.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1234334276}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: OnAnimationHalfed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: OnCanvasFade.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: OnCanvasFade.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: OnAnimationHalfed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1234334276}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: OnAnimationHalfed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: OnAnimationHalfed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: OnCanvasFade.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: OnCanvasFade.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: OnAnimationHalfed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: OnAnimationHalfed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: OnCanvasFade.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389419814075045389, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
+      propertyPath: OnAnimationHalfed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7534033590459753399, guid: 72352960dca965a419b4d1f755ca09fb, type: 3}
       propertyPath: m_RaycastTarget
