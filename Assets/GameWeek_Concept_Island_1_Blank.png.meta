@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: ff13d31442f5d0946ae96f31bfaafaaf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8158672658695229269
+    second: GameWeek_Concept_Island_1_Blank_0
+  - first:
+      213: -1665663835998558674
+    second: GameWeek_Concept_Island_1_Blank_1
+  - first:
+      213: 2197178055396087786
+    second: GameWeek_Concept_Island_1_Blank_2
+  - first:
+      213: 1407163908227886949
+    second: GameWeek_Concept_Island_1_Blank_3
+  - first:
+      213: -4231877323746782293
+    second: GameWeek_Concept_Island_1_Blank_4
+  - first:
+      213: -8064480521466078348
+    second: GameWeek_Concept_Island_1_Blank_5
+  - first:
+      213: -8032611067986325690
+    second: GameWeek_Concept_Island_1_Blank_6
+  - first:
+      213: 5719541381013962881
+    second: GameWeek_Concept_Island_1_Blank_7
+  - first:
+      213: 4576974682286010821
+    second: GameWeek_Concept_Island_1_Blank_8
+  - first:
+      213: -2774557660847826221
+    second: GameWeek_Concept_Island_1_Blank_9
+  - first:
+      213: 994443385202504616
+    second: GameWeek_Concept_Island_1_Blank_10
+  - first:
+      213: -3487304423155255859
+    second: GameWeek_Concept_Island_1_Blank_11
+  - first:
+      213: -2183646861322276630
+    second: GameWeek_Concept_Island_1_Blank_12
+  - first:
+      213: 1387222481560654285
+    second: GameWeek_Concept_Island_1_Blank_13
+  - first:
+      213: 6436000832837415840
+    second: GameWeek_Concept_Island_1_Blank_14
+  - first:
+      213: 7067541102843417560
+    second: GameWeek_Concept_Island_1_Blank_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GameWeek_Concept_Island_1_Blank_0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 218
+        width: 1395
+        height: 1362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba077c3817296ce80800000000000000
+      internalID: -8158672658695229269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Island_1_Blank_1
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 223
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e266714f09f52e8e0800000000000000
+      internalID: -1665663835998558674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Island_1_Blank_2
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 239
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae7da2cdcc1fd7e10800000000000000
+      internalID: 2197178055396087786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Island_1_Blank_3
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 229
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f6caa7e10478310800000000000000
+      internalID: 1407163908227886949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Island_1_Blank_4
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 256
+        width: 35
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba3da09def95545c0800000000000000
+      internalID: -4231877323746782293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Island_1_Blank_5
+      rect:
+        serializedVersion: 2
+        x: 1483
+        y: 225
+        width: 58
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b15f371b5351090800000000000000
+      internalID: -8064480521466078348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Island_1_Blank_6
+      rect:
+        serializedVersion: 2
+        x: 1484
+        y: 225
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64fcdc1dace668090800000000000000
+      internalID: -8032611067986325690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Island_1_Blank_7
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 215
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1800c752594ef5f40800000000000000
+      internalID: 5719541381013962881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Island_1_Blank_8
+      rect:
+        serializedVersion: 2
+        x: 1493
+        y: 208
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c13d93493ea48f30800000000000000
+      internalID: 4576974682286010821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Island_1_Blank_9
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 225
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3da9358f18ace79d0800000000000000
+      internalID: -2774557660847826221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Island_1_Blank_10
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 205
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a37b347df8fccd00800000000000000
+      internalID: 994443385202504616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Island_1_Blank_11
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 222
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc5be2a8a1b9a9fc0800000000000000
+      internalID: -3487304423155255859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Island_1_Blank_12
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 66
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae03df3cfb022b1e0800000000000000
+      internalID: -2183646861322276630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Island_1_Blank_13
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 92
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc1dbd54f77604310800000000000000
+      internalID: 1387222481560654285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Island_1_Blank_14
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 66
+        width: 52
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3746778a4415950800000000000000
+      internalID: 6436000832837415840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameWeek_Concept_Island_1_Blank_15
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 70
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d354760033f41260800000000000000
+      internalID: 7067541102843417560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GameWeek_Concept_Island_1_Blank_0: -8158672658695229269
+      GameWeek_Concept_Island_1_Blank_1: -1665663835998558674
+      GameWeek_Concept_Island_1_Blank_10: 994443385202504616
+      GameWeek_Concept_Island_1_Blank_11: -3487304423155255859
+      GameWeek_Concept_Island_1_Blank_12: -2183646861322276630
+      GameWeek_Concept_Island_1_Blank_13: 1387222481560654285
+      GameWeek_Concept_Island_1_Blank_14: 6436000832837415840
+      GameWeek_Concept_Island_1_Blank_15: 7067541102843417560
+      GameWeek_Concept_Island_1_Blank_2: 2197178055396087786
+      GameWeek_Concept_Island_1_Blank_3: 1407163908227886949
+      GameWeek_Concept_Island_1_Blank_4: -4231877323746782293
+      GameWeek_Concept_Island_1_Blank_5: -8064480521466078348
+      GameWeek_Concept_Island_1_Blank_6: -8032611067986325690
+      GameWeek_Concept_Island_1_Blank_7: 5719541381013962881
+      GameWeek_Concept_Island_1_Blank_8: 4576974682286010821
+      GameWeek_Concept_Island_1_Blank_9: -2774557660847826221
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

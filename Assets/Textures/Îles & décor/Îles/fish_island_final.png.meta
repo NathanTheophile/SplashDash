@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: 99915bf29a0d4df4891a9264fd07a0e9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6462155679617493176
+    second: fish_island_final_0
+  - first:
+      213: -4152713263615568859
+    second: fish_island_final_1
+  - first:
+      213: -5151906848017278132
+    second: fish_island_final_2
+  - first:
+      213: 8551102163697367183
+    second: fish_island_final_3
+  - first:
+      213: 9183318728918256335
+    second: fish_island_final_4
+  - first:
+      213: 2532675762347595009
+    second: fish_island_final_5
+  - first:
+      213: -1255086514820203332
+    second: fish_island_final_6
+  - first:
+      213: -1164154072393393236
+    second: fish_island_final_7
+  - first:
+      213: -2447421833935229965
+    second: fish_island_final_8
+  - first:
+      213: -1081160629926920600
+    second: fish_island_final_9
+  - first:
+      213: 3769527525957348458
+    second: fish_island_final_10
+  - first:
+      213: -3210607970350333555
+    second: fish_island_final_11
+  - first:
+      213: -1496514905397193438
+    second: fish_island_final_12
+  - first:
+      213: 4672503004394952800
+    second: fish_island_final_13
+  - first:
+      213: 6381957795999882443
+    second: fish_island_final_14
+  - first:
+      213: -5878618684233196056
+    second: fish_island_final_15
+  - first:
+      213: 9149390972355878195
+    second: fish_island_final_16
+  - first:
+      213: -8094098463058915197
+    second: fish_island_final_17
+  - first:
+      213: -1271410173319849756
+    second: fish_island_final_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fish_island_final_0
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 1649
+        width: 446
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8475029b5afc156a0800000000000000
+      internalID: -6462155679617493176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_1
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 1650
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 524142ce9499e56c0800000000000000
+      internalID: -4152713263615568859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_2
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 512
+        width: 1646
+        height: 1065
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4b17088400c088b0800000000000000
+      internalID: -5151906848017278132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_3
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 1418
+        width: 283
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f887149bc1e9ba670800000000000000
+      internalID: 8551102163697367183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_4
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 1091
+        width: 106
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fca4d588ab3b17f70800000000000000
+      internalID: 9183318728918256335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_5
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 868
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10558f9ef2fd52320800000000000000
+      internalID: 2532675762347595009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_6
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 509
+        width: 207
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbc32c9e679059ee0800000000000000
+      internalID: -1255086514820203332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_7
+      rect:
+        serializedVersion: 2
+        x: 1547
+        y: 550
+        width: 184
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cabda230a0818dfe0800000000000000
+      internalID: -1164154072393393236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_8
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 396
+        width: 55
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fb61cc1fc2090ed0800000000000000
+      internalID: -2447421833935229965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_9
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 362
+        width: 68
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86e7114a222fef0f0800000000000000
+      internalID: -1081160629926920600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_10
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 362
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6caeb3205d005430800000000000000
+      internalID: 3769527525957348458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_11
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 352
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d810b3ebf01a173d0800000000000000
+      internalID: -3210607970350333555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_12
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 356
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22519b65f9f4b3be0800000000000000
+      internalID: -1496514905397193438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_13
+      rect:
+        serializedVersion: 2
+        x: 1627
+        y: 342
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06818ecf9b018d040800000000000000
+      internalID: 4672503004394952800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_14
+      rect:
+        serializedVersion: 2
+        x: 1657
+        y: 359
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcc9b1a6dc4419850800000000000000
+      internalID: 6381957795999882443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_15
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 345
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ed5e44f373fa6ea0800000000000000
+      internalID: -5878618684233196056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_16
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 203
+        width: 17
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33d10722d9a29fe70800000000000000
+      internalID: 9149390972355878195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_17
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 203
+        width: 51
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 380965c055cfbaf80800000000000000
+      internalID: -8094098463058915197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_island_final_18
+      rect:
+        serializedVersion: 2
+        x: 1474
+        y: 207
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e8d37ffe2b0b5ee0800000000000000
+      internalID: -1271410173319849756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fish_island_final_0: -6462155679617493176
+      fish_island_final_1: -4152713263615568859
+      fish_island_final_10: 3769527525957348458
+      fish_island_final_11: -3210607970350333555
+      fish_island_final_12: -1496514905397193438
+      fish_island_final_13: 4672503004394952800
+      fish_island_final_14: 6381957795999882443
+      fish_island_final_15: -5878618684233196056
+      fish_island_final_16: 9149390972355878195
+      fish_island_final_17: -8094098463058915197
+      fish_island_final_18: -1271410173319849756
+      fish_island_final_2: -5151906848017278132
+      fish_island_final_3: 8551102163697367183
+      fish_island_final_4: 9183318728918256335
+      fish_island_final_5: 2532675762347595009
+      fish_island_final_6: -1255086514820203332
+      fish_island_final_7: -1164154072393393236
+      fish_island_final_8: -2447421833935229965
+      fish_island_final_9: -1081160629926920600
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
